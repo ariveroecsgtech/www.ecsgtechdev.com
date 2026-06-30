@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EQUIMAVENCA — Equipos y Manufacturas Venezolanas, C.A. | Bombas de Cavidad Progresiva</title>
+<meta name="description" content="EQUIMAVENCA, empresa pionera en Venezuela con más de 30 años de experiencia en Sistemas de Bombeo de Cavidad Progresiva (BCP) para la industria petrolera. Diseño, instalación, mantenimiento y monitoreo de pozos." />
+<link rel="icon" type="image/png" href="assets/logo.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --azul:#1d4ed8;
+  --azul-900:#0b1f4d;
+  --azul-800:#10286a;
+  --azul-700:#173a93;
+  --azul-500:#2e6df0;
+  --azul-300:#6f9bff;
+  --rojo:#e23636;
+  --verde:#2faf56;
+  --ink:#0c1530;
+  --muted:#5a6685;
+  --line:#e3e8f5;
+  --bg:#f5f7fc;
+  --white:#ffffff;
+  --shadow:0 18px 50px -20px rgba(13,31,77,.35);
+  --radius:18px;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Barlow Condensed','Inter',sans-serif;line-height:1.05;letter-spacing:.4px;text-transform:uppercase}
+a{text-decoration:none;color:inherit}
+.wrap{width:min(1180px,92%);margin-inline:auto}
+.eyebrow{font-family:'Barlow Condensed',sans-serif;text-transform:uppercase;letter-spacing:3px;font-weight:600;color:var(--azul-500);font-size:.85rem}
+
+/* NAVBAR */
+header{position:sticky;top:0;z-index:50;backdrop-filter:blur(12px);background:rgba(255,255,255,.85);border-bottom:1px solid var(--line);transition:.3s}
+.nav{display:flex;align-items:center;justify-content:space-between;height:74px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand img{height:46px;width:auto;border-radius:6px}
+.brand b{font-family:'Barlow Condensed',sans-serif;font-size:1.45rem;letter-spacing:1px;color:var(--azul-900)}
+.brand span{display:block;font-size:.6rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;font-weight:600;font-family:'Inter'}
+nav ul{display:flex;gap:30px;list-style:none;align-items:center}
+nav a{font-weight:500;font-size:.94rem;color:var(--ink);position:relative;padding:4px 0}
+nav a::after{content:"";position:absolute;left:0;bottom:-2px;width:0;height:2px;background:var(--azul-500);transition:.3s}
+nav a:hover::after{width:100%}
+.cta{background:var(--azul-700);color:#fff!important;padding:11px 22px;border-radius:50px;font-weight:600;font-size:.9rem;box-shadow:0 8px 20px -8px var(--azul-700);transition:.25s}
+.cta:hover{transform:translateY(-2px);background:var(--azul-800)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:0}
+.burger span{width:26px;height:3px;background:var(--azul-900);border-radius:3px;transition:.3s}
+
+/* HERO */
+.hero{position:relative;color:#fff;padding:120px 0 130px;background:
+  radial-gradient(1100px 500px at 80% -10%,rgba(110,155,255,.35),transparent 60%),
+  radial-gradient(800px 400px at 0% 100%,rgba(46,109,240,.4),transparent 55%),
+  linear-gradient(135deg,var(--azul-900),var(--azul-700) 60%,var(--azul-800));
+  overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;background-image:
+  repeating-linear-gradient(115deg,transparent 0 38px,rgba(255,255,255,.025) 38px 76px);pointer-events:none}
+.helix{position:absolute;right:-60px;top:50%;transform:translateY(-50%);font-size:34rem;font-weight:700;color:rgba(255,255,255,.04);font-family:'Barlow Condensed';user-select:none;line-height:1}
+.hero .wrap{position:relative;z-index:2;max-width:760px}
+.hero h1{font-size:clamp(2.6rem,6vw,5rem);font-weight:700}
+.hero h1 .accent{background:linear-gradient(90deg,var(--rojo),#ff8a5b);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p.lead{font-size:1.18rem;color:#d8e1ff;margin:22px 0 34px;max-width:620px;font-weight:400}
+.hero-btns{display:flex;gap:16px;flex-wrap:wrap}
+.btn-primary{background:#fff;color:var(--azul-900);padding:14px 30px;border-radius:50px;font-weight:700;font-size:.95rem;display:inline-flex;align-items:center;gap:8px;transition:.25s;box-shadow:var(--shadow)}
+.btn-primary:hover{transform:translateY(-3px)}
+.btn-ghost{border:1.5px solid rgba(255,255,255,.4);color:#fff;padding:14px 30px;border-radius:50px;font-weight:600;font-size:.95rem;transition:.25s}
+.btn-ghost:hover{background:rgba(255,255,255,.1);border-color:#fff}
+.hero-strip{display:flex;gap:18px;margin-top:46px;flex-wrap:wrap}
+.chip{display:flex;align-items:center;gap:9px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);padding:9px 16px;border-radius:50px;font-size:.85rem;color:#e6ecff}
+.dot{width:9px;height:9px;border-radius:50%}
+
+/* STATS */
+.stats{margin-top:-60px;position:relative;z-index:5}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:38px 34px;box-shadow:var(--shadow)}
+.stat h3{font-size:2.8rem;color:var(--azul-700);font-weight:700}
+.stat p{color:var(--muted);font-size:.9rem;font-weight:500}
+.stat{position:relative}
+.stat:not(:last-child)::after{content:"";position:absolute;right:-10px;top:10%;height:80%;width:1px;background:var(--line)}
+
+/* SECTION GENERIC */
+section{padding:96px 0}
+.sec-head{text-align:center;max-width:640px;margin:0 auto 56px}
+.sec-head h2{font-size:clamp(2rem,4vw,3rem);color:var(--azul-900);margin:10px 0}
+.sec-head p{color:var(--muted)}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:60px;align-items:center}
+.about-card{background:linear-gradient(160deg,var(--azul-800),var(--azul-700));border-radius:24px;padding:46px;color:#fff;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.about-card::after{content:"";position:absolute;width:280px;height:280px;border-radius:50%;background:radial-gradient(circle,rgba(111,155,255,.4),transparent 70%);right:-80px;bottom:-80px}
+.about-card .num{font-family:'Barlow Condensed';font-size:5rem;line-height:.9;color:#fff}
+.about-card .num span{color:var(--azul-300)}
+.about-card h4{font-size:1.4rem;margin:8px 0 14px}
+.about-card p{color:#cdd8ff;font-size:.96rem;position:relative;z-index:2}
+.about-text h2{font-size:clamp(1.9rem,3.5vw,2.7rem);color:var(--azul-900);margin:8px 0 18px}
+.about-text p{color:var(--muted);margin-bottom:16px}
+.mvv{display:grid;gap:14px;margin-top:24px}
+.mvv-item{display:flex;gap:14px;align-items:flex-start;padding:16px;background:#fff;border:1px solid var(--line);border-radius:14px;transition:.25s}
+.mvv-item:hover{transform:translateX(6px);box-shadow:var(--shadow);border-color:transparent}
+.mvv-item .ic{flex:0 0 42px;height:42px;border-radius:11px;display:grid;place-items:center;background:linear-gradient(135deg,var(--azul-700),var(--azul-500));color:#fff}
+.mvv-item b{font-family:'Barlow Condensed';font-size:1.15rem;letter-spacing:.5px;color:var(--azul-900);text-transform:uppercase;display:block}
+.mvv-item small{color:var(--muted);font-size:.88rem}
+
+/* SERVICES */
+.services{background:linear-gradient(180deg,#fff,var(--bg))}
+.svc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+.svc{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:34px 30px;transition:.3s;position:relative;overflow:hidden}
+.svc::before{content:"";position:absolute;top:0;left:0;width:100%;height:4px;background:linear-gradient(90deg,var(--azul-700),var(--azul-500));transform:scaleX(0);transform-origin:left;transition:.35s}
+.svc:hover{transform:translateY(-8px);box-shadow:var(--shadow);border-color:transparent}
+.svc:hover::before{transform:scaleX(1)}
+.svc .ic{width:58px;height:58px;border-radius:15px;display:grid;place-items:center;background:linear-gradient(135deg,rgba(46,109,240,.12),rgba(46,109,240,.04));color:var(--azul-700);margin-bottom:20px}
+.svc h3{font-size:1.35rem;color:var(--azul-900);margin-bottom:10px}
+.svc p{color:var(--muted);font-size:.92rem}
+
+/* PRODUCTS */
+.prod-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.prod{display:flex;gap:20px;padding:28px;background:#fff;border:1px solid var(--line);border-radius:16px;transition:.3s}
+.prod:hover{box-shadow:var(--shadow);border-color:transparent;transform:translateY(-4px)}
+.prod .badge{flex:0 0 56px;height:56px;border-radius:13px;background:linear-gradient(135deg,var(--azul-800),var(--azul-500));color:#fff;display:grid;place-items:center;font-family:'Barlow Condensed';font-size:1.5rem;font-weight:700}
+.prod h4{font-size:1.18rem;color:var(--azul-900);margin-bottom:6px}
+.prod p{color:var(--muted);font-size:.9rem}
+
+/* PCP banner */
+.pcp{background:linear-gradient(135deg,var(--azul-900),var(--azul-700));color:#fff;border-radius:26px;padding:56px;display:grid;grid-template-columns:1fr 1fr;gap:46px;align-items:center;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.pcp::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 40px,rgba(255,255,255,.03) 40px 80px)}
+.pcp>div{position:relative;z-index:2}
+.pcp h2{font-size:2.4rem;margin-bottom:14px}
+.pcp p{color:#cdd8ff;margin-bottom:10px}
+.benefits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px}
+.benefit{display:flex;gap:10px;align-items:center;font-size:.92rem;color:#e6ecff}
+.benefit .check{width:22px;height:22px;border-radius:50%;background:var(--verde);display:grid;place-items:center;flex:0 0 22px}
+
+/* CONTACT */
+.contact{background:var(--azul-900);color:#fff}
+.contact .sec-head h2{color:#fff}
+.contact .sec-head p{color:#b9c6ef}
+.contact-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:50px;align-items:start}
+.people{display:grid;gap:18px}
+.person{display:flex;align-items:center;gap:18px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:22px;border-radius:16px;transition:.25s}
+.person:hover{background:rgba(255,255,255,.1);transform:translateX(6px)}
+.person .av{flex:0 0 58px;height:58px;border-radius:50%;background:linear-gradient(135deg,var(--azul-500),var(--azul-300));display:grid;place-items:center;font-family:'Barlow Condensed';font-size:1.5rem;font-weight:700;color:var(--azul-900)}
+.person h4{font-size:1.2rem;margin-bottom:2px}
+.person .role{color:var(--azul-300);font-size:.82rem;text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-bottom:6px;font-family:'Inter'}
+.person a.tel{color:#fff;font-size:1.02rem;font-weight:600;display:inline-flex;align-items:center;gap:8px}
+.person a.tel:hover{color:var(--azul-300)}
+.info-card{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:16px;padding:30px}
+.info-row{display:flex;gap:14px;align-items:flex-start;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+.info-row:last-child{border-bottom:0}
+.info-row .ic{flex:0 0 40px;height:40px;border-radius:11px;background:rgba(255,255,255,.1);display:grid;place-items:center;color:var(--azul-300)}
+.info-row b{display:block;font-family:'Inter';font-weight:600;font-size:.95rem;text-transform:none;letter-spacing:0}
+.info-row span{color:#b9c6ef;font-size:.9rem}
+.info-row a{color:#b9c6ef}
+.info-row a:hover{color:#fff}
+
+/* FOOTER */
+footer{background:#070f24;color:#9fb0d8;padding:60px 0 26px}
+.foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;padding-bottom:36px;border-bottom:1px solid rgba(255,255,255,.08)}
+.foot-brand img{height:54px;border-radius:6px;margin-bottom:14px}
+.foot-brand p{font-size:.9rem;max-width:320px}
+.foot-col h5{font-family:'Barlow Condensed';color:#fff;font-size:1.1rem;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px}
+.foot-col a{display:block;color:#9fb0d8;font-size:.9rem;margin-bottom:10px;transition:.2s}
+.foot-col a:hover{color:#fff;padding-left:5px}
+.socials{display:flex;gap:12px;margin-top:18px}
+.socials a{width:40px;height:40px;border-radius:11px;background:rgba(255,255,255,.07);display:grid;place-items:center;color:#cdd8ff;transition:.25s}
+.socials a:hover{background:var(--azul-700);color:#fff;transform:translateY(-3px)}
+.foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:24px;font-size:.82rem;color:#6c7ba6;flex-wrap:wrap;gap:10px}
+
+/* reveal animation */
+.reveal{opacity:0;transform:translateY(34px);transition:.7s cubic-bezier(.2,.7,.2,1)}
+.reveal.show{opacity:1;transform:none}
+
+/* RESPONSIVE */
+@media(max-width:960px){
+  .about-grid,.contact-grid,.pcp{grid-template-columns:1fr;gap:34px}
+  .svc-grid{grid-template-columns:1fr 1fr}
+  .stats-grid{grid-template-columns:1fr 1fr;gap:30px}
+  .stat:nth-child(2)::after{display:none}
+  .foot-top{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+  nav ul{position:fixed;inset:74px 0 auto 0;background:#fff;flex-direction:column;padding:24px;gap:20px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.35s;box-shadow:var(--shadow)}
+  nav ul.open{transform:translateY(0)}
+  .burger{display:flex}
+  .svc-grid,.prod-grid,.stats-grid,.benefits,.foot-top{grid-template-columns:1fr}
+  .stat::after{display:none}
+  section{padding:70px 0}
+  .pcp{padding:36px 26px}
+  .about-card{padding:34px}
+}
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header id="top">
+  <div class="wrap nav">
+    <a href="#top" class="brand">
+      <img src="assets/logo.png" alt="EQUIMAVENCA" />
+      <div>
+        <b>EQUIMAVENCA</b>
+        <span>Equipos y Manufacturas Venezolanas, C.A.</span>
+      </div>
+    </a>
+    <nav>
+      <ul id="menu">
+        <li><a href="#nosotros">Nosotros</a></li>
+        <li><a href="#servicios">Servicios</a></li>
+        <li><a href="#productos">Productos</a></li>
+        <li><a href="#bcp">Sistema BCP</a></li>
+        <li><a href="#contacto" class="cta">Contáctanos</a></li>
+      </ul>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menú"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="padding-bottom:160px">
+  <div class="helix">Z</div>
+  <div class="wrap">
+    <p class="eyebrow" style="color:var(--azul-300)">Pioneros en Venezuela desde 1988</p>
+    <h1>Sistemas de <span class="accent">Bombeo de Cavidad Progresiva</span> para la Industria Petrolera</h1>
+    <p class="lead">Más de 30 años instalando, manteniendo y monitoreando sistemas de levantamiento artificial. Tecnología de punta, ingeniería de diseño y atención integral para la explotación de campos petroleros.</p>
+    <div class="hero-btns">
+      <a href="#contacto" class="btn-primary">Solicitar asesoría →</a>
+      <a href="#bcp" class="btn-ghost">¿Qué es una BCP?</a>
+    </div>
+    <div class="hero-strip">
+      <div class="chip"><span class="dot" style="background:var(--rojo)"></span> Diseño de Ingeniería</div>
+      <div class="chip"><span class="dot" style="background:var(--verde)"></span> Instalación &amp; Mantenimiento</div>
+      <div class="chip"><span class="dot" style="background:var(--azul-300)"></span> Monitoreo de Pozos</div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="wrap stats">
+  <div class="stats-grid reveal">
+    <div class="stat"><h3 data-count="30">+30</h3><p>Años de experiencia</p></div>
+    <div class="stat"><h3 data-count="2000">+2.000</h3><p>Instalaciones en Venezuela</p></div>
+    <div class="stat"><h3>1988</h3><p>Primer equipo en la Faja del Orinoco</p></div>
+    <div class="stat"><h3>100%</h3><p>Capital mixto venezolano</p></div>
+  </div>
+</div>
+
+<!-- NOSOTROS -->
+<section id="nosotros">
+  <div class="wrap about-grid">
+    <div class="about-text reveal">
+      <p class="eyebrow">Quiénes Somos</p>
+      <h2>Una trayectoria que respalda cada pozo</h2>
+      <p>Equipos y Manufacturas Venezolanas, C.A. se posiciona como una de las empresas líderes del mercado en Sistemas de Bombeo de Cavidad Progresiva, conformada por capital mixto y con una trayectoria de más de 30 años de experiencia.</p>
+      <p>Iniciamos operaciones en Venezuela con el método de Bomba de Cavidad Progresiva (PCP), instalando el primer equipo en 1988 en la Faja del Orinoco. Desde 1991 nos extendimos progresivamente al resto del país, acumulando más de 2.000 instalaciones a lo largo de toda Venezuela.</p>
+      <p>Ofrecemos servicios pre y post-venta de equipos, tales como ingeniería de diseño, instalación, mantenimiento y monitoreo de pozos para la industria petrolera, con atención integral a nuestros clientes y asesoría técnica en la extracción de crudo y manejo de fluidos.</p>
+      <div class="mvv">
+        <div class="mvv-item">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1" fill="currentColor"/></svg></div>
+          <div><b>Misión</b><small>Manufacturar, ensamblar y suministrar productos, así como brindar servicios técnicos y de ingeniería de alto nivel para pozos petroleros bajo el sistema PCP, con personal calificado y tecnología de punta.</small></div>
+        </div>
+        <div class="mvv-item">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg></div>
+          <div><b>Visión</b><small>Ser la organización líder en el suministro de productos y servicios especializados de PCP para la explotación de campos petroleros a nivel nacional e internacional.</small></div>
+        </div>
+        <div class="mvv-item">
+          <div class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6Z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <div><b>Calidad</b><small>Sistema de Gestión de Calidad que asegura la rentabilidad de la organización, en armonía con el ambiente y el entorno social, para satisfacer la necesidad del cliente.</small></div>
+        </div>
+      </div>
+    </div>
+    <div class="about-card reveal">
+      <div class="num">+30<span> años</span></div>
+      <h4>Liderando el levantamiento artificial</h4>
+      <p>Desde la instalación del primer sistema PCP del país, EQUIMAVENCA ha acompañado la evolución de la industria petrolera venezolana con experiencia comprobada en un diverso espectro de condiciones y fluidos de producción.</p>
+      <p style="margin-top:18px;color:#fff;font-weight:600;font-family:'Barlow Condensed';font-size:1.3rem;letter-spacing:1px">"Cada instalación, una solución integral."</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICIOS -->
+<section id="servicios" class="services">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Lo que hacemos</p>
+      <h2>Servicios integrales pre y post-venta</h2>
+      <p>Acompañamos cada proyecto de levantamiento artificial desde el diseño hasta el monitoreo continuo del pozo.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 20v-8m0 0V4m0 8h8m-8 0H4"/><circle cx="12" cy="12" r="9"/></svg></div>
+        <h3>Ingeniería de Diseño</h3>
+        <p>Diseño y dimensionamiento de sistemas PCP adaptados a las condiciones específicas de cada pozo y fluido de producción.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18v3h3l6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2-2Z"/></svg></div>
+        <h3>Instalación</h3>
+        <p>Instalación profesional de equipos de superficie y fondo, garantizando un asentamiento seguro del sistema en la sarta de tuberías.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 12h4l2 5 4-12 2 7h6"/></svg></div>
+        <h3>Mantenimiento</h3>
+        <p>Mantenimiento preventivo y correctivo que prolonga la vida útil del equipo y minimiza paradas no programadas.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></div>
+        <h3>Monitoreo de Pozos</h3>
+        <p>Sistemas de monitoreo permanente de presión, temperatura y vibración para maximizar la producción del pozo.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l3 3M16 16l3 3M19 5l-3 3M8 16l-3 3"/><circle cx="12" cy="12" r="3"/></svg></div>
+        <h3>Asesoría Técnica</h3>
+        <p>Asesoría especializada en extracción de crudo y manejo de fluidos, con atención integral a cada cliente.</p>
+      </div>
+      <div class="svc reveal">
+        <div class="ic"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 7h18M3 12h18M3 17h18"/><circle cx="7" cy="7" r="1.5" fill="currentColor"/><circle cx="11" cy="12" r="1.5" fill="currentColor"/><circle cx="9" cy="17" r="1.5" fill="currentColor"/></svg></div>
+        <h3>Manufactura de Productos</h3>
+        <p>Fabricación de válvulas de Gas Lift, válvulas de control de flujo, niples de paro, reducciones y acoples para todos los métodos de levantamiento artificial.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTOS -->
+<section id="productos">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow">Sistemas de levantamiento artificial</p>
+      <h2>Productos y accesorios</h2>
+      <p>EQUIMAVENCA vende y distribuye de forma integral todos los componentes de los sistemas de Bomba de Cavidad Progresiva de subsuelo y superficie.</p>
+    </div>
+    <div class="prod-grid">
+      <div class="prod reveal"><div class="badge">PCP</div><div><h4>Bombas de Cavidad Progresiva</h4><p>Bomba de desplazamiento positivo de doble hélice (estator + rotor): alta eficiencia, bajo consumo energético y excelente resistencia a la abrasión.</p></div></div>
+      <div class="prod reveal"><div class="badge">RH</div><div><h4>Cabezales de Rotación</h4><p>Equipo de superficie que soporta cargas axiales y torque, opera la bomba a la velocidad requerida y libera con seguridad la energía almacenada.</p></div></div>
+      <div class="prod reveal"><div class="badge">⚡</div><div><h4>Motores y Variadores de Frecuencia</h4><p>Proporcionan el torque y la potencia del sistema, con arranques y paradas suaves, control SCADA y ajuste "infinito" de velocidad.</p></div></div>
+      <div class="prod reveal"><div class="badge">P&amp;T</div><div><h4>Sensores de Presión y Temperatura</h4><p>Monitoreo permanente de las variables de la bomba para un mejor control del drawdown y máxima producción del pozo.</p></div></div>
+      <div class="prod reveal"><div class="badge">TA</div><div><h4>Anclas de Torque</h4><p>Evitan la rotación de la línea de producción durante la operación del sistema; seguras, de recuperación simple y bajo costo.</p></div></div>
+      <div class="prod reveal"><div class="badge">GS</div><div><h4>Separadores de Gas</h4><p>Separan el gas libre antes de que ingrese a la bomba, aumentando la eficiencia de bombeo y la productividad del pozo.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- BCP BANNER -->
+<section id="bcp" style="padding-top:0">
+  <div class="wrap">
+    <div class="pcp reveal">
+      <div>
+        <p class="eyebrow" style="color:var(--azul-300)">Tecnología</p>
+        <h2>¿Qué es la Bomba de Cavidad Progresiva?</h2>
+        <p>Es una bomba de desplazamiento positivo compuesta por dos elementos principales: un <b>ESTATOR</b> con geometría de doble hélice que contiene un elastómero polimérico, y un <b>ROTOR</b> helicoidal que gira de forma excéntrica dentro del estator.</p>
+        <p>El estator se conecta al final de la tubería de producción y el rotor a la sarta de cabillas, que le transmite —desde un accionamiento de superficie— la energía necesaria para la acción de bombeo.</p>
+      </div>
+      <div>
+        <div class="benefits">
+          <div class="benefit"><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="m5 12 5 5 9-11"/></svg></span> Alta eficiencia, bajo consumo</div>
+          <div class="benefit"><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="m5 12 5 5 9-11"/></svg></span> Bajo costo de inversión</div>
+          <div class="benefit"><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="m5 12 5 5 9-11"/></svg></span> Resistencia a la abrasión</div>
+          <div class="benefit"><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="m5 12 5 5 9-11"/></svg></span> Instalación simple</div>
+          <div class="benefit"><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="m5 12 5 5 9-11"/></svg></span> Bajo mantenimiento</div>
+          <div class="benefit"><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="m5 12 5 5 9-11"/></svg></span> Equipo de superficie compacto</div>
+          <div class="benefit"><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="m5 12 5 5 9-11"/></svg></span> Bajo nivel de ruido</div>
+          <div class="benefit"><span class="check"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="3"><path d="m5 12 5 5 9-11"/></svg></span> Operación sencilla</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section id="contacto" class="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <p class="eyebrow" style="color:var(--azul-300)">Estamos para ayudarte</p>
+      <h2>Contáctanos</h2>
+      <p>Nuestro equipo está listo para asesorarte en tu próximo proyecto de levantamiento artificial.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="people reveal">
+        <div class="person">
+          <div class="av">RM</div>
+          <div>
+            <h4>Roberto Morán</h4>
+            <div class="role">Contacto Comercial</div>
+            <a class="tel" href="tel:+584142547158"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> +58 414 254 7158</a>
+          </div>
+        </div>
+        <div class="person">
+          <div class="av">MC</div>
+          <div>
+            <h4>Mary Chacín</h4>
+            <div class="role">Contacto Comercial</div>
+            <a class="tel" href="tel:+584148741254"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg> +58 414 874 1254</a>
+          </div>
+        </div>
+        <a href="https://wa.me/584142547158" target="_blank" rel="noopener" class="btn-primary" style="justify-content:center;margin-top:6px">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M.1 24l1.7-6.2A11.9 11.9 0 1 1 12 24a11.9 11.9 0 0 1-5.7-1.5L.1 24Zm6.6-3.9.4.2a9.9 9.9 0 0 0 5 1.4 9.9 9.9 0 1 0-9.9-9.9 9.9 9.9 0 0 0 1.5 5.3l.3.4-1 3.6 3.7-1Zm11.4-5.5c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.5.1-.6.8-.8 1-.3.2-.5.1a8 8 0 0 1-2.4-1.5 9 9 0 0 1-1.6-2c-.2-.3 0-.4.1-.6l.4-.4.2-.4a.4.4 0 0 0 0-.4l-.8-2c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-1 2.3 5.3 5.3 0 0 0 1.1 2.8 12 12 0 0 0 4.6 4 5.3 5.3 0 0 0 3.2.7 2.7 2.7 0 0 0 1.8-1.3 2.2 2.2 0 0 0 .2-1.3c-.1-.1-.3-.2-.5-.3Z"/></svg>
+          Escríbenos por WhatsApp
+        </a>
+      </div>
+      <div class="info-card reveal">
+        <div class="info-row">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg></div>
+          <div><b>Planta &amp; Operaciones</b><span>Maracaibo — Zulia, Venezuela. Planta de manufactura y base de operaciones.</span></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2Z"/></svg></div>
+          <div><b>Teléfonos de oficina</b><span><a href="tel:+582617172500">+58 (261) 717-2500 / 503</a><br><a href="tel:+584146123685">+58 (414) 612-3685</a> · <a href="tel:+584146338519">+58 (414) 633-8519</a></span></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6 10-6"/></svg></div>
+          <div><b>Correo</b><span><a href="mailto:info@equimavenca.com">info@equimavenca.com</a></span></div>
+        </div>
+        <div class="info-row">
+          <div class="ic"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg></div>
+          <div><b>Sitio web</b><span><a href="http://equimavenca.com" target="_blank" rel="noopener">www.equimavenca.com</a></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="assets/logo.png" alt="EQUIMAVENCA" />
+        <p>Equipos y Manufacturas Venezolanas, C.A. Pioneros en Sistemas de Bombeo de Cavidad Progresiva para la industria petrolera venezolana.</p>
+        <div class="socials">
+          <a href="http://equimavenca.com" target="_blank" rel="noopener" aria-label="Sitio web"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20 15 15 0 0 1 0-20"/></svg></a>
+          <a href="https://www.linkedin.com/company/equimavenca" target="_blank" rel="noopener" aria-label="LinkedIn"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5A2.5 2.5 0 1 1 0 3.5a2.5 2.5 0 0 1 4.98 0ZM.5 8h4V24h-4V8Zm7.5 0h3.8v2.2h.1c.5-1 1.8-2.2 3.8-2.2 4 0 4.8 2.6 4.8 6.1V24h-4v-7c0-1.7 0-3.8-2.3-3.8s-2.7 1.8-2.7 3.7V24h-4V8Z"/></svg></a>
+          <a href="https://www.instagram.com/equimavenca" target="_blank" rel="noopener" aria-label="Instagram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg></a>
+          <a href="https://www.facebook.com/equimavenca" target="_blank" rel="noopener" aria-label="Facebook"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H8v-2.9h2.4V9.8c0-2.4 1.4-3.7 3.6-3.7 1 0 2.1.2 2.1.2v2.3h-1.2c-1.2 0-1.5.7-1.5 1.4v1.7h2.6l-.4 2.9h-2.2v7A10 10 0 0 0 22 12Z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h5>Navegación</h5>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#servicios">Servicios</a>
+        <a href="#productos">Productos</a>
+        <a href="#bcp">Sistema BCP</a>
+        <a href="#contacto">Contacto</a>
+      </div>
+      <div class="foot-col">
+        <h5>Contacto</h5>
+        <a href="tel:+584142547158">Roberto Morán · +58 414 254 7158</a>
+        <a href="tel:+584148741254">Mary Chacín · +58 414 874 1254</a>
+        <a href="mailto:info@equimavenca.com">info@equimavenca.com</a>
+        <a href="#">Maracaibo, Zulia · Venezuela</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© <span id="year"></span> EQUIMAVENCA — Equipos y Manufacturas Venezolanas, C.A. Todos los derechos reservados.</span>
+      <span>Secure. Reliable. Human. · Hecho en Venezuela 🇻🇪</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// Mobile menu
+const burger=document.getElementById('burger'),menu=document.getElementById('menu');
+burger.addEventListener('click',()=>menu.classList.toggle('open'));
+menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>menu.classList.remove('open')));
+
+// Year
+document.getElementById('year').textContent=new Date().getFullYear();
+
+// Reveal on scroll
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target);}});
+},{threshold:.14});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+// Count-up stats
+function animateCount(el){
+  const target=parseInt(el.getAttribute('data-count'));
+  const prefix=el.textContent.trim().startsWith('+')?'+':'';
+  let cur=0;const step=Math.max(1,Math.floor(target/60));
+  const fmt=n=>n>=1000?n.toLocaleString('es-VE'):n;
+  const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t);}el.textContent=prefix+fmt(cur);},20);
+}
+const statsIO=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.querySelectorAll('[data-count]').forEach(animateCount);statsIO.unobserve(e.target);}});
+},{threshold:.4});
+const sg=document.querySelector('.stats-grid');if(sg)statsIO.observe(sg);
+
+// Navbar shadow on scroll
+const hdr=document.querySelector('header');
+window.addEventListener('scroll',()=>{hdr.style.boxShadow=window.scrollY>20?'0 8px 30px -16px rgba(13,31,77,.25)':'none';});
+</script>
+</body>
+</html>
