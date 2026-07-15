@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Design Plans — Enterprise Cloud Solutions Group LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1E3A5F;
+    --navy-deep: #152C4A;
+    --blue: #2E75B6;
+    --blue-light: #4A90D9;
+    --gray-light: #F5F8FC;
+    --gray-mid: #DDE8F5;
+    --gray-text: #4A5568;
+    --std-color: #2E75B6;
+    --pro-color: #0F766E;
+    --ent-color: #7C3AED;
+    --white: #FFFFFF;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--gray-light);
+    color: var(--navy);
+  }
+
+  /* ─── NAVBAR ─── */
+  .navbar {
+    background: var(--navy-deep);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-link {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
+  .nav-link.active { color: #fff; background: rgba(46,117,182,0.35); font-weight: 600; }
+
+  /* ─── HAMBURGER ─── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .nav-hamburger:hover { background: rgba(255,255,255,0.08); }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 2px;
+    transition: all 0.28s ease;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--navy-deep);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 12px 20px 20px;
+    gap: 4px;
+    position: relative;
+    z-index: 99;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu .nav-link { padding: 11px 14px; font-size: 15px; border-radius: 6px; }
+  .nav-mobile-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    margin-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    gap: 12px;
+  }
+  .nav-cta {
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-cta:hover { background: var(--blue-light); }
+  .nav-mobile-bottom .nav-cta { flex: 1; justify-content: center; }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-right .nav-cta { display: none; }
+    .nav-right .lang-toggle { display: none; }
+    .nav-hamburger { display: flex; }
+  }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 2px;
+    gap: 2px;
+  }
+  .lang-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    padding: 4px 14px;
+    border-radius: 18px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-decoration: none;
+    display: inline-block;
+  }
+  .lang-btn.active, .lang-btn:hover {
+    background: var(--blue);
+    border-color: var(--blue);
+    color: #fff;
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, #1a4570 100%);
+    position: relative;
+    overflow: hidden;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 60% 80% at 85% 50%, rgba(46,117,182,0.25) 0%, transparent 70%),
+      radial-gradient(circle at 10% 80%, rgba(14,165,233,0.1) 0%, transparent 50%);
+  }
+  .header-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 36px 60px;
+    gap: 40px;
+  }
+
+  .header-text { flex: 1; text-align: center; }
+  .header-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--blue-light);
+    margin-bottom: 8px;
+  }
+  .header-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+  .header-title span { color: var(--blue-light); }
+  .header-subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+  .header-contact {
+    flex-shrink: 0;
+    text-align: right;
+    color: rgba(255,255,255,0.55);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .header-contact a { color: var(--blue-light); text-decoration: none; }
+
+  /* ─── LANG SECTIONS ─── */
+  .lang-section { display: none; }
+  .lang-section.active { display: block; }
+
+  /* ─── SECTION WRAPPER ─── */
+  .section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .section-title span { color: var(--blue); }
+  .section-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--blue);
+    margin-bottom: 32px;
+  }
+
+  /* ─── INTRO TAGLINE ─── */
+  .intro-tagline {
+    font-size: 15px;
+    color: var(--gray-text);
+    line-height: 1.7;
+    max-width: 800px;
+    margin-bottom: 40px;
+    padding: 20px 28px;
+    background: #fff;
+    border-left: 4px solid var(--blue);
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 2px 12px rgba(30,58,95,0.07);
+  }
+
+  /* ─── PLAN CARDS GRID ─── */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .plan-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(30,58,95,0.10);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+  }
+  .plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(30,58,95,0.18);
+  }
+  .plan-card.featured::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--ent-color), #A855F7);
+  }
+
+  .plan-header {
+    padding: 28px 28px 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .plan-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; right: -20px;
+    width: 100px; height: 100px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+  }
+  .plan-std .plan-header  { background: linear-gradient(135deg, #1E5A8E, #2E75B6); }
+  .plan-pro .plan-header  { background: linear-gradient(135deg, #0A5954, #0F766E); }
+  .plan-ent .plan-header  { background: linear-gradient(135deg, #5B21B6, #7C3AED); }
+
+  .plan-badge {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.2);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .plan-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.0;
+    position: relative;
+  }
+  .plan-tagline {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 8px;
+    line-height: 1.4;
+    position: relative;
+  }
+
+  .plan-body { padding: 24px 28px; flex: 1; }
+
+  .feature-group { margin-bottom: 18px; }
+  .feature-group-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--gray-mid);
+  }
+  .plan-std .feature-group-title { color: var(--std-color); border-color: #C8DFF5; }
+  .plan-pro .feature-group-title { color: var(--pro-color); border-color: #CCEDE9; }
+  .plan-ent .feature-group-title { color: var(--ent-color); border-color: #DDD6FE; }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 5px 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #374151;
+  }
+  .feature-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    font-size: 9px;
+    font-weight: 700;
+    color: #fff;
+  }
+  .plan-std .feature-icon { background: var(--std-color); }
+  .plan-pro .feature-icon { background: var(--pro-color); }
+  .plan-ent .feature-icon { background: var(--ent-color); }
+
+  .feature-note {
+    font-size: 11px;
+    color: #9CA3AF;
+    font-style: italic;
+    margin-left: 24px;
+    line-height: 1.3;
+    margin-top: 2px;
+  }
+
+  .plan-footer {
+    padding: 18px 28px;
+    border-top: 1px solid var(--gray-mid);
+    background: var(--gray-light);
+    font-size: 12px;
+    color: var(--gray-text);
+    line-height: 1.5;
+  }
+
+  /* ─── COMPARISON TABLE ─── */
+  .comparison-wrap {
+    background: var(--navy);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+  .comparison-header-bar {
+    padding: 28px 40px 20px;
+  }
+  .comparison-header-bar .section-title { color: #fff; }
+  .comparison-header-bar .section-divider { background: var(--blue-light); }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 13px 20px;
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .comparison-table th {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.2);
+  }
+  .comparison-table td { color: rgba(255,255,255,0.85); }
+  .comparison-table td:first-child { font-weight: 600; color: #fff; }
+  .comparison-table tr:hover td { background: rgba(46,117,182,0.1); }
+  .col-std  { color: #60A5FA; }
+  .col-pro  { color: #34D399; }
+  .col-ent  { color: #A78BFA; }
+  .tick     { color: #34D399; font-size: 15px; }
+  .cross    { color: #6B7280; font-size: 15px; }
+  .partial  { color: #F59E0B; font-size: 12px; font-weight: 600; }
+
+  /* ─── CTA ─── */
+  .cta-block {
+    background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+    border-radius: 16px;
+    padding: 40px;
+    color: #fff;
+    margin-bottom: 48px;
+    text-align: center;
+  }
+  .cta-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .cta-title span { color: var(--blue-light); }
+  .cta-subtitle {
+    font-size: 14px;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 32px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .plan-select-row {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+  }
+  .plan-select-btn {
+    flex: 1;
+    max-width: 220px;
+    padding: 16px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+  }
+  .plan-select-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
+  .plan-select-btn.std:hover  { border-color: #60A5FA; background: rgba(96,165,250,0.12);  color: #60A5FA; }
+  .plan-select-btn.pro:hover  { border-color: #34D399; background: rgba(52,211,153,0.12);  color: #34D399; }
+  .plan-select-btn.ent:hover  { border-color: #A78BFA; background: rgba(167,139,250,0.12); color: #A78BFA; }
+
+  .cta-note {
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+  }
+  .cta-note a { color: var(--blue-light); text-decoration: none; }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--navy-deep);
+    padding: 32px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .footer img { width: 80px; opacity: 0.9; }
+  .footer-text { color: rgba(255,255,255,0.4); font-size: 12px; line-height: 1.6; }
+  .footer-text a { color: var(--blue-light); text-decoration: none; }
+  .footer-right { text-align: right; color: rgba(255,255,255,0.3); font-size: 11px; }
+
+  /* ─── RESPONSIVE ─── */
+  @media print {
+    .lang-bar { display: none !important; }
+    .lang-section { display: block !important; }
+    body { background: #fff; }
+  }
+  @media (max-width: 900px) {
+    .plans-grid { grid-template-columns: 1fr; }
+    .header-inner { flex-direction: column; text-align: center; }
+    .header-contact { text-align: center; }
+    .section { padding: 32px 20px; }
+    .footer { flex-direction: column; text-align: center; }
+    .footer-right { text-align: center; }
+    .plan-select-row { flex-direction: column; align-items: center; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="managed-services.html" class="nav-link">Managed Services</a>
+    <a href="cloud-services.html" class="nav-link active">Cloud Services</a>
+    <a href="cybersecurity.html" class="nav-link">Cybersecurity</a>
+    <a href="ECSG_About.html" class="nav-link">About Us</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+    <a href="ecsgcontact_sales.html" class="nav-cta">✉ Contact Sales</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="managed-services.html" class="nav-link">Managed Services</a>
+  <a href="cloud-services.html" class="nav-link active">Cloud Services</a>
+  <a href="cybersecurity.html" class="nav-link">Cybersecurity</a>
+  <a href="ECSG_About.html" class="nav-link">About Us</a>
+  <div class="nav-mobile-bottom">
+    <div class="lang-toggle">
+      <button class="lang-btn" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+    <a href="ecsgcontact_sales.html" class="nav-cta">✉ Contact Sales</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-text">
+      <div class="header-eyebrow">Enterprise Cloud Solutions Group LLC</div>
+      <h1 class="header-title">Web Design <span>Plans</span></h1>
+      <p class="header-subtitle" id="hdr-sub">Managed IT · Cloud · Cybersecurity · Projects</p>
+    </div>
+    <div class="header-contact">
+      26 Belden Ave, Norwalk, CT<br>
+      <a href="/cdn-cgi/l/email-protection#8be2e5ede4cbeee8f8ecffeee8e3a5e8e4e6"><span class="__cf_email__" data-cfemail="b9d0d7dfd6f9dcdacadecddcdad197dad6d4">[email&#160;protected]</span></a><br>
+      <a href="https://www.ecsgtech.com">www.ecsgtech.com</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════ ESPAÑOL ══════════════════ -->
+<div id="lang-es" class="lang-section">
+  <div class="section">
+
+    <div class="section-title">Planes <span>Disponibles</span></div>
+    <div class="section-divider"></div>
+    <p class="intro-tagline">Diseñados para impulsar tu presencia digital con escalabilidad, diseño profesional y soporte según tu etapa de negocio.</p>
+
+    <!-- PLAN CARDS -->
+    <div class="plans-grid">
+
+      <!-- STANDARD -->
+      <div class="plan-card plan-std">
+        <div class="plan-header">
+          <div class="plan-badge">Plan Básico</div>
+          <div class="plan-name">Standard</div>
+          <p class="plan-tagline">Presencia digital profesional de una página, lista para captar clientes.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Dominio & Hosting</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Registro de dominio (.com) — 1 año</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Hosting administrado con SSL incluido — 1 año</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Diseño del Sitio</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Landing Page + Booking básico</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Sitio de 1 página: Quiénes somos, Servicios, Misión/Visión, Valores, Portafolio, Contacto</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>5–10 imágenes optimizadas</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Funcionalidades</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Formulario de contacto con envío por email</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>SEO básico (metadatos + sitemap)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Soporte</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>1 mantenimiento anual incluido</div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          Ideal para negocios que inician su presencia en línea.
+        </div>
+      </div>
+
+      <!-- PRO -->
+      <div class="plan-card plan-pro">
+        <div class="plan-header">
+          <div class="plan-badge">Plan Profesional</div>
+          <div class="plan-name">Pro</div>
+          <p class="plan-tagline">Sitio multi-página con diseño personalizado, booking avanzado y mantenimiento semestral.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Todo lo del Plan Standard, más:</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Hasta <strong>5 páginas internas</strong> (Servicios, Portafolio, Blog, Preguntas frecuentes…)</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Diseño personalizado (CSS) + micro‑interacciones con JavaScript ligero</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Booking & Reservas</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Booking avanzado con confirmación automática y recordatorios</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Soporte & Entrega</div>
+            <div class="feature-item"><span class="feature-icon">✓</span><strong>2 mantenimientos al año</strong></div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Entrega estimada: <strong>2–3 semanas</strong></div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          Perfecto para empresas en crecimiento que necesitan mayor presencia y funcionalidad.
+        </div>
+      </div>
+
+      <!-- ENTERPRISE -->
+      <div class="plan-card plan-ent featured">
+        <div class="plan-header">
+          <div class="plan-badge">Plan Completo</div>
+          <div class="plan-name">Enterprise</div>
+          <p class="plan-tagline">Plataforma web completa: multi-idioma, e-commerce, automatización y correos corporativos.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Todo lo del Plan Pro, más:</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Hasta <strong>15 páginas</strong> + landing pages de campañas</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Componentes avanzados: slides, galerías filtrables, animaciones</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Automatización & Formularios</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Formularios multi‑paso con automatización (CRM / Email Marketing)</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Versión <strong>Multi‑idioma</strong> (Español / Inglés)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Comercio & Pagos</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Integración de pagos o <strong>e‑commerce inicial</strong> (hasta 10 productos)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Soporte & Correo Corporativo</div>
+            <div class="feature-item"><span class="feature-icon">✓</span><strong>4 mantenimientos anuales</strong></div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Hasta <strong>10 cuentas de correo corporativo</strong> bajo el dominio*</div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          * Las cuentas de correo requieren suscripción activa del proveedor (p.ej. Microsoft 365). La gestión está incluida en este plan.
+        </div>
+      </div>
+
+    </div><!-- /plans-grid -->
+
+    <!-- COMPARISON TABLE -->
+    <div class="comparison-wrap">
+      <div class="comparison-header-bar">
+        <div class="section-title">Comparativa <span style="color:var(--blue-light)">Rápida</span></div>
+        <div class="section-divider"></div>
+      </div>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th class="col-std">Standard</th>
+            <th class="col-pro">Pro</th>
+            <th class="col-ent">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Dominio .com (1 año)</td><td class="col-std"><span class="tick">✔</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Hosting con SSL</td><td class="col-std"><span class="tick">✔</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Landing Page + Booking básico</td><td class="col-std"><span class="tick">✔</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>SEO básico (metadatos + sitemap)</td><td class="col-std"><span class="tick">✔</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Páginas internas adicionales</td><td><span class="cross">✗</span></td><td class="col-pro"><span class="partial">Hasta 5</span></td><td class="col-ent"><span class="partial">Hasta 15</span></td></tr>
+          <tr><td>Diseño CSS personalizado + micro-interacciones JS</td><td><span class="cross">✗</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Booking avanzado (confirmación + recordatorios)</td><td><span class="cross">✗</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Componentes avanzados (slides, galerías, animaciones)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Formularios multi-paso + automatización CRM</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Versión Multi-idioma (ES/EN)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>E-commerce / Pagos (hasta 10 productos)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Cuentas de correo corporativo</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-ent"><span class="partial">Hasta 10</span></td></tr>
+          <tr><td>Mantenimientos anuales</td><td class="col-std"><span class="partial">1 / año</span></td><td class="col-pro"><span class="partial">2 / año</span></td><td class="col-ent"><span class="partial">4 / año</span></td></tr>
+          <tr><td>Tiempo de entrega estimado</td><td class="col-std"><span class="partial">1–2 sem.</span></td><td class="col-pro"><span class="partial">2–3 sem.</span></td><td class="col-ent"><span class="partial">3–5 sem.</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CTA -->
+    <div class="cta-block">
+      <div class="cta-title">¿Listo para <span>empezar</span>?</div>
+      <p class="cta-subtitle">Selecciona el plan que mejor se adapta a tu negocio y uno de nuestros especialistas se pondrá en contacto contigo.</p>
+      <div class="plan-select-row">
+        <a class="plan-select-btn std" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=web-standard">Plan Standard</a>
+        <a class="plan-select-btn pro" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=web-pro">Plan Pro</a>
+        <a class="plan-select-btn ent" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=web-enterprise">Plan Enterprise</a>
+      </div>
+      <p class="cta-note">¿Tienes preguntas? Escríbenos a <a href="/cdn-cgi/l/email-protection#ff8c9e939a8cbf9a9c8c988b9a9c97d19c9092"><span class="__cf_email__" data-cfemail="e49785888197a4818797839081878cca878b89">[email&#160;protected]</span></a> — respondemos en menos de 1 día hábil.</p>
+    </div>
+
+  </div>
+</div><!-- /lang-es -->
+
+<!-- ══════════════════ ENGLISH ══════════════════ -->
+<div id="lang-en" class="lang-section active">
+  <div class="section">
+
+    <div class="section-title">Available <span>Plans</span></div>
+    <div class="section-divider"></div>
+    <p class="intro-tagline">Designed to boost your digital presence with scalability, professional design, and support matched to your business stage.</p>
+
+    <!-- PLAN CARDS -->
+    <div class="plans-grid">
+
+      <!-- STANDARD EN -->
+      <div class="plan-card plan-std">
+        <div class="plan-header">
+          <div class="plan-badge">Basic Plan</div>
+          <div class="plan-name">Standard</div>
+          <p class="plan-tagline">Professional one-page digital presence, ready to attract customers.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Domain & Hosting</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Domain registration (.com) — 1 year</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Managed hosting with SSL included — 1 year</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Site Design</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Landing Page + basic booking widget</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>1-page site: About us, Services, Mission/Vision, Values, Portfolio, Contact</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>5–10 optimized images</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Features</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Contact form with email delivery</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Basic SEO (metadata + sitemap)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Support</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>1 annual maintenance included</div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          Ideal for businesses starting their online presence.
+        </div>
+      </div>
+
+      <!-- PRO EN -->
+      <div class="plan-card plan-pro">
+        <div class="plan-header">
+          <div class="plan-badge">Professional Plan</div>
+          <div class="plan-name">Pro</div>
+          <p class="plan-tagline">Multi-page site with custom design, advanced booking, and semi-annual maintenance.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Everything in Standard, plus:</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Up to <strong>5 inner pages</strong> (Services, Portfolio, Blog, FAQs…)</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Custom CSS design + lightweight JavaScript micro-interactions</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Booking & Scheduling</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Advanced booking with automatic confirmation and reminders</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Support & Delivery</div>
+            <div class="feature-item"><span class="feature-icon">✓</span><strong>2 maintenances per year</strong></div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Estimated delivery: <strong>2–3 weeks</strong></div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          Perfect for growing businesses needing more presence and functionality.
+        </div>
+      </div>
+
+      <!-- ENTERPRISE EN -->
+      <div class="plan-card plan-ent featured">
+        <div class="plan-header">
+          <div class="plan-badge">Full Plan</div>
+          <div class="plan-name">Enterprise</div>
+          <p class="plan-tagline">Full web platform: multilingual, e-commerce, automation, and corporate email.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Everything in Pro, plus:</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Up to <strong>15 pages</strong> + campaign landing pages</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Advanced components: sliders, filterable galleries, animations</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Automation & Forms</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Multi-step forms with automation (CRM / Email Marketing)</div>
+            <div class="feature-item"><span class="feature-icon">✓</span><strong>Multilingual version</strong> (Spanish / English)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Commerce & Payments</div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Payment integration or <strong>initial e-commerce</strong> (up to 10 products)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Support & Corporate Email</div>
+            <div class="feature-item"><span class="feature-icon">✓</span><strong>4 annual maintenances</strong></div>
+            <div class="feature-item"><span class="feature-icon">✓</span>Up to <strong>10 corporate email accounts</strong> under the domain*</div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          * Corporate email accounts require an active provider subscription (e.g. Microsoft 365). Management is included in this plan.
+        </div>
+      </div>
+
+    </div><!-- /plans-grid -->
+
+    <!-- COMPARISON TABLE EN -->
+    <div class="comparison-wrap">
+      <div class="comparison-header-bar">
+        <div class="section-title">Quick <span style="color:var(--blue-light)">Comparison</span></div>
+        <div class="section-divider"></div>
+      </div>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-std">Standard</th>
+            <th class="col-pro">Pro</th>
+            <th class="col-ent">Enterprise</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Domain .com (1 year)</td><td class="col-std"><span class="tick">✔</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Managed hosting with SSL</td><td class="col-std"><span class="tick">✔</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Landing Page + basic booking</td><td class="col-std"><span class="tick">✔</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Basic SEO (metadata + sitemap)</td><td class="col-std"><span class="tick">✔</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Additional inner pages</td><td><span class="cross">✗</span></td><td class="col-pro"><span class="partial">Up to 5</span></td><td class="col-ent"><span class="partial">Up to 15</span></td></tr>
+          <tr><td>Custom CSS design + JS micro-interactions</td><td><span class="cross">✗</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Advanced booking (confirmation + reminders)</td><td><span class="cross">✗</span></td><td class="col-pro"><span class="tick">✔</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Advanced components (sliders, galleries, animations)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Multi-step forms + CRM automation</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Multilingual version (ES/EN)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>E-commerce / Payments (up to 10 products)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-ent"><span class="tick">✔</span></td></tr>
+          <tr><td>Corporate email accounts</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-ent"><span class="partial">Up to 10</span></td></tr>
+          <tr><td>Annual maintenances</td><td class="col-std"><span class="partial">1 / year</span></td><td class="col-pro"><span class="partial">2 / year</span></td><td class="col-ent"><span class="partial">4 / year</span></td></tr>
+          <tr><td>Estimated delivery time</td><td class="col-std"><span class="partial">1–2 wks</span></td><td class="col-pro"><span class="partial">2–3 wks</span></td><td class="col-ent"><span class="partial">3–5 wks</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- CTA EN -->
+    <div class="cta-block">
+      <div class="cta-title">Ready to <span>get started</span>?</div>
+      <p class="cta-subtitle">Select the plan that best fits your business and one of our specialists will get in touch with you.</p>
+      <div class="plan-select-row">
+        <a class="plan-select-btn std" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=web-standard">Standard Plan</a>
+        <a class="plan-select-btn pro" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=web-pro">Pro Plan</a>
+        <a class="plan-select-btn ent" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=web-enterprise">Enterprise Plan</a>
+      </div>
+      <p class="cta-note">Have questions? Email us at <a href="/cdn-cgi/l/email-protection#9ae9fbf6ffe9dafff9e9fdeefff9f2b4f9f5f7"><span class="__cf_email__" data-cfemail="e59684898096a5808696829180868dcb868a88">[email&#160;protected]</span></a> — we respond within 1 business day.</p>
+    </div>
+
+  </div>
+</div><!-- /lang-en -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <img src="assets/img/logo1_white.png" alt="Enterprise Cloud Solutions Group LLC">
+  <div class="footer-text">
+    <strong style="color:rgba(255,255,255,0.7)">Enterprise Cloud Solutions Group LLC</strong><br>
+    26 Belden Ave, Norwalk, CT 06850 &nbsp;·&nbsp;
+    <a href="/cdn-cgi/l/email-protection#264f48404966434555415243454e0845494b"><span class="__cf_email__" data-cfemail="85ecebe3eac5e0e6f6e2f1e0e6edabe6eae8">[email&#160;protected]</span></a> &nbsp;·&nbsp;
+    <a href="https://www.ecsgtech.com">www.ecsgtech.com</a>
+  </div>
+  <div class="footer-right">
+    Managed IT · Cloud · Cybersecurity · Projects<br>
+    © 2025 ECSG LLC. All rights reserved.
+  </div>
+</footer>
+<script>
+(function() {
+
+  function switchLang(lang) {
+    document.querySelectorAll('.lang-section').forEach(function(s) { s.classList.remove('active'); });
+    document.querySelectorAll('.lang-btn').forEach(function(b) { b.classList.remove('active'); });
+    var section = document.getElementById('lang-' + lang);
+    if (section) section.classList.add('active');
+    document.querySelectorAll('.lang-btn[data-lang="' + lang + '"]').forEach(function(b) { b.classList.add('active'); });
+    localStorage.setItem('ecsg-lang', lang);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        switchLang(this.getAttribute('data-lang'));
+      });
+    });
+
+    switchLang('en');
+
+    var hamburger = document.getElementById('navHamburger');
+    var mobileMenu = document.getElementById('navMobileMenu');
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', function() {
+        var isOpen = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+      });
+      mobileMenu.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('open');
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+  });
+
+})();
+</script>
+</body>
+</html>

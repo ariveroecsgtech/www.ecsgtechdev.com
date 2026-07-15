@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Global Cybersecurity Report 2024–2025 — Enterprise Cloud Solutions Group LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>:root{--acc:#DC2626;--acc-dark:#B91C1C;--acc-light:#FCA5A5;--acc-glow:rgba(220,38,38,.25);}
+:root{--navy:#1E3A5F;--navy-deep:#152C4A;--blue:#2E75B6;--blue-light:#4A90D9;--gray-light:#F5F8FC;--gray-mid:#DDE8F5;--gray-text:#4A5568;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:"Barlow",sans-serif;background:var(--gray-light);color:var(--navy);}
+.es{display:block;}.en{display:none;}.es-inline{display:inline;}.en-inline{display:none;}
+body.lang-en .es{display:none;}body.lang-en .en{display:block;}
+body.lang-en .es-inline{display:none;}body.lang-en .en-inline{display:inline;}
+.lang-bar{background:var(--navy-deep);display:flex;justify-content:flex-end;padding:8px 40px;gap:8px;position:sticky;top:0;z-index:100;}
+.lang-btn{background:transparent;border:1.5px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.7);padding:4px 16px;border-radius:20px;font-family:"Barlow",sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;}
+.lang-btn.active,.lang-btn:hover{background:var(--acc);border-color:var(--acc);color:#fff;}
+.header{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,var(--acc-dark) 100%);position:relative;overflow:hidden;}
+.header::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 85% 50%,var(--acc-glow) 0%,transparent 70%);}
+.header-inner{position:relative;display:flex;align-items:center;justify-content:space-between;padding:36px 60px;gap:40px;}
+.logo-wrap img{width:120px;height:auto;filter:drop-shadow(0 2px 12px rgba(0,0,0,.3));}
+.header-center{flex:1;text-align:center;}
+.header-eyebrow{font-family:"Barlow Condensed",sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--acc-light);margin-bottom:8px;}
+.header-title{font-family:"Barlow Condensed",sans-serif;font-size:clamp(20px,3vw,42px);font-weight:800;color:#fff;line-height:1.05;text-transform:uppercase;}
+.header-title span{color:var(--acc-light);}
+.header-subtitle{font-size:13px;color:rgba(255,255,255,0.6);margin-top:8px;}
+.header-contact{flex-shrink:0;text-align:right;color:rgba(255,255,255,0.55);font-size:12px;line-height:1.9;}
+.header-contact a{color:var(--acc-light);text-decoration:none;}
+.cta-hdr{display:inline-block;margin-top:12px;padding:10px 26px;background:var(--acc);border-radius:6px;color:#fff;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all .25s;}
+.cta-hdr:hover{opacity:.85;transform:translateY(-2px);}
+.wrap{max-width:1240px;margin:0 auto;padding:48px 40px;}
+.sec-title{font-family:"Barlow Condensed",sans-serif;font-size:32px;font-weight:800;text-transform:uppercase;color:var(--navy);margin-bottom:8px;}
+.sec-title span{color:var(--acc);}
+.sec-div{width:60px;height:3px;background:var(--acc);margin-bottom:28px;}
+.sec-lead{font-size:14px;color:var(--gray-text);line-height:1.75;max-width:860px;margin-bottom:32px;}
+.g{display:grid;gap:18px;}
+.g2{grid-template-columns:repeat(2,1fr);}.g3{grid-template-columns:repeat(3,1fr);}.g4{grid-template-columns:repeat(4,1fr);}
+.card{background:#fff;border-radius:12px;padding:24px 22px;box-shadow:0 4px 18px rgba(30,58,95,.08);border-left:4px solid var(--acc);transition:transform .2s;}
+.card:hover{transform:translateY(-3px);}
+.card-icon{font-size:26px;margin-bottom:10px;}
+.card-title{font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:700;text-transform:uppercase;color:var(--navy);margin-bottom:6px;}
+.card-sub{font-size:11px;color:var(--acc);font-weight:600;text-transform:uppercase;margin-bottom:6px;}
+.card p{font-size:13px;color:var(--gray-text);line-height:1.6;}
+.card-focus{margin-top:8px;padding-top:8px;border-top:1px solid var(--gray-mid);font-size:12px;color:var(--acc);}
+.stats{display:grid;gap:16px;margin-bottom:36px;}
+.stat{background:var(--navy);border-radius:12px;padding:20px 16px;text-align:center;}
+.stat-n{font-family:"Barlow Condensed",sans-serif;font-size:34px;font-weight:800;color:var(--acc-light);line-height:1;}
+.stat-l{font-size:11px;color:rgba(255,255,255,.6);margin-top:5px;line-height:1.4;}
+.dark-band{background:linear-gradient(135deg,var(--navy-deep),var(--navy));border-radius:14px;padding:36px 44px;color:#fff;margin-bottom:36px;position:relative;overflow:hidden;}
+.dark-band::after{content:"";position:absolute;bottom:-40px;right:-40px;width:200px;height:200px;background:rgba(255,255,255,.04);border-radius:50%;}
+.dark-band-title{font-family:"Barlow Condensed",sans-serif;font-size:clamp(18px,2.5vw,26px);font-weight:800;text-transform:uppercase;color:var(--acc-light);margin-bottom:14px;}
+.dark-band p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;max-width:900px;}
+.phase-wrap{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 4px 18px rgba(30,58,95,.08);margin-bottom:36px;}
+.phase-hdr{background:var(--navy);padding:20px 28px;}
+.phase-hdr-t{font-family:"Barlow Condensed",sans-serif;font-size:17px;font-weight:700;text-transform:uppercase;color:#fff;letter-spacing:.5px;}
+.phase-hdr-s{font-size:12px;color:rgba(255,255,255,.5);margin-top:4px;}
+.phase-step{display:flex;gap:20px;padding:20px 28px;border-bottom:1px solid var(--gray-mid);}
+.phase-step:last-child{border-bottom:none;}
+.ps-num{font-family:"Barlow Condensed",sans-serif;font-size:36px;font-weight:800;color:rgba(46,117,182,.15);line-height:1;flex-shrink:0;width:44px;}
+.ps-title{font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:700;text-transform:uppercase;color:var(--acc);margin-bottom:4px;}
+.ps-body p{font-size:13px;color:var(--gray-text);line-height:1.6;}
+.compare-tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(30,58,95,.08);margin-bottom:36px;}
+.compare-tbl th{background:var(--navy);color:#fff;padding:13px 16px;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;text-align:left;}
+.compare-tbl td{padding:12px 16px;font-size:13px;color:var(--gray-text);border-bottom:1px solid var(--gray-mid);}
+.compare-tbl tr:last-child td{border-bottom:none;}
+.bad{color:#EF4444;}.good{color:#10B981;font-weight:600;}
+.quote-box{background:linear-gradient(135deg,var(--navy-deep),var(--navy));border-radius:12px;padding:26px 36px;color:#fff;text-align:center;margin-top:28px;}
+.quote-box p{font-size:14px;font-style:italic;color:rgba(255,255,255,.8);line-height:1.7;}
+.quote-box p span{color:var(--acc-light);font-weight:600;font-style:normal;}
+.cta-block{background:linear-gradient(135deg,var(--navy-deep),var(--navy));border-radius:14px;padding:40px;text-align:center;color:#fff;margin:0 40px 40px;}
+.cta-t{font-family:"Barlow Condensed",sans-serif;font-size:28px;font-weight:800;text-transform:uppercase;margin-bottom:10px;}
+.cta-t span{color:var(--acc-light);}
+.cta-s{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:28px;}
+.cta-btn{display:inline-block;padding:16px 44px;background:var(--acc);border-radius:8px;color:#fff;font-family:"Barlow Condensed",sans-serif;font-size:16px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all .25s;}
+.cta-btn:hover{opacity:.85;transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3);}
+.cta-note{margin-top:16px;font-size:11.5px;color:rgba(255,255,255,.3);font-style:italic;}
+.cta-note a{color:var(--acc-light);text-decoration:none;}
+.sep{height:1px;background:linear-gradient(90deg,transparent,var(--gray-mid),transparent);margin:0 40px;}
+.footer{background:var(--navy-deep);padding:28px 60px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.footer img{width:76px;opacity:.9;}
+.footer-txt{color:rgba(255,255,255,.4);font-size:12px;line-height:1.7;}
+.footer-txt a{color:var(--acc-light);text-decoration:none;}
+.footer-r{text-align:right;color:rgba(255,255,255,.3);font-size:11px;}
+@media(max-width:900px){.g2,.g3,.g4,.stats{grid-template-columns:1fr!important;}
+  .header-inner{flex-direction:column;text-align:center;padding:24px;}
+  .header-contact{text-align:center;}.wrap{padding:32px 20px;}
+  .cta-block{margin:0 16px 32px;}
+  .footer{flex-direction:column;text-align:center;padding:24px 20px;}.footer-r{text-align:center;}
+  .lang-bar{padding:8px 16px;}}
+</style>
+<script>
+  function switchLang(lang) {
+    if (lang === 'en') {
+      document.body.classList.add('lang-en');
+    } else {
+      document.body.classList.remove('lang-en');
+    }
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.classList.remove('active');
+    });
+    var activeBtn = document.querySelector('.lang-btn[onclick="switchLang(\'' + lang + '\')"]');
+    if (activeBtn) activeBtn.classList.add('active');
+  }
+</script>
+</head>
+<body class="lang-en">
+<!-- NAVBAR -->
+<nav style="background:#1E3A5F;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:56px;position:sticky;top:0;z-index:100;font-family:'Barlow',sans-serif;">
+  <div style="display:flex;align-items:center;gap:32px;">
+    <a href="index.html" style="color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;white-space:nowrap;">Home</a>
+    <a href="managed-services.html" style="color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;white-space:nowrap;">Managed Services</a>
+    <a href="cloud-services.html" style="color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;white-space:nowrap;">Cloud Services</a>
+    <a href="cybersecurity.html" style="color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;white-space:nowrap;">Cybersecurity</a>
+    <a href="ECSG_About.html" style="color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;white-space:nowrap;">About Us</a>
+  </div>
+  <div style="display:flex;align-items:center;gap:12px;">
+    <div style="display:flex;align-items:center;background:rgba(255,255,255,.12);border-radius:20px;overflow:hidden;">
+      <button class="lang-btn active" onclick="switchLang('en')" style="background:rgba(255,255,255,.85);border:none;color:#1E3A5F;padding:5px 14px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;cursor:pointer;">EN</button>
+      <button class="lang-btn" onclick="switchLang('es')" style="background:transparent;border:none;color:rgba(255,255,255,.7);padding:5px 14px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;letter-spacing:.5px;cursor:pointer;">ES</button>
+    </div>
+    <a href="https://www.ecsgtech.com/ecsgcontact_sales.html" style="display:inline-flex;align-items:center;gap:6px;background:#2E75B6;color:#fff;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:9px 20px;border-radius:6px;white-space:nowrap;">✉ Contact Sales</a>
+  </div>
+</nav>
+<header class="header">
+  <div class="header-inner">
+    <div class="logo-wrap"><img src="assets/img/logo1_white.png" alt="ECSG Logo"></div>
+    <div class="header-center">
+      <div class="header-eyebrow">Enterprise Cloud Solutions Group LLC</div>
+      <h1 class="header-title"><span class="es-inline">Global Cybersecurity Report 2024–2025</span><span class="en-inline">Global Cybersecurity Report 2024–2025</span></h1>
+      <p class="header-subtitle"><span class="es-inline">Panorama de Amenazas para Decision-Makers de Seguridad</span><span class="en-inline">Threat Landscape for Enterprise Security Decision-Makers</span></p>
+    </div>
+    <div class="header-contact">
+      26 Belden Ave, Norwalk, CT<br>
+      <a href="mailto:info@ecsgtech.com">info@ecsgtech.com</a><br>
+      <a href="https://www.ecsgtech.com">www.ecsgtech.com</a><br>
+      <a class="cta-hdr" href="https://www.ecsgtech.com/ecsgcontact_sales.html"><span class="es-inline">Contáctenos</span><span class="en-inline">Contact Us</span></a>
+    </div>
+  </div>
+</header>
+<div class="wrap"><div class="dark-band"><div class="dark-band-title">🔐 Global Cybersecurity Threat Landscape 2024–2025</div><p class="es">Análisis basado en datos para decision-makers de seguridad empresarial. Fuentes: IBM Security, Verizon DBIR, CrowdStrike, Check Point Research, Microsoft Security Intelligence, Palo Alto Networks, Fortinet, ENISA.</p><p class="en">Data-driven insights for enterprise security decision-makers. Sources: IBM Security, Verizon DBIR, CrowdStrike, Check Point Research, Microsoft Security Intelligence, Palo Alto Networks, Fortinet, ENISA.</p></div></div><div class="wrap"><div class="sec-title es">Frecuencia de <span>Ciberataques</span></div><div class="sec-title en">Cyberattack <span>Frequency</span></div><div class="sec-div"></div><div class="stats g4"><div class="stat"><div class="stat-n">1,636</div><div class="stat-l"><span class="es-inline">Ataques/semana/organización — promedio global</span><span class="en-inline">Attacks/Week/Org — global average</span></div></div><div class="stat"><div class="stat-n">↑ 30%</div><div class="stat-l"><span class="es-inline">Crecimiento YoY 2023→2024</span><span class="en-inline">YoY Growth 2023→2024</span></div></div><div class="stat"><div class="stat-n">83%</div><div class="stat-l"><span class="es-inline">Organizaciones con 2+ brechas</span><span class="en-inline">Orgs w/ 2+ breaches</span></div></div><div class="stat"><div class="stat-n">560K+</div><div class="stat-l"><span class="es-inline">Nuevas amenazas detectadas por día</span><span class="en-inline">New threats detected per day</span></div></div></div></div><div class="sep"></div><div class="wrap"><div class="sec-title es">Tipos de <span>Amenazas Más Comunes</span></div><div class="sec-title en">Most Common <span>Threat Types</span></div><div class="sec-div"></div><div class="g g3"><div class="card"><div class="card-icon">📧</div><div class="card-title es">Phishing / Ingeniería Social — 36%</div><div class="card-title en">Phishing / Social Engineering — 36%</div><p class="es">El vector de ataque #1. Los ataques crafteados con IA logran tasas de clics 4.5× más altas que el phishing tradicional.</p><p class="en">The #1 attack vector. AI-crafted lures achieve click rates 4.5× higher than traditional phishing campaigns.</p></div><div class="card"><div class="card-icon">🎯</div><div class="card-title es">Ransomware — 24%</div><div class="card-title en">Ransomware — 24%</div><p class="es">Un ataque cada 11 segundos. Pago promedio $2.73M en 2024. 21 días promedio de recuperación.</p><p class="en">Attack every 11 seconds. Average ransom $2.73M in 2024. 21 days average recovery time.</p></div><div class="card"><div class="card-icon">💀</div><div class="card-title es">Malware — 17%</div><div class="card-title en">Malware — 17%</div><p class="es">El malware sin archivos (fileless) creció 65% — evade el antivirus tradicional. Requiere EDR de próxima generación.</p><p class="en">Fileless malware up 65% — evades traditional AV. Requires next-generation EDR solutions.</p></div><div class="card"><div class="card-icon">📨</div><div class="card-title es">Business Email Compromise (BEC) — 9%</div><div class="card-title en">Business Email Compromise (BEC) — 9%</div><p class="es">$2.9 billones en pérdidas en 2023 (FBI IC3). Ataques sofisticados de suplantación de identidad corporativa.</p><p class="en">$2.9B in losses in 2023 (FBI IC3). Sophisticated corporate identity impersonation attacks.</p></div><div class="card"><div class="card-icon">⚠️</div><div class="card-title es">Zero-Day Exploits — 8%</div><div class="card-title en">Zero-Day Exploits — 8%</div><p class="es">97 zero-days explotados en 2023 — récord histórico. Requieren detección basada en comportamiento, no en firmas.</p><p class="en">97 zero-days exploited in 2023 — record high. Require behavior-based detection, not signature-based.</p></div><div class="card"><div class="card-icon">👤</div><div class="card-title es">Amenazas Internas — 6%</div><div class="card-title en">Insider Threats — 6%</div><p class="es">74% de los incidentes involucran el factor humano. El entrenamiento de concienciación es la primera línea de defensa.</p><p class="en">74% of incidents involve the human element. Security awareness training is the first line of defense.</p></div></div></div><div class="sep"></div><div class="wrap"><div class="sec-title es">Impacto Financiero de <span>los Incidentes</span></div><div class="sec-title en">Financial Impact of <span>Cyber Incidents</span></div><div class="sec-div"></div><div class="stats g4"><div class="stat"><div class="stat-n">$4.88M</div><div class="stat-l"><span class="es-inline">Costo promedio de una brecha de datos 2024 (récord)</span><span class="en-inline">Avg cost of a data breach 2024 (all-time high)</span></div></div><div class="stat"><div class="stat-n">194 días</div><div class="stat-l"><span class="es-inline">Tiempo promedio de detección (MTTD)</span><span class="en-inline">Mean Time to Detect (MTTD)</span></div></div><div class="stat"><div class="stat-n">64 días</div><div class="stat-l"><span class="es-inline">Tiempo promedio de contención (MTTC)</span><span class="en-inline">Mean Time to Contain (MTTC)</span></div></div><div class="stat"><div class="stat-n">$1.49M</div><div class="stat-l"><span class="es-inline">Ahorro promedio con IA y automatización</span><span class="en-inline">Avg savings with AI + automation</span></div></div></div></div><div class="sep"></div><div class="wrap"><div class="sec-title es">Tendencias Emergentes <span>2025</span></div><div class="sec-title en">Emerging Threats <span>2025</span></div><div class="sec-div"></div><div class="g g2"><div class="card"><div class="card-icon">🤖</div><div class="card-title es">Ataques Potenciados por IA +400%</div><div class="card-title en">AI-Powered Attacks +400%</div><p class="es">Phishing deepfake por voz/video. Malware generado por LLMs. Spear-phishing hiper-personalizado. Descubrimiento automatizado de vulnerabilidades.</p><p class="en">Deepfake voice/video fraud. LLM-generated malware variants. Hyper-personalized spear-phishing. Automated vulnerability discovery.</p></div><div class="card"><div class="card-icon">☁</div><div class="card-title es">Riesgos de Seguridad Cloud — 82%</div><div class="card-title en">Cloud Security Risks — 82%</div><p class="es">82% de las brechas involucran activos cloud. Mala configuración es el riesgo #1. Shadow IT y APIs sin asegurar crecen.</p><p class="en">82% of breaches involve cloud assets. Misconfiguration is the #1 cloud risk. Shadow IT and unsecured APIs growing.</p></div><div class="card"><div class="card-icon">🔑</div><div class="card-title es">Ataques Basados en Identidad — 75%</div><div class="card-title en">Identity-Based Attacks — 75%</div><p class="es">75% de los ataques son basados en identidad. Credential stuffing +45%. Técnicas de bypass de MFA evolucionando.</p><p class="en">75% of attacks are identity-driven. Credential stuffing up 45%. MFA bypass techniques evolving.</p></div><div class="card"><div class="card-icon">🔗</div><div class="card-title es">Compromisos de Cadena de Suministro +245%</div><div class="card-title en">Supply Chain Compromises +245%</div><p class="es">Dependencias de software explotadas. Acceso de proveedor de confianza abusado. Envenenamiento de paquetes open-source.</p><p class="en">Software dependencies exploited. Trusted vendor access abused. Open-source package poisoning increasing.</p></div></div></div><div class="sep"></div><div class="wrap"><div class="sec-title es">Cómo ECSG <span>Protege tu Negocio</span></div><div class="sec-title en">How ECSG <span>Protects Your Business</span></div><div class="sec-div"></div><div class="g g3"><div class="card"><div class="card-icon">🔎</div><div class="card-title es">Evaluación de Seguridad</div><div class="card-title en">Security Assessment</div><p class="es">Identificamos brechas, vulnerabilidades y mejoras rápidas en todo su entorno. Plan de acción priorizado.</p><p class="en">We identify gaps, vulnerabilities & quick wins across your entire environment. Prioritized action plan.</p></div><div class="card"><div class="card-icon">🛡</div><div class="card-title es">Arquitectura Zero-Trust</div><div class="card-title en">Zero-Trust Architecture</div><p class="es">Controles de mínimo privilegio y verificación de identidad en cada capa de su infraestructura.</p><p class="en">Least-privilege access controls and identity verification at every layer of your infrastructure.</p></div><div class="card"><div class="card-icon">📧</div><div class="card-title es">Protección de Email y Endpoints</div><div class="card-title en">Email & Endpoint Protection</div><p class="es">Filtrado con IA, EDR de próxima generación y programas de entrenamiento de concienciación en seguridad.</p><p class="en">AI-powered filtering, EDR, and security awareness training programs including simulated phishing.</p></div><div class="card"><div class="card-icon">🔄</div><div class="card-title es">Respuesta a Incidentes y Recuperación</div><div class="card-title en">Incident Response & Recovery</div><p class="es">Monitoreo 24/7, contención rápida y planes de recuperación ante desastres probados y documentados.</p><p class="en">24/7 monitoring, rapid containment, and tested disaster recovery plans documented and validated.</p></div><div class="card"><div class="card-icon">☁</div><div class="card-title es">Postura de Seguridad Cloud</div><div class="card-title en">Cloud Security Posture</div><p class="es">Monitoreo continuo de configuraciones incorrectas, Shadow IT y APIs cloud en su entorno completo.</p><p class="en">Continuous monitoring of misconfigurations, shadow IT, and cloud APIs across your entire environment.</p></div><div class="card"><div class="card-icon">📊</div><div class="card-title es">Cumplimiento e Informes</div><div class="card-title en">Compliance & Reporting</div><p class="es">Alineación con HIPAA, SOC 2, NIST y CIS. Dashboards ejecutivos con recomendaciones accionables.</p><p class="en">HIPAA, SOC 2, NIST, CIS alignment with executive-ready dashboards and actionable recommendations.</p></div></div></div><div class="sep"></div><div class="wrap"><div class="quote-box"><p class="es">"Las organizaciones con Zero Trust maduro ahorran en promedio $1.76M por brecha. Las que no tienen detección con IA pagan 23% más. — IBM Cost of a Data Breach 2024"</p><p class="en">"Organizations with mature Zero Trust save an avg $1.76M per breach. Those without AI detection pay 23% more. — IBM Cost of a Data Breach 2024"</p></div></div>
+<div class="cta-block">
+  <div class="cta-t"><span class="es-inline">¿Listo para <span>Comenzar</span>?</span><span class="en-inline">Ready to <span>Get Started</span>?</span></div>
+  <p class="cta-s es">Hable con uno de nuestros especialistas — sin compromiso, con resultados reales.</p>
+  <p class="cta-s en">Talk to one of our specialists — no commitment, real results.</p>
+  <a class="cta-btn" href="https://www.ecsgtech.com/ecsgcontact_sales.html"><span class="es-inline">Contáctenos</span><span class="en-inline">Contact Us</span></a>
+  <p class="cta-note">26 Belden Ave, Norwalk, CT &nbsp;·&nbsp; <a href="mailto:info@ecsgtech.com">info@ecsgtech.com</a> &nbsp;·&nbsp; <a href="https://www.ecsgtech.com">www.ecsgtech.com</a></p>
+</div>
+<footer class="footer">
+  <img src="assets/img/logo1_white.png" alt="ECSG Logo">
+  <div class="footer-txt"><strong style="color:rgba(255,255,255,.7)">Enterprise Cloud Solutions Group LLC<

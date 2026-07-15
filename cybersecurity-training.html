@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Cybersecurity Awareness Training — Enterprise Cloud Solutions Group LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>:root{--acc:#E53E3E;--acc-dark:#C53030;--acc-light:#FC8181;--acc-glow:rgba(229,62,62,.25);}
+:root{--navy:#1E3A5F;--navy-deep:#152C4A;--blue:#2E75B6;--blue-light:#4A90D9;--gray-light:#F5F8FC;--gray-mid:#DDE8F5;--gray-text:#4A5568;}
+*{margin:0;padding:0;box-sizing:border-box;}html{scroll-behavior:smooth;}
+body{font-family:"Barlow",sans-serif;background:var(--gray-light);color:var(--navy);}
+.es{display:block;}.en{display:none;}.es-inline{display:inline;}.en-inline{display:none;}
+body.lang-en .es{display:none;}body.lang-en .en{display:block;}
+body.lang-en .es-inline{display:none;}body.lang-en .en-inline{display:inline;}
+.lang-bar{background:var(--navy-deep);display:flex;justify-content:flex-end;padding:8px 40px;gap:8px;position:sticky;top:0;z-index:100;}
+.lang-btn{background:transparent;border:1.5px solid rgba(255,255,255,0.3);color:rgba(255,255,255,0.7);padding:4px 16px;border-radius:20px;font-family:"Barlow",sans-serif;font-size:12px;font-weight:600;letter-spacing:1px;cursor:pointer;transition:all .2s;text-decoration:none;display:inline-block;}
+.lang-btn.active,.lang-btn:hover{background:var(--acc);border-color:var(--acc);color:#fff;}
+.header{background:linear-gradient(135deg,var(--navy-deep) 0%,var(--navy) 55%,var(--acc-dark) 100%);position:relative;overflow:hidden;}
+.header::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 85% 50%,var(--acc-glow) 0%,transparent 70%);}
+.header-inner{position:relative;display:flex;align-items:center;justify-content:space-between;padding:36px 60px;gap:40px;}
+.logo-wrap img{width:120px;height:auto;filter:drop-shadow(0 2px 12px rgba(0,0,0,.3));}
+.header-center{flex:1;text-align:center;}
+.header-eyebrow{font-family:"Barlow Condensed",sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--acc-light);margin-bottom:8px;}
+.header-title{font-family:"Barlow Condensed",sans-serif;font-size:clamp(20px,3vw,42px);font-weight:800;color:#fff;line-height:1.05;text-transform:uppercase;}
+.header-title span{color:var(--acc-light);}
+.header-subtitle{font-size:13px;color:rgba(255,255,255,0.6);margin-top:8px;}
+.header-contact{flex-shrink:0;text-align:right;color:rgba(255,255,255,0.55);font-size:12px;line-height:1.9;}
+.header-contact a{color:var(--acc-light);text-decoration:none;}
+.cta-hdr{display:inline-block;margin-top:12px;padding:10px 26px;background:var(--acc);border-radius:6px;color:#fff;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;text-decoration:none;transition:all .25s;}
+.cta-hdr:hover{opacity:.85;transform:translateY(-2px);}
+.wrap{max-width:1240px;margin:0 auto;padding:48px 40px;}
+.sec-title{font-family:"Barlow Condensed",sans-serif;font-size:32px;font-weight:800;text-transform:uppercase;color:var(--navy);margin-bottom:8px;}
+.sec-title span{color:var(--acc);}
+.sec-div{width:60px;height:3px;background:var(--acc);margin-bottom:28px;}
+.sec-lead{font-size:14px;color:var(--gray-text);line-height:1.75;max-width:860px;margin-bottom:32px;}
+.g{display:grid;gap:18px;}
+.g2{grid-template-columns:repeat(2,1fr);}.g3{grid-template-columns:repeat(3,1fr);}.g4{grid-template-columns:repeat(4,1fr);}
+.card{background:#fff;border-radius:12px;padding:24px 22px;box-shadow:0 4px 18px rgba(30,58,95,.08);border-left:4px solid var(--acc);transition:transform .2s;}
+.card:hover{transform:translateY(-3px);}
+.card-icon{font-size:26px;margin-bottom:10px;}
+.card-title{font-family:"Barlow Condensed",sans-serif;font-size:15px;font-weight:700;text-transform:uppercase;color:var(--navy);margin-bottom:6px;}
+.card-sub{font-size:11px;color:var(--acc);font-weight:600;text-transform:uppercase;margin-bottom:6px;}
+.card p{font-size:13px;color:var(--gray-text);line-height:1.6;}
+.card-focus{margin-top:8px;padding-top:8px;border-top:1px solid var(--gray-mid);font-size:12px;color:var(--acc);}
+.stats{display:grid;gap:16px;margin-bottom:36px;}
+.stat{background:var(--navy);border-radius:12px;padding:20px 16px;text-align:center;}
+.stat-n{font-family:"Barlow Condensed",sans-serif;font-size:34px;font-weight:800;color:var(--acc-light);line-height:1;}
+.stat-l{font-size:11px;color:rgba(255,255,255,.6);margin-top:5px;line-height:1.4;}
+.dark-band{background:linear-gradient(135deg,var(--navy-deep),var(--navy));border-radius:14px;padding:36px 44px;color:#fff;margin-bottom:36px;position:relative;overflow:hidden;}
+.dark-band::after{content:"";position:absolute;bottom:-40px;right:-40px;width:200px;height:200px;background:rgba(255,255,255,.04);border-radius:50%;}
+.dark-band-title{font-family:"Barlow Condensed",sans-serif;font-size:clamp(18px,2.5vw,26px);font-weight:800;text-transform:uppercase;color:var(--acc-light);margin-bottom:14px;}
+.dark-band p{font-size:14px;color:rgba(255,255,255,.75);line-height:1.8;max-width:900px;}
+.feature-list{margin-top:16px;}
+.feature-item{display:flex;align-items:flex-start;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.feature-item:last-child{border-bottom:none;}
+.feature-icon{font-size:18px;flex-shrink:0;margin-top:2px;}
+.feature-text strong{display:block;font-family:"Barlow Condensed",sans-serif;font-size:14px;font-weight:700;text-transform:uppercase;color:#fff;margin-bottom:3px;}
+.feature-text p{font-size:12px;color:rgba(255,255,255,.65);line-height:1.6;}
+.check-list{list-style:none;padding:0;margin:0;}
+.check-list li{font-size:13px;color:var(--gray-text);line-height:1.8;padding:4px 0;}
+.check-list li::before{content:"✔ ";color:var(--acc);font-weight:700;}
+.threat-band{background:linear-gradient(135deg,#7B1A1A,#C53030);border-radius:14px;padding:30px 40px;color:#fff;margin-bottom:36px;}
+.threat-title{font-family:"Barlow Condensed",sans-serif;font-size:20px;font-weight:800;text-transform:uppercase;color:#FFB3B3;margin-bottom:6px;}
+.threat-subtitle{font-size:13px;color:rgba(255,255,255,.7);margin-bottom:20px;}
+.threat-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;}
+.threat-stat{text-align:center;padding:16px 10px;background:rgba(255,255,255,.1);border-radius:8px;}
+.threat-stat-n{font-family:"Barlow Condensed",sans-serif;font-size:30px;font-weight:800;color:#FFB3B3;line-height:1;}
+.threat-stat-l{font-size:10px;color:rgba(255,255,255,.65);margin-top:4px;line-height:1.4;}
+.compare-tbl{width:100%;border-collapse:collapse;background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 4px 18px rgba(30,58,95,.08);margin-bottom:36px;}
+.compare-tbl th{background:var(--navy);color:#fff;padding:13px 16px;font-family:"Barlow Condensed",sans-serif;font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;text-align:left;}
+.compare-tbl td{padding:12px 16px;font-size:13px;color:var(--gray-text);border-bottom:1px solid var(--gray-mid);}
+.compare-tbl tr:last-child td{border-bottom:none;}
+.bad{color:#EF4444;}.good{color:#10B981;font-weight:600;}
+.cta-block{background:linear-gradient(135deg,var(--navy-deep),var(--navy));border-radius:14px;padding:40px;text-align:center;color:#fff;margin:0 40px 40px;}
+.cta-t{font-family:"Barlow Condensed",sans-serif;font-size:28px;font-weight:800;text-transform:uppercase;margin-bottom:10px;}
+.cta-t span{color:var(--acc-light);}
+.cta-s{font-size:13px;color:rgba(255,255,255,.6);margin-bottom:28px;}
+.cta-btn{display:inline-block;padding:16px 44px;background:var(--acc);border-radius:8px;color:#fff;font-family:"Barlow Condensed",sans-serif;font-size:16px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;transition:all .25s;}
+.cta-btn:hover{opacity:.85;transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,.3);}
+.cta-note{margin-top:16px;font-size:11.5px;color:rgba(255,255,255,.3);font-style:italic;}
+.cta-note a{color:var(--acc-light);text-decoration:none;}
+.sep{height:1px;background:linear-gradient(90deg,transparent,var(--gray-mid),transparent);margin:0 40px;}
+.footer{background:var(--navy-deep);padding:28px 60px;display:flex;align-items:center;justify-content:space-between;gap:24px;}
+.footer img{width:76px;opacity:.9;}
+.footer-txt{color:rgba(255,255,255,.4);font-size:12px;line-height:1.7;}
+.footer-txt a{color:var(--acc-light);text-decoration:none;}
+.footer-r{text-align:right;color:rgba(255,255,255,.3);font-size:11px;}
+.badge{display:inline-block;background:var(--acc);color:#fff;font-family:"Barlow Condensed",sans-serif;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:3px 10px;border-radius:4px;margin-bottom:8px;}
+@media(max-width:900px){.g2,.g3,.g4,.stats,.threat-stats{grid-template-columns:1fr!important;}
+  .header-inner{flex-direction:column;text-align:center;padding:24px;}
+  .header-contact{text-align:center;}.wrap{padding:32px 20px;}
+  .cta-block{margin:0 16px 32px;}
+  .footer{flex-direction:column;text-align:center;padding:24px 20px;}.footer-r{text-align:center;}
+  .lang-bar{padding:8px 16px;}}
+</style>
+<script>
+function switchLang(lang){
+  var body=document.body;
+  var btns=document.querySelectorAll('.lang-btn');
+  if(lang==='en'){body.classList.add('lang-en');}else{body.classList.remove('lang-en');}
+  btns.forEach(function(b){
+    b.classList.remove('active');
+    b.style.background='transparent';
+    b.style.color='rgba(255,255,255,.7)';
+  });
+  btns.forEach(function(b){
+    if(b.getAttribute('onclick') && b.getAttribute('onclick').indexOf("'"+lang+"'")>-1){
+      b.classList.add('active');
+      b.style.background='rgba(255,255,255,.85)';
+      b.style.color='#1E3A5F';
+    }
+  });
+}
+</script>
+</head>
+<body class="lang-en">
+<style>
+.nav-main{background:#1E3A5F;display:flex;align-items:center;justify-content:space-between;padding:0 40px;height:56px;position:sticky;top:0;z-index:200;font-family:'Barlow',sans-serif;}
+.nav-links{display:flex;align-items:center;gap:32px;}
+.nav-links a{color:rgba(255,255,255,.75);text-decoration:none;font-size:13px;font-weight:500;letter-spacing:.3px;white-space:nowrap;}
+.nav-links a.active-page{background:#E53E3E;color:#fff;padding:8px 16px;border-radius:4px;font-weight:600;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-lang{display:flex;align-items:center;background:rgba(255,255,255,.12);border-radius:20px;overflow:hidden;}
+.nav-cta{display:inline-flex;align-items:center;gap:6px;background:#2E75B6;color:#fff;text-decoration:none;font-family:'Barlow Condensed',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;padding:9px 20px;border-radius:6px;white-space:nowrap;}
+.hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:8px;z-index:210;}
+.hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:all .25s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+.nav-mobile-menu{display:none;position:fixed;top:56px;left:0;right:0;background:#1E3A5F;z-index:199;padding:16px 24px 20px;flex-direction:column;gap:0;box-shadow:0 8px 24px rgba(0,0,0,.3);}
+.nav-mobile-menu.open{display:flex;}
+.nav-mobile-menu a{color:rgba(255,255,255,.8);text-decoration:none;font-size:15px;font-weight:500;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.08);}
+.nav-mobile-menu a.active-page{color:#FC8181;font-weight:700;}
+.nav-mobile-menu a:last-child{border-bottom:none;}
+.nav-mobile-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.12);}
+.nav-mobile-bottom .nav-lang{background:rgba(255,255,255,.1);}
+.nav-mobile-bottom .nav-cta{font-size:12px;padding:8px 16px;}
+@media(max-width:768px){
+  .nav-main{padding:0 20px;}
+  .nav-links,.nav-right{display:none;}
+  .hamburger{display:flex;}
+}
+</style>
+<nav class="nav-main">
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="managed-services.html">Managed Services</a>
+    <a href="cloud-services.html">Cloud Services</a>
+    <a href="cybersecurity.html" class="active-page">Cybersecurity</a>
+    <a href="ECSG_About.html">About Us</a>
+  </div>
+  <div class="nav-right">
+    <div class="nav-lang">
+      <button class="lang-btn active" onclick="switchLang('en')" style="background:rgba(255,255,255,.85);border:none;color:#1E3A5F;padding:5px 14px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;cursor:pointer;">EN</button>
+      <button class="lang-btn" onclick="switchLang('es')" style="background:transparent;border:none;color:rgba(255,255,255,.7);padding:5px 14px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;letter-spacing:.5px;cursor:pointer;">ES</button>
+    </div>
+    <a href="https://www.ecsgtech.com/ecsgcontact_sales.html" class="nav-cta">✉ Contact Sales</a>
+  </div>
+  <!-- Hamburger button (mobile only) -->
+  <button class="hamburger" id="hamburger" aria-label="Menu" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+<!-- Mobile dropdown menu -->
+<div class="nav-mobile-menu" id="mobileMenu">
+  <a href="index.html">Home</a>
+  <a href="managed-services.html">Managed Services</a>
+  <a href="cloud-services.html">Cloud Services</a>
+  <a href="cybersecurity.html" class="active-page">Cybersecurity</a>
+  <a href="ECSG_About.html">About Us</a>
+  <div class="nav-mobile-bottom">
+    <div class="nav-lang">
+      <button class="lang-btn active" onclick="switchLang('en')" style="background:rgba(255,255,255,.85);border:none;color:#1E3A5F;padding:5px 14px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:700;letter-spacing:.5px;cursor:pointer;">EN</button>
+      <button class="lang-btn" onclick="switchLang('es')" style="background:transparent;border:none;color:rgba(255,255,255,.7);padding:5px 14px;font-family:'Barlow',sans-serif;font-size:12px;font-weight:600;letter-spacing:.5px;cursor:pointer;">ES</button>
+    </div>
+    <a href="https://www.ecsgtech.com/ecsgcontact_sales.html" class="nav-cta">✉ Contact Sales</a>
+  </div>
+</div>
+<script>
+function toggleMenu(){
+  var btn=document.getElementById('hamburger');
+  var menu=document.getElementById('mobileMenu');
+  btn.classList.toggle('open');
+  menu.classList.toggle('open');
+}
+</script>
+
+<header class="header">
+  <div class="header-inner">
+    <div class="header-center">
+      <div class="header-eyebrow">Enterprise Cloud Solutions Group LLC</div>
+      <h1 class="header-title"><span class="es-inline">Capacitación en <span>Conciencia Cibernética</span></span><span class="en-inline">Cybersecurity <span>Awareness Training</span></span></h1>
+      <p class="header-subtitle"><span class="es-inline">Convierte a tu equipo en la primera línea de defensa</span><span class="en-inline">Transform Your Team Into Your First Line of Defense</span></p>
+    </div>
+    <div class="header-contact">
+      26 Belden Ave, Norwalk, CT<br>
+      <a href="mailto:info@ecsgtech.com">info@ecsgtech.com</a><br>
+      <a href="https://www.ecsgtech.com">www.ecsgtech.com</a><br>
+      <a class="cta-hdr" href="https://www.ecsgtech.com/ecsgcontact_sales.html"><span class="es-inline">Contáctenos</span><span class="en-inline">Contact Us</span></a>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="dark-band">
+    <div class="dark-band-title es">🛡 Ciberseguridad — El Factor Humano es el Mayor Riesgo</div>
+    <div class="dark-band-title en">🛡 Cybersecurity — The Human Factor Is Your Greatest Risk</div>
+    <p class="es">Los ciberataques cada vez más tienen como objetivo a los empleados, siendo el error humano una de las causas más comunes de brechas de seguridad. Equipar a tu equipo con el conocimiento correcto es la inversión más inteligente que puedes hacer.</p>
+    <p class="en">Cyberattacks increasingly target employees, making human error one of the most common causes of breaches. Equipping your team with the right knowledge is the smartest investment you can make in security.</p>
+  </div>
+</div>
+
+<!-- Threat Stats -->
+<div class="wrap" style="padding-top:0;">
+  <div class="threat-band">
+    <div class="threat-title es">El Panorama de Amenazas — Por Qué Actuar Ahora</div>
+    <div class="threat-title en">The Threat Landscape — Why Act Now</div>
+    <div class="threat-subtitle es">Datos reales que demuestran la urgencia de la capacitación en ciberseguridad</div>
+    <div class="threat-subtitle en">Real data that demonstrates the urgency of cybersecurity awareness training</div>
+    <div class="threat-stats g4">
+      <div class="threat-stat">
+        <div class="threat-stat-n">80%+</div>
+        <div class="threat-stat-l"><span class="es-inline">Brechas causadas por error humano</span><span class="en-inline">Breaches caused by human error</span></div>
+      </div>
+      <div class="threat-stat">
+        <div class="threat-stat-n">$4.5M</div>
+        <div class="threat-stat-l"><span class="es-inline">Costo promedio de una brecha de datos</span><span class="en-inline">Average cost of a data breach</span></div>
+      </div>
+      <div class="threat-stat">
+        <div class="threat-stat-n">3.4B</div>
+        <div class="threat-stat-l"><span class="es-inline">Correos de phishing enviados por día</span><span class="en-inline">Phishing emails sent per day</span></div>
+      </div>
+      <div class="threat-stat">
+        <div class="threat-stat-n">94%</div>
+        <div class="threat-stat-l"><span class="es-inline">Malware distribuido por correo electrónico</span><span class="en-inline">Malware delivered via email</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- Core Training Topics -->
+<div class="wrap">
+  <div class="sec-title es">Áreas Clave de <span>Capacitación</span></div>
+  <div class="sec-title en">Core <span>Training Areas</span></div>
+  <div class="sec-div"></div>
+  <div class="sec-lead es">Nuestros programas de capacitación cubren las áreas críticas de ciberseguridad que toda empresa necesita dominar para protegerse de las amenazas más comunes.</div>
+  <div class="sec-lead en">Our training programs cover the critical cybersecurity areas every business needs to master to protect against the most common threats.</div>
+  <div class="g g3">
+    <div class="card">
+      <div class="card-icon">🎣</div>
+      <div class="card-title es">Phishing y Spear Phishing</div>
+      <div class="card-title en">Phishing & Spear Phishing</div>
+      <p class="es">Aprende a identificar correos fraudulentos, links maliciosos y técnicas de ingeniería social antes de que causen daño. Simulaciones realistas para reforzar el aprendizaje.</p>
+      <p class="en">Learn to identify fraudulent emails, malicious links, and social engineering techniques before they cause harm. Realistic simulations to reinforce learning.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🦠</div>
+      <div class="card-title es">Identificación de Malware</div>
+      <div class="card-title en">Identifying Malware</div>
+      <p class="es">Reconoce señales de infección por ransomware, spyware y virus. Entiende cómo se propagan y qué hacer ante un incidente de seguridad.</p>
+      <p class="en">Recognize signs of ransomware, spyware, and virus infections. Understand how they spread and what to do when a security incident occurs.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🌐</div>
+      <div class="card-title es">Navegación Segura</div>
+      <div class="card-title en">Safe Web Browsing</div>
+      <p class="es">Prácticas de navegación segura, gestión de contraseñas, uso de VPN y protección de datos sensibles en entornos digitales.</p>
+      <p class="en">Safe browsing practices, password management, VPN usage, and protection of sensitive data in digital environments.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔑</div>
+      <div class="card-title es">Gestión de Contraseñas</div>
+      <div class="card-title en">Password Management</div>
+      <p class="es">Políticas de contraseñas seguras, autenticación multifactor (MFA) y mejores prácticas para proteger las cuentas de la organización.</p>
+      <p class="en">Secure password policies, multi-factor authentication (MFA), and best practices for protecting organizational accounts.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">📱</div>
+      <div class="card-title es">Seguridad en Dispositivos Móviles</div>
+      <div class="card-title en">Mobile Device Security</div>
+      <p class="es">Seguridad en dispositivos móviles personales y corporativos, incluyendo políticas BYOD y protección de datos en tránsito.</p>
+      <p class="en">Security for personal and corporate mobile devices, including BYOD policies and protection of data in transit.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚖️</div>
+      <div class="card-title es">Cumplimiento y Regulaciones</div>
+      <div class="card-title en">Compliance & Regulations</div>
+      <p class="es">Entendimiento de HIPAA, PCI-DSS, GDPR y otros marcos regulatorios. Preparación para auditorías y requerimientos de seguros cibernéticos.</p>
+      <p class="en">Understanding HIPAA, PCI-DSS, GDPR, and other regulatory frameworks. Preparation for audits and cyber insurance requirements.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- BullPhish ID Platform -->
+<div class="wrap">
+  <div class="sec-title es">🔐 BullPhish ID — <span>Nuestra Plataforma Recomendada</span></div>
+  <div class="sec-title en">🔐 BullPhish ID — <span>Our Recommended Platform</span></div>
+  <div class="sec-div"></div>
+  <div class="sec-lead es">BullPhish ID es una plataforma poderosa diseñada para MSPs que combina capacitación en conciencia de seguridad con simulaciones automáticas de phishing para educar a los empleados y medir su preparación en el mundo real.</div>
+  <div class="sec-lead en">BullPhish ID is a powerful platform designed for MSPs that combines security awareness training with automated phishing simulations to educate employees and measure their real-world readiness.</div>
+
+  <div class="dark-band">
+    <div class="dark-band-title es">⭐ ¿Qué es BullPhish ID?</div>
+    <div class="dark-band-title en">⭐ What Is BullPhish ID?</div>
+    <p class="es">BullPhish ID ofrece un amplio catálogo de módulos de capacitación, plantillas realistas de phishing y reportes detallados para ayudar a las organizaciones a mantenerse un paso adelante de las amenazas cibernéticas en evolución. La plataforma se actualiza constantemente con nuevos cursos y kits de phishing para reflejar los últimos métodos de ataque y requisitos de cumplimiento.</p>
+    <p class="en">BullPhish ID offers a wide catalog of training modules, realistic phishing templates, and detailed reporting to help organizations stay ahead of evolving cyber threats. The platform is constantly updated with new courses and phishing kits to reflect the latest attack methods and compliance requirements.</p>
+  </div>
+
+  <div class="g g2">
+    <div class="card">
+      <div class="badge">Security Awareness</div>
+      <div class="card-title es">📘 Capacitación en Seguridad</div>
+      <div class="card-title en">📘 Security Awareness Training</div>
+      <ul class="check-list" style="margin-top:12px;">
+        <li class="es">Docenas de cursos basados en video</li>
+        <li class="en">Dozens of video-based courses</li>
+        <li class="es">Cuestionarios para validar comprensión</li>
+        <li class="en">Quizzes to validate understanding</li>
+        <li class="es">Contenido disponible en múltiples idiomas</li>
+        <li class="en">Content available in multiple languages</li>
+        <li class="es">Nuevos módulos agregados mensualmente</li>
+        <li class="en">New modules added monthly</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="badge">Phishing Simulations</div>
+      <div class="card-title es">🎣 Simulaciones de Phishing</div>
+      <div class="card-title en">🎣 Phishing Simulations</div>
+      <ul class="check-list" style="margin-top:12px;">
+        <li class="es">Plantillas de ataque realistas</li>
+        <li class="en">Realistic attack templates</li>
+        <li class="es">Correos y páginas de destino personalizables</li>
+        <li class="en">Customizable emails and landing pages</li>
+        <li class="es">Campañas automatizadas por grupos de usuarios</li>
+        <li class="en">Automated campaigns targeting specific user groups</li>
+        <li class="es">Integración con Azure AD / Google Workspace</li>
+        <li class="en">Azure AD / Google Workspace integration</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="badge">Analytics</div>
+      <div class="card-title es">📊 Reportes y Análisis</div>
+      <div class="card-title en">📊 Analytics & Reporting</div>
+      <ul class="check-list" style="margin-top:12px;">
+        <li class="es">Métricas de rendimiento de campañas</li>
+        <li class="en">Campaign performance metrics</li>
+        <li class="es">Seguimiento de completación de cursos</li>
+        <li class="en">Completion tracking</li>
+        <li class="es">Reportes de cumplimiento regulatorio</li>
+        <li class="en">Compliance reports</li>
+        <li class="es">Perspectivas para guiar capacitación futura</li>
+        <li class="en">Insights to guide future training</li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="badge">Customization</div>
+      <div class="card-title es">🎛️ Opciones de Personalización</div>
+      <div class="card-title en">🎛️ Customization Options</div>
+      <ul class="check-list" style="margin-top:12px;">
+        <li class="es">Campañas de marca blanca con logo de tu empresa</li>
+        <li class="en">White-label campaigns with your company logo</li>
+        <li class="es">Correos de phishing y contenido personalizados</li>
+        <li class="en">Custom phishing emails and training content</li>
+        <li class="es">Gestión automatizada de campañas</li>
+        <li class="en">Automated campaign management</li>
+        <li class="es">Programación flexible para múltiples departamentos</li>
+        <li class="en">Flexible scheduling for multiple departments</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- Key Benefits -->
+<div class="wrap">
+  <div class="sec-title es">🧩 Beneficios Clave para <span>Tu Negocio</span></div>
+  <div class="sec-title en">🧩 Key Benefits for <span>Your Business</span></div>
+  <div class="sec-div"></div>
+  <div class="g g3">
+    <div class="card">
+      <div class="card-icon">🦺</div>
+      <div class="card-title es">Empleados como Defensores</div>
+      <div class="card-title en">Employees as Defenders</div>
+      <p class="es">Videos cortos y atractivos con cuestionarios enseñan a los usuarios cómo reconocer correos de phishing, proteger datos sensibles y seguir prácticas de ciberseguridad seguras.</p>
+      <p class="en">Short, engaging training videos and quizzes teach users how to recognize phishing emails, protect sensitive data, and follow safe cybersecurity practices.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">🔍</div>
+      <div class="card-title es">Identifica Vulnerabilidades</div>
+      <div class="card-title en">Identify Vulnerabilities</div>
+      <p class="es">BullPhish envía correos de phishing simulados al personal para medir quién hace clic, quién reporta y quién necesita capacitación adicional — sin poner en riesgo tu red.</p>
+      <p class="en">BullPhish sends simulated phishing emails to your staff to measure who clicks, who reports, and who needs additional training — without risking your network.</p>
+    </div>
+    <div class="card">
+      <div class="card-icon">⚙️</div>
+      <div class="card-title es">Gestión Automatizada</div>
+      <div class="card-title en">Automated Management</div>
+      <p class="es">BullPhish ID permite automatización completa de campañas de capacitación y phishing, reduciendo la carga del equipo de TI y permitiendo una fácil programación para múltiples departamentos.</p>
+      <p class="en">BullPhish ID allows complete automation of training and phishing campaigns, reducing IT team workload and enabling easy scheduling for multiple departments.</p>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- Stats Bar -->
+<div class="wrap" style="padding-top:36px;">
+  <div class="sec-title es">¿Por Qué Tu Organización <span>Necesita Esto?</span></div>
+  <div class="sec-title en">Why Your Organization <span>Needs This</span></div>
+  <div class="sec-div"></div>
+  <div class="stats g4">
+    <div class="stat">
+      <div class="stat-n">80%</div>
+      <div class="stat-l"><span class="es-inline">Brechas causadas por error humano — la capacitación reduce ese riesgo</span><span class="en-inline">Breaches caused by human error — training reduces that risk</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">Requerido</div>
+      <div class="stat-l"><span class="es-inline">Por seguros cibernéticos y regulaciones de cumplimiento</span><span class="en-inline">By cyber insurance and compliance regulations increasingly</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">#1</div>
+      <div class="stat-l"><span class="es-inline">Phishing es el vector de ataque más común contra PYMEs</span><span class="en-inline">Phishing is the most common attack vector against SMBs</span></div>
+    </div>
+    <div class="stat">
+      <div class="stat-n">Cultura</div>
+      <div class="stat-l"><span class="es-inline">La educación continua construye una cultura de seguridad primero</span><span class="en-inline">Continuous education builds a security-first culture</span></div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- How ECSG Manages It -->
+<div class="wrap">
+  <div class="sec-title es">🏢 BullPhish ID con <span>Enterprise Cloud Solutions Group</span></div>
+  <div class="sec-title en">🏢 BullPhish ID with <span>Enterprise Cloud Solutions Group</span></div>
+  <div class="sec-div"></div>
+  <div class="sec-lead es">Cuando te asocias con nosotros, gestionamos el programa de capacitación completo por ti. Nuestro objetivo es simple: ayudar a tus empleados a convertirse en defensores confiados y sólidos de la ciberseguridad de tu empresa.</div>
+  <div class="sec-lead en">When you partner with us, we manage the entire training program for you. Our goal is simple: help your employees become strong, confident defenders of your company's cybersecurity.</div>
+
+  <div class="g g2">
+    <div class="dark-band" style="margin-bottom:0;">
+      <div class="dark-band-title es">Lo Que Hacemos Por Ti</div>
+      <div class="dark-band-title en">What We Do For You</div>
+      <div class="feature-list">
+        <div class="feature-item">
+          <div class="feature-icon">📅</div>
+          <div class="feature-text">
+            <strong class="es">Diseñamos y automatizamos tu programa</strong>
+            <strong class="en">We design and automate your training schedule</strong>
+            <p class="es">Creamos un calendario de capacitación personalizado según las necesidades y el perfil de riesgo de tu empresa.</p>
+            <p class="en">We create a customized training calendar tailored to your company's needs and risk profile.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">🎯</div>
+          <div class="feature-text">
+            <strong class="es">Lanzamos y rastreamos simulaciones</strong>
+            <strong class="en">We launch and track phishing simulations</strong>
+            <p class="es">Ejecutamos campañas de phishing realistas y monitoreamos los resultados para identificar áreas de mejora.</p>
+            <p class="en">We run realistic phishing campaigns and monitor results to identify areas for improvement.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">📈</div>
+          <div class="feature-text">
+            <strong class="es">Analizamos resultados y recomendamos mejoras</strong>
+            <strong class="en">We analyze results and recommend improvements</strong>
+            <p class="es">Revisamos los datos de desempeño y ajustamos el programa continuamente para maximizar el impacto.</p>
+            <p class="en">We review performance data and continuously adjust the program to maximize impact.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-icon">✅</div>
+          <div class="feature-text">
+            <strong class="es">Mantenemos tu empresa preparada y en cumplimiento</strong>
+            <strong class="en">We keep your business compliant and secure</strong>
+            <p class="es">Garantizamos que tu organización cumpla con los requisitos regulatorios y de seguros cibernéticos.</p>
+            <p class="en">We ensure your organization meets regulatory and cyber insurance requirements at all times.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:18px;">
+      <div class="card">
+        <div class="card-icon">🏆</div>
+        <div class="card-title es">Nuestra Promesa</div>
+        <div class="card-title en">Our Promise</div>
+        <p class="es">No solo instalamos software — nos convertimos en tu socio estratégico de ciberseguridad. Entendemos que cada empresa es única y adaptamos nuestros programas para maximizar la efectividad y minimizar la interrupción de tu negocio.</p>
+        <p class="en">We don't just install software — we become your strategic cybersecurity partner. We understand that every business is unique and tailor our programs to maximize effectiveness and minimize business disruption.</p>
+      </div>
+      <div class="card">
+        <div class="card-icon">🔗</div>
+        <div class="card-title es">Integración con Microsoft 365</div>
+        <div class="card-title en">Microsoft 365 Integration</div>
+        <p class="es">Las cuentas de usuario se sincronizan automáticamente desde Azure AD o Google Workspace, garantizando que tus grupos de capacitación estén siempre actualizados sin trabajo manual adicional.</p>
+        <p class="en">User accounts can be synced automatically from Azure AD or Google Workspace, ensuring your training groups stay up to date without additional manual work.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="sep"></div>
+
+<!-- Logo -->
+<div class="wrap" style="text-align:center;padding-top:40px;padding-bottom:0;">
+  <a href="index.html"><img src="assets/img/logo1_black.png" alt="Enterprise Cloud Solutions Group" style="width:200px;height:auto;display:inline-block;" /></a>
+</div>
+
+<div class="cta-block">
+  <div class="cta-t"><span class="es-inline">¿Listo para <span>Proteger Tu Empresa</span>?</span><span class="en-inline">Ready to <span>Protect Your Business</span>?</span></div>
+  <p class="cta-s es">Hable con uno de nuestros especialistas en ciberseguridad — sin compromiso, con resultados reales.</p>
+  <p class="cta-s en">Talk to one of our cybersecurity specialists — no commitment, real results.</p>
+  <a class="cta-btn" href="https://www.ecsgtech.com/ecsgcontact_sales.html"><span class="es-inline">Contáctenos</span><span class="en-inline">Contact Us</span></a>
+  <p class="cta-note">26 Belden Ave, Norwalk, CT &nbsp;·&nbsp; <a href="mailto:info@ecsgtech.com">info@ecsgtech.com</a> &nbsp;·&nbsp; <a href="https://www.ecsgtech.com">www.ecsgtech.com</a></p>
+</div>
+
+<footer class="footer">
+  <img src="assets/img/logo1_white.png" alt="ECSG" />
+  <div class="footer-txt">
+    Enterprise Cloud Solutions Group LLC<br>
+    26 Belden Ave, Norwalk, CT &nbsp;·&nbsp; <a href="/cdn-cgi/

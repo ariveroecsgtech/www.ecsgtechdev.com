@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FAQs – Enterprise Cloud Solutions Group LLC</title>
+<meta name="description" content="Frequently asked questions about Microsoft 365, Azure, Cybersecurity, Managed IT, networking, structured cabling and more. Enterprise Cloud Solutions Group LLC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+  --navy:#1E3A5F; --navy-deep:#0d1e36; --navy-mid:#152d4a;
+  --blue:#2E75B6; --blue-light:#3D8FD4; --sky:#7EC8F5; --sky-pale:#EAF2FB;
+  --white:#ffffff; --gray-400:#94A3B8; --gray-600:#475569; --gray-800:#1E293B;
+  --green:#4ade80;
+  --font-display:'Barlow Condensed',sans-serif;
+  --font-body:'Barlow',sans-serif;
+  --max-w:1200px; --radius:10px;
+  --transition:all 0.28s cubic-bezier(0.4,0,0.2,1);
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--font-body);background:var(--navy-deep);color:rgba(255,255,255,0.85);line-height:1.65;overflow-x:hidden;}
+
+/* ── LANG SWITCH ── */
+.lang-switch{
+  display:flex;align-items:center;
+  background:rgba(255,255,255,0.08);
+  border:1px solid rgba(255,255,255,0.15);
+  border-radius:30px;padding:3px;gap:2px;
+}
+.lang-btn{
+  border:none;cursor:pointer;
+  padding:5px 14px;border-radius:24px;
+  font-family:var(--font-body);font-size:0.78rem;font-weight:700;
+  transition:var(--transition);
+  background:transparent;color:rgba(255,255,255,0.5);
+  letter-spacing:0.05em;
+}
+.lang-btn.active{background:white;color:var(--navy);}
+.lang-btn:not(.active):hover{color:white;background:rgba(255,255,255,0.1);}
+
+/* ── NAVBAR ── */
+#navbar{background:var(--navy);position:sticky;top:0;z-index:1000;box-shadow:0 2px 20px rgba(0,0,0,0.4);border-bottom:1px solid rgba(255,255,255,0.07);}
+.nav-inner{max-width:var(--max-w);margin:0 auto;padding:0 32px;display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-brand{display:flex;align-items:center;gap:12px;text-decoration:none;}
+.nav-logo-box{width:40px;height:40px;background:var(--blue);border-radius:9px;display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-weight:900;font-size:1rem;color:white;letter-spacing:-1px;flex-shrink:0;}
+.nav-brand-text{font-family:var(--font-display);font-size:0.78rem;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.75);line-height:1.25;}
+.nav-brand-text em{color:var(--sky);font-style:normal;display:block;font-size:0.68rem;}
+.nav-links{display:flex;align-items:center;gap:4px;list-style:none;}
+.nav-links a{color:rgba(255,255,255,0.65);text-decoration:none;font-size:0.83rem;font-weight:600;padding:7px 13px;border-radius:6px;transition:var(--transition);white-space:nowrap;}
+.nav-links a:hover,.nav-links a.active{background:rgba(255,255,255,0.1);color:#fff;}
+.nav-right{display:flex;align-items:center;gap:12px;}
+.nav-cta{display:inline-flex;align-items:center;gap:7px;background:var(--blue-light);color:#fff;padding:8px 18px;border-radius:7px;font-size:0.82rem;font-weight:700;text-decoration:none;transition:var(--transition);white-space:nowrap;}
+.nav-cta:hover{background:#4EA3E8;transform:translateY(-1px);}
+#hamburger{display:none;flex-direction:column;gap:5px;background:transparent;border:none;cursor:pointer;padding:6px;}
+#hamburger span{display:block;width:22px;height:2px;background:#fff;border-radius:2px;transition:var(--transition);}
+#mobile-menu{display:none;background:var(--navy);border-top:1px solid rgba(255,255,255,0.08);padding:16px 24px 20px;}
+#mobile-menu.open{display:block;}
+#mobile-menu a{display:block;color:rgba(255,255,255,0.8);text-decoration:none;font-size:0.9rem;font-weight:600;padding:10px 0;border-bottom:1px solid rgba(255,255,255,0.07);}
+#mobile-menu a:last-of-type{border-bottom:none;}
+.mobile-lang-row{display:flex;align-items:center;gap:10px;padding:14px 0 4px;}
+.mobile-lang-row span{font-size:0.75rem;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.1em;}
+
+/* ── HERO ── */
+.hero{background:linear-gradient(150deg,#061320 0%,var(--navy) 55%,#0a2240 100%);padding:90px 32px 80px;position:relative;overflow:hidden;}
+.hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 95% 50%,rgba(46,117,182,0.3) 0%,transparent 65%),url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.025'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
+.hero::after{content:'';position:absolute;width:700px;height:700px;border-radius:50%;border:1px solid rgba(46,117,182,0.2);top:-200px;right:-200px;pointer-events:none;}
+.hero-inner{max-width:var(--max-w);margin:0 auto;position:relative;z-index:1;display:grid;grid-template-columns:1fr 380px;gap:60px;align-items:center;}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:30px;padding:5px 16px;font-size:0.75rem;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--sky);margin-bottom:22px;}
+.hero h1{font-family:var(--font-display);font-size:clamp(3rem,5.5vw,5rem);font-weight:900;line-height:0.92;text-transform:uppercase;letter-spacing:-0.02em;margin-bottom:22px;}
+.hero h1 em{color:var(--sky);font-style:normal;display:block;}
+.hero p.lead{font-size:1.05rem;color:rgba(255,255,255,0.6);max-width:560px;line-height:1.75;margin-bottom:36px;}
+.hero-stats{display:flex;gap:32px;flex-wrap:wrap;}
+.hero-stat .num{font-family:var(--font-display);font-size:2rem;font-weight:900;color:var(--sky);line-height:1;}
+.hero-stat .lbl{font-size:0.75rem;color:rgba(255,255,255,0.45);margin-top:3px;}
+.hero-search-box{background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:16px;padding:28px;backdrop-filter:blur(10px);}
+.hero-search-box h3{font-family:var(--font-display);font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sky);margin-bottom:14px;}
+.search-wrap{display:flex;align-items:center;background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:8px;overflow:hidden;transition:var(--transition);}
+.search-wrap:focus-within{border-color:var(--blue-light);background:rgba(255,255,255,0.1);}
+.search-wrap i{color:rgba(255,255,255,0.4);padding:0 14px;font-size:0.9rem;}
+#faq-search{flex:1;background:transparent;border:none;outline:none;color:white;font-family:var(--font-body);font-size:0.88rem;padding:12px 0;caret-color:var(--sky);}
+#faq-search::placeholder{color:rgba(255,255,255,0.35);}
+.search-count{font-size:0.72rem;color:rgba(255,255,255,0.35);padding:0 12px;white-space:nowrap;}
+.cat-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+.cat-pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.12);border-radius:30px;padding:4px 12px;font-size:0.72rem;font-weight:700;color:rgba(255,255,255,0.6);cursor:pointer;transition:var(--transition);white-space:nowrap;}
+.cat-pill:hover,.cat-pill.active{background:var(--blue);border-color:var(--blue);color:white;}
+
+/* ── LAYOUT ── */
+.page-wrap{max-width:var(--max-w);margin:0 auto;padding:64px 32px 100px;display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start;}
+.sidebar{position:sticky;top:88px;}
+.sidebar-label{font-family:var(--font-display);font-size:0.68rem;font-weight:700;letter-spacing:0.25em;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:14px;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.07);}
+.sidebar-nav{list-style:none;display:flex;flex-direction:column;gap:2px;}
+.sidebar-nav a{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;text-decoration:none;font-size:0.83rem;font-weight:600;color:rgba(255,255,255,0.55);transition:var(--transition);border:1px solid transparent;}
+.sidebar-nav a i{width:18px;text-align:center;font-size:0.78rem;color:var(--blue-light);flex-shrink:0;}
+.sidebar-nav a:hover{background:rgba(255,255,255,0.06);color:rgba(255,255,255,0.85);border-color:rgba(255,255,255,0.08);}
+.sidebar-nav a.active{background:rgba(46,117,182,0.2);color:var(--sky);border-color:rgba(46,117,182,0.3);}
+.sidebar-nav a .count{margin-left:auto;background:rgba(255,255,255,0.07);border-radius:30px;padding:1px 8px;font-size:0.65rem;color:rgba(255,255,255,0.4);}
+.sidebar-contact{margin-top:32px;background:rgba(46,117,182,0.15);border:1px solid rgba(46,117,182,0.25);border-radius:var(--radius);padding:20px;}
+.sidebar-contact h4{font-family:var(--font-display);font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:0.1em;color:var(--sky);margin-bottom:14px;}
+.sidebar-contact p{font-size:0.8rem;color:rgba(255,255,255,0.6);line-height:1.6;}
+.sidebar-contact a{display:inline-flex;align-items:center;gap:6px;color:var(--sky);text-decoration:none;font-size:0.8rem;font-weight:600;margin-top:12px;transition:var(--transition);}
+.sidebar-contact a:hover{color:white;}
+
+/* ── FAQ ITEMS ── */
+.faq-section{margin-bottom:56px;scroll-margin-top:100px;animation:fadeUp 0.5s ease both;}
+.faq-section:nth-child(2){animation-delay:0.05s;}
+.faq-section:nth-child(3){animation-delay:0.10s;}
+.faq-section:nth-child(4){animation-delay:0.15s;}
+.faq-section:nth-child(5){animation-delay:0.20s;}
+.section-header{display:flex;align-items:center;gap:14px;margin-bottom:28px;padding-bottom:16px;border-bottom:1px solid rgba(255,255,255,0.08);}
+.section-icon{width:46px;height:46px;flex-shrink:0;background:rgba(46,117,182,0.2);border:1px solid rgba(46,117,182,0.3);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.1rem;color:var(--sky);}
+.section-info h2{font-family:var(--font-display);font-size:1.5rem;font-weight:900;text-transform:uppercase;letter-spacing:0.03em;color:white;line-height:1;}
+.section-info p{font-size:0.82rem;color:rgba(255,255,255,0.45);margin-top:3px;}
+.faq-item{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:var(--radius);margin-bottom:8px;transition:var(--transition);overflow:hidden;}
+.faq-item:hover{border-color:rgba(46,117,182,0.3);}
+.faq-item.open{background:rgba(14,32,64,0.8);border-color:rgba(46,117,182,0.4);}
+.faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;cursor:pointer;gap:16px;user-select:none;}
+.faq-q-text{font-size:0.93rem;font-weight:600;color:rgba(255,255,255,0.9);line-height:1.45;flex:1;}
+.faq-chevron{width:30px;height:30px;flex-shrink:0;background:rgba(255,255,255,0.07);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.72rem;color:rgba(255,255,255,0.5);transition:var(--transition);}
+.faq-item.open .faq-chevron{background:var(--blue);color:white;transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;transition:max-height 0.38s cubic-bezier(0.4,0,0.2,1);}
+.faq-item.open .faq-a{max-height:1200px;}
+.faq-a-inner{padding:0 20px 20px;border-top:1px solid rgba(255,255,255,0.06);padding-top:16px;}
+.faq-a-inner p{font-size:0.88rem;color:rgba(255,255,255,0.65);line-height:1.78;margin-bottom:10px;}
+.faq-a-inner p:last-child{margin-bottom:0;}
+.faq-a-inner ul,.faq-a-inner ol{margin:10px 0 10px 20px;}
+.faq-a-inner li{font-size:0.87rem;color:rgba(255,255,255,0.6);line-height:1.7;margin-bottom:4px;}
+.faq-a-inner li::marker{color:var(--blue-light);}
+.faq-a-inner strong{color:rgba(255,255,255,0.9);font-weight:600;}
+.faq-a-inner .tip{display:flex;gap:10px;background:rgba(46,117,182,0.12);border-left:3px solid var(--blue-light);border-radius:0 8px 8px 0;padding:12px 14px;margin-top:12px;font-size:0.83rem;color:rgba(255,255,255,0.7);line-height:1.6;}
+.faq-a-inner .tip i{color:var(--sky);flex-shrink:0;margin-top:2px;}
+
+/* ── GLOSSARY ── */
+.glossary-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:8px;}
+.glossary-card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:10px;padding:16px 18px;transition:var(--transition);}
+.glossary-card:hover{border-color:rgba(46,117,182,0.3);background:rgba(14,32,64,0.6);}
+.glossary-card .term{font-family:var(--font-display);font-size:1rem;font-weight:800;color:var(--sky);text-transform:uppercase;letter-spacing:0.04em;margin-bottom:6px;}
+.glossary-card .def{font-size:0.82rem;color:rgba(255,255,255,0.55);line-height:1.6;}
+
+/* ── NO RESULTS ── */
+#no-results{display:none;text-align:center;padding:60px 20px;}
+#no-results i{font-size:2.5rem;color:rgba(255,255,255,0.15);margin-bottom:16px;}
+#no-results p{color:rgba(255,255,255,0.35);font-size:0.92rem;}
+
+/* ── CTA ── */
+.cta-band{background:linear-gradient(135deg,var(--navy) 0%,var(--blue) 100%);padding:72px 32px;text-align:center;position:relative;overflow:hidden;}
+.cta-band::before{content:'';position:absolute;inset:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");}
+.cta-band .inner{position:relative;max-width:640px;margin:0 auto;}
+.cta-band h2{font-family:var(--font-display);font-size:clamp(2rem,4vw,3rem);font-weight:900;text-transform:uppercase;letter-spacing:-0.02em;color:white;margin-bottom:14px;}
+.cta-band p{color:rgba(255,255,255,0.7);margin-bottom:32px;font-size:1rem;line-height:1.7;}
+.btn-white{display:inline-flex;align-items:center;gap:9px;background:white;color:var(--navy);padding:14px 30px;border-radius:8px;font-family:var(--font-display);font-weight:800;font-size:1rem;letter-spacing:0.04em;text-transform:uppercase;text-decoration:none;transition:var(--transition);}
+.btn-white:hover{background:var(--sky-pale);transform:translateY(-2px);}
+
+/* ── FOOTER ── */
+footer{background:#040c17;border-top:1px solid rgba(255,255,255,0.06);padding:52px 32px 28px;}
+.footer-inner{max-width:var(--max-w);margin:0 auto;}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:40px;margin-bottom:36px;}
+.footer-col h4{font-family:var(--font-display);font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.16em;color:rgba(255,255,255,0.35);margin-bottom:14px;}
+.footer-col p,.footer-col a{font-size:0.83rem;line-height:1.9;color:rgba(255,255,255,0.55);text-decoration:none;display:block;}
+.footer-col a:hover{color:var(--sky);}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.07);padding-top:20px;display:flex;align-items:center;justify-content:space-between;font-size:0.75rem;color:rgba(255,255,255,0.25);flex-wrap:wrap;gap:8px;}
+.footer-tagline{font-family:var(--font-display);font-size:0.75rem;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.2);}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1024px){.hero-inner{grid-template-columns:1fr;}.hero-search-box{display:none;}.page-wrap{grid-template-columns:1fr;}.sidebar{position:static;}.sidebar-nav{flex-direction:row;flex-wrap:wrap;}.sidebar-nav a{font-size:0.78rem;padding:6px 10px;}.glossary-grid{grid-template-columns:1fr;}}
+@media(max-width:768px){.nav-links{display:none;}.nav-cta{display:none;}.lang-switch{display:none;}.lang-switch-desktop{display:none!important;}#hamburger{display:flex;}.hero{padding:60px 20px 52px;}.page-wrap{padding:40px 20px 70px;}.hero h1{font-size:2.8rem;}.footer-grid{grid-template-columns:1fr;}}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── LANG HIDDEN ── */
+[data-lang]{display:none;}
+body.lang-en [data-lang="en"],
+body.lang-es [data-lang="es"]{display:revert;}
+/* For block-level elements inside nav, sidebar, etc. */
+span[data-lang],a[data-lang]{display:inline;}
+li[data-lang]{display:list-item;}
+body.lang-en li[data-lang="es"],
+body.lang-es li[data-lang="en"]{display:none;}
+</style>
+</head>
+<body class="lang-en">
+
+<!-- ══════════════ NAVBAR ══════════════ -->
+<header id="navbar">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="nav-logo-box">EC</div>
+      <div class="nav-brand-text">
+        Enterprise Cloud<br>
+        <em>Solutions Group LLC</em>
+      </div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html" data-lang="en">Home</a><a href="index.html" data-lang="es">Inicio</a></li>
+      <li><a href="managed-services.html" data-lang="en">Services</a><a href="managed-services.html" data-lang="es">Servicios</a></li>
+      <li><a href="cloud-services.html">Cloud</a></li>
+      <li><a href="cybersecurity.html" data-lang="en">Cybersecurity</a><a href="cybersecurity.html" data-lang="es">Ciberseguridad</a></li>
+      <li><a href="ECSG_About.html" data-lang="en">About Us</a><a href="ECSG_About.html" data-lang="es">Nosotros</a></li>
+      <li><a href="faq.html" class="active">FAQs</a></li>
+    </ul>
+    <div class="nav-right">
+      <div class="lang-switch" id="langSwitch">
+        <button class="lang-btn active" id="btnEN">EN</button>
+        <button class="lang-btn" id="btnES">ES</button>
+      </div>
+      <a href="ecsgcontact_sales.html" class="nav-cta">
+        <i class="fas fa-envelope"></i>
+        <span data-lang="en">Contact</span><span data-lang="es">Contactar</span>
+      </a>
+      <button id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div id="mobile-menu">
+    <a href="index.html" data-lang="en">Home</a>
+    <a href="index.html" data-lang="es">Inicio</a>
+    <a href="managed-services.html" data-lang="en">Managed Services</a>
+    <a href="managed-services.html" data-lang="es">Servicios Administrados</a>
+    <a href="cloud-services.html">Cloud Services</a>
+    <a href="cybersecurity.html" data-lang="en">Cybersecurity</a>
+    <a href="cybersecurity.html" data-lang="es">Ciberseguridad</a>
+    <a href="ECSG_About.html" data-lang="en">About Us</a>
+    <a href="ECSG_About.html" data-lang="es">Nosotros</a>
+    <a href="faq.html">FAQs</a>
+    <a href="ecsgcontact_sales.html" data-lang="en">Contact</a>
+    <a href="ecsgcontact_sales.html" data-lang="es">Contactar</a>
+    <div class="mobile-lang-row">
+      <span data-lang="en">Language:</span><span data-lang="es">Idioma:</span>
+      <button class="lang-btn active" id="btnEN2">EN</button>
+      <button class="lang-btn" id="btnES2">ES</button>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════ HERO ══════════════ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-tag">
+        <i class="fas fa-circle-question"></i>
+        <span data-lang="en">Help Center</span>
+        <span data-lang="es">Centro de Ayuda</span>
+      </div>
+      <h1>
+        <span data-lang="en">Frequently<br><em>Asked Questions</em></span>
+        <span data-lang="es">Preguntas<br><em>Frecuentes</em></span>
+      </h1>
+      <p class="lead" data-lang="en">Clear answers about our cloud services, cybersecurity, networking, infrastructure and enterprise technology. Everything you need to know about ECSG.</p>
+      <p class="lead" data-lang="es">Respuestas claras sobre nuestros servicios de cloud, ciberseguridad, redes, infraestructura y tecnología empresarial. Todo lo que necesitas saber sobre ECSG.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><div class="num">9</div><div class="lbl" data-lang="en">Categories</div><div class="lbl" data-lang="es">Categorías</div></div>
+        <div class="hero-stat"><div class="num">80+</div><div class="lbl" data-lang="en">Questions</div><div class="lbl" data-lang="es">Preguntas</div></div>
+        <div class="hero-stat"><div class="num">100+</div><div class="lbl" data-lang="en">Terms</div><div class="lbl" data-lang="es">Términos</div></div>
+      </div>
+    </div>
+    <div class="hero-search-box">
+      <h3>
+        <i class="fas fa-magnifying-glass"></i>
+        <span data-lang="en">Search answers</span>
+        <span data-lang="es">Buscar respuestas</span>
+      </h3>
+      <div class="search-wrap">
+        <i class="fas fa-search"></i>
+        <input type="text" id="faq-search" data-ph-en="E.g.: Microsoft 365, firewall, SLA..." data-ph-es="Ej: Microsoft 365, firewall, SLA..." placeholder="E.g.: Microsoft 365, firewall, SLA...">
+        <span class="search-count" id="search-count"></span>
+      </div>
+      <div class="cat-pills">
+        <span class="cat-pill active" data-cat="all" data-lang="en">All</span>
+        <span class="cat-pill active" data-cat="all" data-lang="es">Todas</span>
+        <span class="cat-pill" data-cat="m365">M365</span>
+        <span class="cat-pill" data-cat="azure">Azure</span>
+        <span class="cat-pill" data-cat="ciber" data-lang="en">Cyber</span>
+        <span class="cat-pill" data-cat="ciber" data-lang="es">Ciber</span>
+        <span class="cat-pill" data-cat="redes" data-lang="en">Networking</span>
+        <span class="cat-pill" data-cat="redes" data-lang="es">Redes</span>
+        <span class="cat-pill" data-cat="glosario" data-lang="en">Glossary</span>
+        <span class="cat-pill" data-cat="glosario" data-lang="es">Glosario</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ PAGE WRAP ══════════════ -->
+<div class="page-wrap">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-label" data-lang="en">Categories</div>
+    <div class="sidebar-label" data-lang="es">Categorías</div>
+    <ul class="sidebar-nav">
+      <li><a href="#general" class="active"><i class="fas fa-building"></i> <span data-lang="en">General ECSG</span><span data-lang="es">General ECSG</span> <span class="count">8</span></a></li>
+      <li><a href="#m365"><i class="fab fa-microsoft"></i> Microsoft 365 <span class="count">10</span></a></li>
+      <li><a href="#azure"><i class="fas fa-cloud"></i> Azure Cloud <span class="count">9</span></a></li>
+      <li><a href="#ciberseguridad"><i class="fas fa-shield-halved"></i> <span data-lang="en">Cybersecurity</span><span data-lang="es">Ciberseguridad</span> <span class="count">10</span></a></li>
+      <li><a href="#it-gestionado"><i class="fas fa-server"></i> <span data-lang="en">Managed IT</span><span data-lang="es">IT Gestionado</span> <span class="count">8</span></a></li>
+      <li><a href="#vcio"><i class="fas fa-chess-king"></i> vCIO Consulting <span class="count">6</span></a></li>
+      <li><a href="#redes"><i class="fas fa-network-wired"></i> <span data-lang="en">Networking & Cabling</span><span data-lang="es">Redes & Networking</span> <span class="count">10</span></a></li>
+      <li><a href="#camaras"><i class="fas fa-camera"></i> <span data-lang="en">Cameras & Security</span><span data-lang="es">Cámaras & Seguridad</span> <span class="count">8</span></a></li>
+      <li><a href="#glosario"><i class="fas fa-book-open"></i> <span data-lang="en">Technical Glossary</span><span data-lang="es">Glosario Técnico</span> <span class="count">40+</span></a></li>
+    </ul>
+    <div class="sidebar-contact">
+      <h4><i class="fas fa-headset"></i> <span data-lang="en">Can't find your answer?</span><span data-lang="es">¿No encuentras tu respuesta?</span></h4>
+      <p data-lang="en">Our team is available to resolve any technical question.</p>
+      <p data-lang="es">Nuestro equipo está disponible para resolver cualquier consulta técnica.</p>
+      <a href="mailto:info@ecsgtech.com"><i class="fas fa-envelope"></i> info@ecsgtech.com</a>
+      <a href="https://www.ecsgtech.com" target="_blank"><i class="fas fa-globe"></i> www.ecsgtech.com</a>
+    </div>
+  </aside>
+
+  <!-- MAIN CONTENT -->
+  <main id="faq-main">
+    <div id="no-results">
+      <i class="fas fa-magnifying-glass"></i>
+      <p data-lang="en">No results found. Try different search terms.</p>
+      <p data-lang="es">No se encontraron resultados. Intenta con otros términos.</p>
+    </div>
+
+    <!-- ════════ GENERAL ECSG ════════ -->
+    <section class="faq-section" id="general" data-cat="general">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-building"></i></div>
+        <div class="section-info">
+          <h2>General ECSG</h2>
+          <p data-lang="en">Who we are, what we offer and how we work</p>
+          <p data-lang="es">Quiénes somos, qué ofrecemos y cómo trabajamos</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Enterprise Cloud Solutions Group LLC?</span>
+            <span data-lang="es">¿Qué es Enterprise Cloud Solutions Group LLC?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">Enterprise Cloud Solutions Group LLC (ECSG) is a Managed Service Provider (MSP) headquartered in Norwalk, Connecticut, specializing in enterprise technology solutions for organizations in the United States and Latin American markets, with a special focus on Venezuela.</p>
+          <p data-lang="es">Enterprise Cloud Solutions Group LLC (ECSG) es un Managed Service Provider (MSP) con sede en Norwalk, Connecticut, especializado en soluciones de tecnología empresarial para organizaciones en los Estados Unidos y mercados latinoamericanos, con enfoque especial en Venezuela.</p>
+          <p data-lang="en">Our services include Microsoft 365, Azure Cloud, Cybersecurity, Managed IT, vCIO Consulting, Web Design, Camera Installation, Network Infrastructure and Structured Cabling.</p>
+          <p data-lang="es">Nuestros servicios incluyen Microsoft 365, Azure Cloud, Ciberseguridad, IT Gestionado, vCIO Consulting, Diseño Web, Instalación de Cámaras, Infraestructura de Redes y Cableado Estructurado.</p>
+          <div class="tip"><i class="fas fa-info-circle"></i>
+            <span data-lang="en">Our tagline is <strong>"Secure. Reliable. Human."</strong> — representing our commitment to deliver world-class technology with personalized attention.</span>
+            <span data-lang="es">Nuestro tagline es <strong>"Seguro. Confiable. Humano."</strong> — representamos el compromiso de brindar tecnología de clase mundial con atención personalizada.</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What markets does ECSG serve?</span>
+            <span data-lang="es">¿En qué mercados opera ECSG?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">ECSG primarily operates in the U.S. market from our headquarters in Norwalk, CT, and actively serves the Latin American market with a special presence in Venezuela through our <strong>@ecsg.latam</strong> account.</p>
+          <p data-lang="es">ECSG opera principalmente en el mercado estadounidense desde nuestra sede en Norwalk, CT, y atendemos activamente el mercado latinoamericano, con presencia especial en Venezuela a través de nuestra cuenta <strong>@ecsg.latam</strong>.</p>
+          <p data-lang="en">We offer bilingual support (English and Spanish), allowing us to serve both local businesses in Connecticut and Venezuelan organizations that need reliable technology solutions.</p>
+          <p data-lang="es">Ofrecemos atención bilingüe (inglés y español), lo que nos permite servir tanto a empresas locales en Connecticut como a organizaciones venezolanas que necesitan soluciones tecnológicas confiables.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is the process for getting started with ECSG?</span>
+            <span data-lang="es">¿Cuál es el proceso para comenzar a trabajar con ECSG?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>Working with ECSG is simple and friction-free:</p>
+            <ol>
+              <li><strong>Free assessment (48 hours):</strong> we evaluate your current infrastructure and identify critical gaps at no cost or commitment.</li>
+              <li><strong>Tailored plan:</strong> we design a technical roadmap adapted to your company, budget and goals.</li>
+              <li><strong>Migration and setup:</strong> we execute the implementation without interrupting your operations — zero-downtime migration.</li>
+              <li><strong>Continuous 24/7 support:</strong> your team has permanent technical backup, no exceptions.</li>
+            </ol>
+            <div class="tip"><i class="fas fa-envelope"></i> To get started, email us at <strong>info@ecsgtech.com</strong> or visit <strong>www.ecsgtech.com</strong></div>
+          </div>
+          <div data-lang="es">
+            <p>Trabajar con ECSG es simple y sin fricciones:</p>
+            <ol>
+              <li><strong>Diagnóstico gratuito (48 horas):</strong> evaluamos tu infraestructura actual e identificamos brechas críticas sin costo ni compromiso.</li>
+              <li><strong>Plan a tu medida:</strong> diseñamos una hoja de ruta técnica adaptada a tu empresa, presupuesto y objetivos.</li>
+              <li><strong>Migración y configuración:</strong> ejecutamos la implementación sin interrumpir tu operación — migración sin downtime.</li>
+              <li><strong>Soporte continuo 24/7:</strong> tu equipo cuenta con respaldo técnico permanente, sin excepciones.</li>
+            </ol>
+            <div class="tip"><i class="fas fa-envelope"></i> Para comenzar, escríbenos a <strong>info@ecsgtech.com</strong> o visita <strong>www.ecsgtech.com</strong></div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What guarantees does ECSG offer?</span>
+            <span data-lang="es">¿Qué garantías ofrece ECSG?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">ECSG guarantees <strong>99.9% uptime</strong> on managed services under an SLA (Service Level Agreement) contract. This means your infrastructure will be available virtually at all times, with contractually defined response times.</p>
+          <p data-lang="es">ECSG garantiza <strong>99.9% de uptime</strong> en los servicios gestionados bajo contrato SLA (Service Level Agreement). Esto significa que tu infraestructura estará disponible prácticamente en todo momento, con tiempos de respuesta definidos contractualmente.</p>
+          <p data-lang="en">We also guarantee zero-downtime migration, 24/7 support and Spanish-language assistance for all our clients.</p>
+          <p data-lang="es">Adicionalmente, garantizamos migración sin downtime, soporte 24/7 y atención en español para todos nuestros clientes.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is an SLA and why does it matter?</span>
+            <span data-lang="es">¿Qué es un SLA y por qué es importante?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">An <strong>SLA (Service Level Agreement)</strong> is a formal contract between ECSG and the client that defines service metrics such as availability, response times, incident resolution times and penalties for non-compliance.</p>
+          <p data-lang="es">Un <strong>SLA (Service Level Agreement)</strong> o Acuerdo de Nivel de Servicio es un contrato formal entre ECSG y el cliente que define métricas de servicio como disponibilidad, tiempos de respuesta, tiempos de resolución de incidentes y penalizaciones en caso de incumplimiento.</p>
+          <div class="tip"><i class="fas fa-check-circle"></i>
+            <span data-lang="en">ECSG's SLA guarantees <strong>99.9% uptime</strong> — less than 9 hours of permitted downtime per year.</span>
+            <span data-lang="es">El SLA de ECSG garantiza <strong>99.9% de uptime</strong> — menos de 9 horas de inactividad permitida al año.</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">How much does it cost to work with ECSG?</span>
+            <span data-lang="es">¿Cuánto cuesta trabajar con ECSG?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>ECSG pricing varies based on the service and the size of your organization. As a reference:</p>
+            <ul>
+              <li>Microsoft 365 Business Basic: from <strong>$6/user/month</strong></li>
+              <li>Microsoft 365 Business Standard: from <strong>$12.50/user/month</strong></li>
+              <li>Managed IT: customized plans based on number of users and devices</li>
+              <li>Azure Cloud: consumption-based billing (pay-as-you-go)</li>
+            </ul>
+            <p>Contact our sales team for a free quote tailored to your company.</p>
+          </div>
+          <div data-lang="es">
+            <p>Los precios de ECSG varían según el servicio y el tamaño de tu organización. Como referencia:</p>
+            <ul>
+              <li>Microsoft 365 Business Basic: desde <strong>$6/usuario/mes</strong></li>
+              <li>Microsoft 365 Business Standard: desde <strong>$12.50/usuario/mes</strong></li>
+              <li>IT Gestionado: planes personalizados según cantidad de usuarios y dispositivos</li>
+              <li>Azure Cloud: facturación por consumo real (pay-as-you-go)</li>
+            </ul>
+            <p>Contacta nuestro equipo de ventas para una cotización sin costo adaptada a tu empresa.</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">Does ECSG work with small and medium-sized businesses?</span>
+            <span data-lang="es">¿ECSG trabaja con pequeñas y medianas empresas?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">Yes. ECSG is specifically designed to serve SMBs (small and medium-sized businesses) that need enterprise-grade technology without the cost of an in-house IT department. We serve companies from 5 employees up to organizations with hundreds of users.</p>
+          <p data-lang="es">Sí. ECSG está diseñado especialmente para servir a pymes (pequeñas y medianas empresas) que necesitan tecnología de nivel empresarial sin los costos de un departamento IT interno. Atendemos desde empresas con 5 empleados hasta organizaciones con cientos de usuarios.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">How do I contact ECSG technical support?</span>
+            <span data-lang="es">¿Cómo contacto al soporte técnico de ECSG?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>You can reach the ECSG team through the following channels:</p>
+            <ul>
+              <li><strong>General email:</strong> info@ecsgtech.com</li>
+              <li><strong>Website:</strong> www.ecsgtech.com</li>
+              <li><strong>Instagram LATAM:</strong> @ecsg.latam</li>
+              <li><strong>Address:</strong> 26 Belden Ave, Norwalk, CT</li>
+            </ul>
+            <p>Clients with an active SLA contract have access to priority 24/7 technical support.</p>
+          </div>
+          <div data-lang="es">
+            <p>Puedes contactar al equipo de ECSG a través de los siguientes canales:</p>
+            <ul>
+              <li><strong>Email general:</strong> info@ecsgtech.com</li>
+              <li><strong>Sitio web:</strong> www.ecsgtech.com</li>
+              <li><strong>Instagram LATAM:</strong> @ecsg.latam</li>
+              <li><strong>Dirección:</strong> 26 Belden Ave, Norwalk, CT</li>
+            </ul>
+            <p>Los clientes con contrato SLA activo tienen acceso a soporte técnico prioritario 24/7.</p>
+          </div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ════════ MICROSOFT 365 ════════ -->
+    <section class="faq-section" id="m365" data-cat="m365">
+      <div class="section-header">
+        <div class="section-icon"><i class="fab fa-microsoft"></i></div>
+        <div class="section-info">
+          <h2>Microsoft 365</h2>
+          <p data-lang="en">Licenses, apps, email and collaboration</p>
+          <p data-lang="es">Licencias, aplicaciones, correo y colaboración</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What does Microsoft 365 for business include?</span>
+            <span data-lang="es">¿Qué incluye Microsoft 365 para empresas?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>Microsoft 365 for business includes a complete suite of productivity and collaboration tools:</p>
+            <ul>
+              <li><strong>Outlook:</strong> professional corporate email with your @yourdomain.com</li>
+              <li><strong>Teams:</strong> video conferencing, chat, calls and real-time collaboration</li>
+              <li><strong>SharePoint:</strong> corporate intranet and document management</li>
+              <li><strong>OneDrive:</strong> personal cloud storage (1TB per user)</li>
+              <li><strong>Word, Excel, PowerPoint:</strong> always up-to-date Office applications</li>
+              <li><strong>Exchange Online:</strong> professional mailboxes with advanced protection</li>
+              <li><strong>Entra ID (Azure AD):</strong> identity and secure access management</li>
+            </ul>
+            <div class="tip"><i class="fas fa-shield-halved"></i> Business Standard and Premium plans also include <strong>Defender for Business</strong>, an advanced cybersecurity solution.</div>
+          </div>
+          <div data-lang="es">
+            <p>Microsoft 365 para empresas incluye un conjunto completo de herramientas de productividad y colaboración:</p>
+            <ul>
+              <li><strong>Outlook:</strong> correo corporativo profesional con tu dominio @tuempresa.com</li>
+              <li><strong>Teams:</strong> videoconferencias, chat, llamadas y colaboración en tiempo real</li>
+              <li><strong>SharePoint:</strong> intranet corporativa y gestión de documentos</li>
+              <li><strong>OneDrive:</strong> almacenamiento en la nube personal (1TB por usuario)</li>
+              <li><strong>Word, Excel, PowerPoint:</strong> aplicaciones de Office siempre actualizadas</li>
+              <li><strong>Exchange Online:</strong> buzones de correo profesionales con protección avanzada</li>
+              <li><strong>Entra ID (Azure AD):</strong> gestión de identidades y acceso seguro</li>
+            </ul>
+            <div class="tip"><i class="fas fa-shield-halved"></i> Los planes Business Standard y Premium incluyen además <strong>Defender for Business</strong>, solución avanzada de ciberseguridad.</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What Microsoft 365 plans are available?</span>
+            <span data-lang="es">¿Cuáles son los planes de Microsoft 365 disponibles?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>The main business plans are:</p>
+            <ul>
+              <li><strong>Business Basic ($6/user/month):</strong> Teams, Exchange, SharePoint, OneDrive — web/mobile Office versions.</li>
+              <li><strong>Business Standard ($12.50/user/month):</strong> everything above plus installable desktop Office apps.</li>
+              <li><strong>Business Premium ($22/user/month):</strong> everything above plus advanced security (Defender, Intune, Azure AD Premium).</li>
+              <li><strong>Apps for Business ($8.25/user/month):</strong> Office apps only, without email services.</li>
+            </ul>
+            <p>ECSG helps you choose the right plan based on each user's profile and your company's budget.</p>
+          </div>
+          <div data-lang="es">
+            <p>Los planes principales para empresas son:</p>
+            <ul>
+              <li><strong>Business Basic ($6/usuario/mes):</strong> Teams, Exchange, SharePoint, OneDrive — versiones web/móvil de Office.</li>
+              <li><strong>Business Standard ($12.50/usuario/mes):</strong> todo lo anterior más las apps de Office para escritorio instalables.</li>
+              <li><strong>Business Premium ($22/usuario/mes):</strong> todo lo anterior más seguridad avanzada (Defender, Intune, Azure AD Premium).</li>
+              <li><strong>Apps for Business ($8.25/usuario/mes):</strong> solo las apps de Office sin servicios de correo.</li>
+            </ul>
+            <p>ECSG te ayuda a elegir el plan correcto según el perfil de cada usuario y el presupuesto de tu empresa.</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is MFA and why should I enable it on Microsoft 365?</span>
+            <span data-lang="es">¿Qué es MFA y por qué debo activarlo en Microsoft 365?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>MFA (Multi-Factor Authentication)</strong> is a security method that requires two or more forms of verification to access an account — in addition to the password, a second factor is required such as a code sent to the phone or an authenticator app.</p>
+          <p data-lang="es"><strong>MFA (Multi-Factor Authentication)</strong> o Autenticación Multifactor es un método de seguridad que requiere dos o más formas de verificación para acceder a una cuenta — además de la contraseña, se requiere un segundo factor como un código enviado al teléfono o una app de autenticación.</p>
+          <p data-lang="en">It is critical because <strong>99.9% of account compromise attacks</strong> are blocked when MFA is enabled, according to Microsoft data. A password alone is no longer sufficient protection.</p>
+          <p data-lang="es">Es fundamental porque el <strong>99.9% de los ataques de compromiso de cuentas</strong> se bloquean con MFA activado, según datos de Microsoft. Una contraseña sola ya no es suficiente protección.</p>
+          <div class="tip"><i class="fas fa-shield-halved"></i>
+            <span data-lang="en">ECSG configures MFA for all Microsoft 365 users as a standard part of any implementation.</span>
+            <span data-lang="es">ECSG configura MFA para todos los usuarios de Microsoft 365 como parte estándar de cualquier implementación.</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">How does email migration to Microsoft 365 work?</span>
+            <span data-lang="es">¿Cómo funciona la migración de correo a Microsoft 365?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>ECSG performs zero-downtime email migrations to Microsoft 365. The process includes:</p>
+            <ol>
+              <li>Audit of the current email system (Gmail, cPanel, Exchange on-premise, etc.)</li>
+              <li>Microsoft 365 tenant setup and domain verification</li>
+              <li>Migration of all mailboxes, contacts and calendars</li>
+              <li>DNS record configuration (MX, SPF, DKIM, DMARC)</li>
+              <li>Team training on the new environment</li>
+            </ol>
+            <div class="tip"><i class="fas fa-clock"></i> A typical migration for a 10–50 user company takes between <strong>2 and 5 business days</strong>.</div>
+          </div>
+          <div data-lang="es">
+            <p>ECSG realiza migraciones de correo a Microsoft 365 sin tiempo de inactividad (zero-downtime migration). El proceso incluye:</p>
+            <ol>
+              <li>Auditoría del sistema de correo actual (Gmail, cPanel, Exchange on-premise, etc.)</li>
+              <li>Configuración del tenant de Microsoft 365 y verificación del dominio</li>
+              <li>Migración de todos los buzones, contactos y calendarios</li>
+              <li>Configuración de registros DNS (MX, SPF, DKIM, DMARC)</li>
+              <li>Capacitación del equipo en el nuevo entorno</li>
+            </ol>
+            <div class="tip"><i class="fas fa-clock"></i> Una migración típica para una empresa de 10-50 usuarios toma entre <strong>2 y 5 días hábiles</strong>.</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is SharePoint and how does it benefit my company?</span>
+            <span data-lang="es">¿Qué es SharePoint y cómo beneficia a mi empresa?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>SharePoint</strong> is Microsoft 365's content management and collaboration platform. It acts as your company's corporate intranet, allowing you to centralize documents, policies, announcements and resources in a single place accessible to the entire team.</p>
+          <p data-lang="es"><strong>SharePoint</strong> es la plataforma de gestión de contenido y colaboración de Microsoft 365. Funciona como la intranet corporativa de tu empresa, permitiendo centralizar documentos, políticas, anuncios y recursos en un solo lugar accesible para todo el equipo.</p>
+          <p data-lang="en">Key benefits: elimination of duplicate document versions, department-level access control, automated approval workflows, integration with Teams and Office, and access from any device.</p>
+          <p data-lang="es">Beneficios clave: eliminación de versiones duplicadas de documentos, control de acceso por departamento, flujos de aprobación automatizados, integración con Teams y Office, y acceso desde cualquier dispositivo.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Exchange Online and how is it different from free email?</span>
+            <span data-lang="es">¿Qué es Exchange Online y cómo se diferencia del correo gratuito?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p><strong>Exchange Online</strong> is the corporate email service of Microsoft 365. Unlike free services (Gmail, Hotmail), Exchange Online offers:</p>
+            <ul>
+              <li>Custom corporate domain (@yourdomain.com)</li>
+              <li>50 GB of storage per mailbox</li>
+              <li>Advanced anti-spam and anti-phishing protection</li>
+              <li>eDiscovery and legal email retention</li>
+              <li>99.9% availability guaranteed by SLA</li>
+              <li>Compliance with regulations (HIPAA, GDPR, ISO 27001)</li>
+            </ul>
+          </div>
+          <div data-lang="es">
+            <p><strong>Exchange Online</strong> es el servicio de correo corporativo de Microsoft 365. A diferencia de servicios gratuitos (Gmail, Hotmail), Exchange Online ofrece:</p>
+            <ul>
+              <li>Dominio corporativo personalizado (@tuempresa.com)</li>
+              <li>50 GB de almacenamiento por buzón</li>
+              <li>Protección anti-spam y anti-phishing avanzada</li>
+              <li>eDiscovery y retención legal de correos</li>
+              <li>Disponibilidad 99.9% garantizada por SLA</li>
+              <li>Cumplimiento con regulaciones (HIPAA, GDPR, ISO 27001)</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Microsoft Intune and what is it used for?</span>
+            <span data-lang="es">¿Qué es Intune y para qué sirve?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Microsoft Intune</strong> is the Mobile Device Management (MDM) and Mobile Application Management (MAM) solution included in Microsoft 365 Business Premium and Enterprise plans.</p>
+          <p data-lang="es"><strong>Microsoft Intune</strong> es la solución de gestión de dispositivos móviles (MDM) y aplicaciones (MAM) incluida en los planes Microsoft 365 Business Premium y Enterprise.</p>
+          <p data-lang="en">It allows IT administrators to: control which devices access corporate data, enforce security policies on smartphones, tablets and PCs, remotely wipe lost or stolen devices, and manage corporate applications centrally.</p>
+          <p data-lang="es">Permite a los administradores de IT: controlar qué dispositivos acceden a los datos corporativos, aplicar políticas de seguridad en smartphones, tablets y PCs, realizar borrado remoto de dispositivos perdidos o robados, y gestionar aplicaciones corporativas de forma centralizada.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What training does ECSG offer with Microsoft 365 implementations?</span>
+            <span data-lang="es">¿Qué capacitación ofrece ECSG con la implementación de Microsoft 365?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">Every Microsoft 365 implementation with ECSG includes personalized training for the team: training sessions on Teams, Outlook, SharePoint and OneDrive; user guides tailored to your company's processes; bilingual documentation; and post-implementation support for team questions.</p>
+          <p data-lang="es">Toda implementación de Microsoft 365 con ECSG incluye capacitación personalizada para el equipo: sesiones de entrenamiento en Teams, Outlook, SharePoint y OneDrive; guías de usuario adaptadas a los procesos de tu empresa; documentación bilingüe; y soporte post-implementación para dudas del equipo.</p>
+          <p data-lang="en">We also offer continuous adoption programs and advanced training as additional services.</p>
+          <p data-lang="es">También ofrecemos programas de adopción continua y capacitación avanzada como servicios adicionales.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">Can I use Microsoft 365 from Venezuela?</span>
+            <span data-lang="es">¿Puedo usar Microsoft 365 desde Venezuela?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">Yes. Microsoft 365 is a global cloud service accessible from anywhere in the world with an internet connection, including Venezuela. Data is stored in Microsoft's globally distributed data centers.</p>
+          <p data-lang="es">Sí. Microsoft 365 es un servicio de nube global accesible desde cualquier parte del mundo con conexión a internet, incluida Venezuela. Los datos se almacenan en centros de datos de Microsoft distribuidos globalmente.</p>
+          <p data-lang="en">ECSG has specific expertise implementing Microsoft 365 for Venezuelan companies, handling licensing, international billing and Spanish-language support.</p>
+          <p data-lang="es">ECSG tiene experiencia específica implementando Microsoft 365 para empresas venezolanas, manejando los aspectos de licenciamiento, facturación internacional y soporte en español.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ════════ AZURE ════════ -->
+    <section class="faq-section" id="azure" data-cat="azure">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-cloud"></i></div>
+        <div class="section-info">
+          <h2>Azure Cloud</h2>
+          <p data-lang="en">Infrastructure, servers, backup and cloud services</p>
+          <p data-lang="es">Infraestructura, servidores, backup y servicios cloud</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Microsoft Azure?</span>
+            <span data-lang="es">¿Qué es Microsoft Azure?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Microsoft Azure</strong> is Microsoft's cloud computing platform, one of the largest in the world alongside AWS and Google Cloud. It offers over 200 cloud services that allow businesses to build, deploy and manage applications and technology infrastructure without needing physical servers of their own.</p>
+          <p data-lang="es"><strong>Microsoft Azure</strong> es la plataforma de computación en la nube de Microsoft, una de las más grandes del mundo junto con AWS y Google Cloud. Ofrece más de 200 servicios en la nube que permiten a las empresas construir, desplegar y gestionar aplicaciones e infraestructura tecnológica sin necesidad de servidores físicos propios.</p>
+          <p data-lang="en">With Azure, your company can have virtual servers, databases, networking, storage, security and data analytics available globally, paying only for what you use.</p>
+          <p data-lang="es">Con Azure, tu empresa puede tener servidores virtuales, bases de datos, redes, almacenamiento, seguridad y análisis de datos disponibles globalmente, pagando solo por lo que usa.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is the difference between IaaS, PaaS and SaaS?</span>
+            <span data-lang="es">¿Cuál es la diferencia entre IaaS, PaaS y SaaS?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>These are the three main cloud service models:</p>
+            <ul>
+              <li><strong>IaaS (Infrastructure as a Service):</strong> virtualized infrastructure — servers, networking, storage. You manage the OS and above. Example: Azure Virtual Machines.</li>
+              <li><strong>PaaS (Platform as a Service):</strong> platform for developing and deploying apps without managing underlying infrastructure. Example: Azure App Service, Azure SQL Database.</li>
+              <li><strong>SaaS (Software as a Service):</strong> ready-to-use software, accessible via internet. You simply use the app. Example: Microsoft 365, Salesforce.</li>
+            </ul>
+            <div class="tip"><i class="fas fa-info-circle"></i> ECSG implements all three models based on each client's needs.</div>
+          </div>
+          <div data-lang="es">
+            <p>Son los tres modelos principales de servicios en la nube:</p>
+            <ul>
+              <li><strong>IaaS (Infrastructure as a Service):</strong> infraestructura virtualizada — servidores, redes, almacenamiento. Tú gestionas el sistema operativo y arriba. Ejemplo: Azure Virtual Machines.</li>
+              <li><strong>PaaS (Platform as a Service):</strong> plataforma para desarrollar y desplegar aplicaciones sin gestionar la infraestructura subyacente. Ejemplo: Azure App Service, Azure SQL Database.</li>
+              <li><strong>SaaS (Software as a Service):</strong> software listo para usar, accesible por internet. Tú solo usas la aplicación. Ejemplo: Microsoft 365, Salesforce.</li>
+            </ul>
+            <div class="tip"><i class="fas fa-info-circle"></i> ECSG implementa los tres modelos según las necesidades de cada cliente.</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Azure Backup and why is it critical?</span>
+            <span data-lang="es">¿Qué es Azure Backup y por qué es crítico?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Azure Backup</strong> is Microsoft's cloud backup service that protects data from servers, VMs, databases, files and workloads (SQL Server, SAP HANA, etc.).</p>
+          <p data-lang="es"><strong>Azure Backup</strong> es el servicio de respaldo en la nube de Microsoft que protege datos de servidores, VMs, bases de datos, archivos y cargas de trabajo (SQL Server, SAP HANA, etc.).</p>
+          <p data-lang="en">It is critical because it guarantees disaster recovery from ransomware, hardware failure, accidental deletion or natural disasters. Backups are stored AES-256 encrypted in geographically distributed data centers.</p>
+          <p data-lang="es">Es crítico porque garantiza la recuperación ante desastres: ransomware, fallo de hardware, borrado accidental o catástrofes naturales. Los backups se almacenan cifrados con AES-256 en centros de datos geográficamente distribuidos.</p>
+          <div class="tip"><i class="fas fa-exclamation-triangle"></i>
+            <span data-lang="en"><strong>3-2-1 Rule:</strong> 3 copies of data, on 2 different storage types, with 1 offsite copy. Azure Backup makes this automatic.</span>
+            <span data-lang="es"><strong>Regla del 3-2-1:</strong> 3 copias de datos, en 2 tipos de almacenamiento diferentes, con 1 copia offsite. Azure Backup facilita implementar esta regla automáticamente.</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Azure Active Directory (Entra ID)?</span>
+            <span data-lang="es">¿Qué es Azure Active Directory (Entra ID)?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Microsoft Entra ID</strong> (formerly Azure Active Directory) is Microsoft's cloud identity and access management service. It acts as your company's "central directory" in the cloud.</p>
+          <p data-lang="es"><strong>Microsoft Entra ID</strong> (anteriormente Azure Active Directory) es el servicio de gestión de identidades y acceso en la nube de Microsoft. Actúa como el "directorio central" de tu empresa en la nube.</p>
+          <p data-lang="en">It enables: Single Sign-On (SSO) for all Microsoft 365 and third-party apps, centralized user and group management, conditional access policies, and multi-factor authentication (MFA). It is the security foundation of the entire Microsoft ecosystem.</p>
+          <p data-lang="es">Permite: inicio de sesión único (SSO) para todas las apps de Microsoft 365 y de terceros, gestión centralizada de usuarios y grupos, políticas de acceso condicional, y autenticación multifactor (MFA). Es la base de seguridad de todo el ecosistema Microsoft.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Azure Firewall?</span>
+            <span data-lang="es">¿Qué es Azure Firewall?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Azure Firewall</strong> is a managed cloud network security service that protects Azure resources from external threats. Unlike traditional physical firewalls, it is fully scalable with no hardware required.</p>
+          <p data-lang="es"><strong>Azure Firewall</strong> es un servicio de seguridad de red gestionado en la nube que protege los recursos de Azure de amenazas externas. A diferencia de los firewalls físicos tradicionales, es completamente escalable, sin necesidad de hardware.</p>
+          <p data-lang="en">It includes: rule-based network traffic filtering, Microsoft threat intelligence, TLS traffic inspection, integrated high availability and complete audit logs.</p>
+          <p data-lang="es">Incluye: filtrado de tráfico de red basado en reglas, inteligencia de amenazas de Microsoft, inspección de tráfico TLS, alta disponibilidad integrada, y registros de auditoría completos.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a Virtual Network (VNet) in Azure?</span>
+            <span data-lang="es">¿Qué es una Virtual Network (VNet) en Azure?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">An <strong>Azure Virtual Network (VNet)</strong> is an isolated private network within Microsoft's infrastructure. It allows your Azure resources (VMs, databases, etc.) to communicate with each other securely, as if they were on a private corporate network.</p>
+          <p data-lang="es">Una <strong>Virtual Network (VNet)</strong> en Azure es una red privada aislada dentro de la infraestructura de Microsoft. Permite que tus recursos de Azure (VMs, bases de datos, etc.) se comuniquen entre sí de forma segura, como si estuvieran en una red corporativa privada.</p>
+          <p data-lang="en">It can be connected to your on-premise network via Site-to-Site VPN or ExpressRoute, creating a secure hybrid infrastructure.</p>
+          <p data-lang="es">Se puede conectar a tu red local mediante VPN Site-to-Site o ExpressRoute, creando una infraestructura híbrida segura.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Azure Monitor?</span>
+            <span data-lang="es">¿Qué es Azure Monitor?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Azure Monitor</strong> is Microsoft Azure's centralized monitoring and observability solution. It collects, analyzes and acts on telemetry from your cloud and on-premise resources.</p>
+          <p data-lang="es"><strong>Azure Monitor</strong> es la solución centralizada de monitoreo y observabilidad de Microsoft Azure. Recopila, analiza y actúa sobre telemetría de tus recursos en la nube y on-premise.</p>
+          <p data-lang="en">It enables automatic alerts, real-time dashboards, anomaly detection and log analysis. ECSG configures Azure Monitor as part of the Managed IT service to detect and resolve issues before they affect your operations.</p>
+          <p data-lang="es">Permite configurar alertas automáticas, dashboards en tiempo real, detección de anomalías y análisis de logs. ECSG configura Azure Monitor como parte del servicio de IT Gestionado para detectar y resolver problemas antes de que afecten tu operación.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Azure DevOps?</span>
+            <span data-lang="es">¿Qué es Azure DevOps?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Azure DevOps</strong> is a set of services for managing the software development lifecycle (ALM). It includes: project boards (Boards), code repositories (Repos), CI/CD pipelines to automate deployments, automated testing and artifact management.</p>
+          <p data-lang="es"><strong>Azure DevOps</strong> es un conjunto de servicios para gestión del ciclo de vida de desarrollo de software (ALM). Incluye: tableros de proyectos (Boards), repositorios de código (Repos), pipelines de CI/CD para automatizar despliegues, pruebas automatizadas y gestión de artefactos.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ════════ CYBERSECURITY ════════ -->
+    <section class="faq-section" id="ciberseguridad" data-cat="ciber">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-shield-halved"></i></div>
+        <div class="section-info">
+          <h2><span data-lang="en">Cybersecurity</span><span data-lang="es">Ciberseguridad</span></h2>
+          <p data-lang="en">Protection, threats, compliance and best practices</p>
+          <p data-lang="es">Protección, amenazas, cumplimiento y mejores prácticas</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is ransomware and how do I protect against it?</span>
+            <span data-lang="es">¿Qué es un ransomware y cómo me protejo?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Ransomware</strong> is a type of malware that encrypts the victim's files and demands a ransom to unlock them. It is one of the most devastating attacks for businesses — 60% of SMBs that suffer one close within 6 months.</p>
+          <p data-lang="es"><strong>Ransomware</strong> es un tipo de malware que cifra los archivos de la víctima y exige un rescate (ransom) para desbloquearlos. Es uno de los ataques más devastadores para las empresas — el 60% de las pymes que sufren uno cierran en menos de 6 meses.</p>
+          <div data-lang="en">
+            <p>To protect against it, ECSG implements a layered defense strategy:</p>
+            <ul>
+              <li>Automatic offsite backups (Azure Backup) — the most effective antidote</li>
+              <li>Endpoint protection with Microsoft Defender for Business</li>
+              <li>Email filtering (anti-phishing, anti-spam) with Microsoft Defender for Office 365</li>
+              <li>Network segmentation to limit lateral movement</li>
+              <li>User training to recognize phishing attempts</li>
+            </ul>
+          </div>
+          <div data-lang="es">
+            <p>Para protegerse, ECSG implementa una estrategia de defensa en capas:</p>
+            <ul>
+              <li>Backups automáticos offsite (Azure Backup) — el antídoto más eficaz</li>
+              <li>Protección de endpoints con Microsoft Defender for Business</li>
+              <li>Filtrado de correo (anti-phishing, anti-spam) con Microsoft Defender for Office 365</li>
+              <li>Segmentación de red para limitar el movimiento lateral</li>
+              <li>Capacitación de usuarios para reconocer intentos de phishing</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is phishing and how do I recognize it?</span>
+            <span data-lang="es">¿Qué es el phishing y cómo reconocerlo?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Phishing</strong> is a social engineering attack where cybercriminals impersonate legitimate entities (banks, Microsoft, well-known companies) to trick users into giving up credentials, financial information or installing malware.</p>
+          <p data-lang="es"><strong>Phishing</strong> es un ataque de ingeniería social donde los ciberdelincuentes se hacen pasar por entidades legítimas (bancos, Microsoft, compañías conocidas) para engañar a los usuarios y robar credenciales, información financiera o instalar malware.</p>
+          <div data-lang="en">
+            <p>Red flags of a phishing email:</p>
+            <ul>
+              <li>Sender domain different from the official one (e.g.: microsoft-support.net instead of microsoft.com)</li>
+              <li>Artificial urgency: "your account will be blocked in 24 hours"</li>
+              <li>Spelling or grammar errors</li>
+              <li>Links that show different URLs when you hover over them</li>
+              <li>Requests for credentials or financial data via email</li>
+            </ul>
+            <div class="tip"><i class="fas fa-lightbulb"></i> ECSG offers <strong>Security Awareness Training</strong> programs to train your team to detect phishing and other social engineering attacks.</div>
+          </div>
+          <div data-lang="es">
+            <p>Señales de alerta de un email de phishing:</p>
+            <ul>
+              <li>Remitente con dominio diferente al oficial (ej: microsoft-support.net en vez de microsoft.com)</li>
+              <li>Urgencia artificial: "tu cuenta será bloqueada en 24 horas"</li>
+              <li>Errores ortográficos o gramaticales</li>
+              <li>Links que al pasar el cursor muestran URLs diferentes</li>
+              <li>Solicitudes de credenciales o datos financieros por correo</li>
+            </ul>
+            <div class="tip"><i class="fas fa-lightbulb"></i> ECSG ofrece capacitaciones de <strong>Security Awareness Training</strong> para entrenar a tu equipo en la detección de phishing y otros ataques de ingeniería social.</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a firewall and why do I need one?</span>
+            <span data-lang="es">¿Qué es un firewall y por qué lo necesito?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">A <strong>firewall</strong> is a network security system (hardware, software or cloud) that monitors and controls incoming and outgoing network traffic according to predefined security rules. It acts as the first line of defense for your corporate network.</p>
+          <p data-lang="es">Un <strong>firewall</strong> es un sistema de seguridad de red (hardware, software o cloud) que monitorea y controla el tráfico de red entrante y saliente según reglas de seguridad predefinidas. Actúa como la primera línea de defensa de tu red corporativa.</p>
+          <p data-lang="en">Modern firewalls (NGFW — Next-Generation Firewall) go beyond basic filtering: they inspect packet content (DPI), identify applications, detect intrusions (IPS), filter URLs and apply advanced security policies.</p>
+          <p data-lang="es">Los firewalls modernos (NGFW — Next-Generation Firewall) van más allá del filtrado básico: inspeccionan el contenido de los paquetes (DPI), identifican aplicaciones, detectan intrusiones (IPS), filtran URLs y aplican políticas de seguridad avanzadas.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a NGFW (Next-Generation Firewall)?</span>
+            <span data-lang="es">¿Qué es un NGFW (Next-Generation Firewall)?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>An <strong>NGFW (Next-Generation Firewall)</strong> is an evolution of the traditional firewall that incorporates advanced security capabilities:</p>
+            <ul>
+              <li><strong>Deep Packet Inspection (DPI):</strong> deep inspection of traffic content</li>
+              <li><strong>Application Awareness:</strong> identification and control by application (not just port)</li>
+              <li><strong>Intrusion Prevention System (IPS):</strong> real-time detection and blocking of exploits</li>
+              <li><strong>SSL/TLS Inspection:</strong> decryption and inspection of encrypted traffic</li>
+              <li><strong>Threat Intelligence:</strong> integration with global threat intelligence feeds</li>
+              <li><strong>User Identity:</strong> user-based policies, not just IP</li>
+            </ul>
+            <p>Leading brands: Fortinet FortiGate, Palo Alto Networks, Cisco Firepower, Sophos XGS.</p>
+          </div>
+          <div data-lang="es">
+            <p>Un <strong>NGFW (Next-Generation Firewall)</strong> es una evolución del firewall tradicional que incorpora capacidades avanzadas de seguridad:</p>
+            <ul>
+              <li><strong>Deep Packet Inspection (DPI):</strong> inspección profunda del contenido del tráfico</li>
+              <li><strong>Application Awareness:</strong> identificación y control por aplicación (no solo puerto)</li>
+              <li><strong>Intrusion Prevention System (IPS):</strong> detección y bloqueo de exploits en tiempo real</li>
+              <li><strong>SSL/TLS Inspection:</strong> descifrado e inspección de tráfico cifrado</li>
+              <li><strong>Threat Intelligence:</strong> integración con feeds de inteligencia de amenazas globales</li>
+              <li><strong>User Identity:</strong> políticas basadas en usuario, no solo IP</li>
+            </ul>
+            <p>Marcas líderes: Fortinet FortiGate, Palo Alto Networks, Cisco Firepower, Sophos XGS.</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Zero Trust Security?</span>
+            <span data-lang="es">¿Qué es Zero Trust Security?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Zero Trust</strong> is a security model based on the principle of "never trust, always verify." Unlike the traditional model that trusted everything inside the corporate network, Zero Trust assumes no user, device or application is trusted by default — even if inside the network.</p>
+          <p data-lang="es"><strong>Zero Trust</strong> es un modelo de seguridad basado en el principio de "nunca confiar, siempre verificar". A diferencia del modelo tradicional que confiaba en todo lo que estaba dentro de la red corporativa, Zero Trust asume que ningún usuario, dispositivo o aplicación es de confianza por defecto — incluso si está dentro de la red.</p>
+          <p data-lang="en">The pillars of Zero Trust are: continuous identity verification (MFA), least privilege access, micro-network segmentation, continuous monitoring of all activities and encryption of all data in transit and at rest. ECSG implements Zero Trust using Microsoft 365 and Azure tools.</p>
+          <p data-lang="es">Los pilares de Zero Trust son: verificación continua de identidad (MFA), acceso de mínimo privilegio, segmentación de red micro, monitoreo continuo de todas las actividades, y cifrado de todos los datos en tránsito y en reposo. ECSG implementa Zero Trust utilizando las herramientas de Microsoft 365 y Azure.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is DLP (Data Loss Prevention)?</span>
+            <span data-lang="es">¿Qué es DLP (Data Loss Prevention)?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>DLP (Data Loss Prevention)</strong> is a set of policies and technologies that prevent sensitive information from leaving the organization without authorization — whether by mistake, negligence or malicious intent.</p>
+          <p data-lang="es"><strong>DLP (Data Loss Prevention)</strong> es un conjunto de políticas y tecnologías que previenen que información sensible salga de la organización sin autorización — ya sea por error, negligencia o intención maliciosa.</p>
+          <p data-lang="en">Microsoft 365 includes built-in DLP that can detect credit card numbers, social security numbers, medical data and other sensitive information in emails, documents and Teams messages, and automatically block their unauthorized transmission.</p>
+          <p data-lang="es">Microsoft 365 incluye DLP integrado que puede detectar números de tarjetas de crédito, números de seguro social, datos médicos y otra información sensible en correos, documentos y mensajes de Teams, y bloquear automáticamente su transmisión no autorizada.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a pentest (penetration test)?</span>
+            <span data-lang="es">¿Qué es un pentest (prueba de penetración)?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">A <strong>pentest (Penetration Test)</strong> is an ethical and controlled attack on an organization's systems to identify vulnerabilities before real attackers exploit them. A pentest evaluates: internal and perimeter network security, web application vulnerabilities, configuration security and personnel resistance to social engineering attacks.</p>
+          <p data-lang="es">Un <strong>pentest (Penetration Test)</strong> o prueba de penetración es un ataque ético y controlado a los sistemas de una organización para identificar vulnerabilidades antes de que los atacantes reales las exploten. Un pentest evalúa: seguridad de la red interna y perimetral, vulnerabilidades de aplicaciones web, seguridad de configuraciones, y resistencia del personal a ataques de ingeniería social.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is SIEM and what is it used for?</span>
+            <span data-lang="es">¿Qué es SIEM y para qué sirve?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>SIEM (Security Information and Event Management)</strong> is a platform that centralizes, correlates and analyzes security logs and events from the entire IT infrastructure in real time to detect threats and respond to incidents. Microsoft offers <strong>Microsoft Sentinel</strong>, a cloud-native SIEM that uses artificial intelligence to detect attack patterns and automate responses.</p>
+          <p data-lang="es"><strong>SIEM (Security Information and Event Management)</strong> es una plataforma que centraliza, correlaciona y analiza logs y eventos de seguridad de toda la infraestructura IT en tiempo real para detectar amenazas y responder a incidentes. Microsoft ofrece <strong>Microsoft Sentinel</strong>, un SIEM nativo en la nube que utiliza inteligencia artificial para detectar patrones de ataque y automatizar respuestas.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What regulatory compliance standards does ECSG handle?</span>
+            <span data-lang="es">¿Qué cumplimientos normativos maneja ECSG?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>ECSG helps organizations comply with multiple security standards and regulations:</p>
+            <ul>
+              <li><strong>ISO/IEC 27001:</strong> international information security management standard</li>
+              <li><strong>NIST Cybersecurity Framework:</strong> U.S. government cybersecurity framework</li>
+              <li><strong>HIPAA:</strong> health information protection in the U.S.</li>
+              <li><strong>GDPR:</strong> European personal data protection regulation</li>
+              <li><strong>PCI DSS:</strong> payment card data security standard</li>
+            </ul>
+          </div>
+          <div data-lang="es">
+            <p>ECSG ayuda a las organizaciones a cumplir con múltiples estándares y regulaciones de seguridad:</p>
+            <ul>
+              <li><strong>ISO/IEC 27001:</strong> estándar internacional de gestión de seguridad de la información</li>
+              <li><strong>NIST Cybersecurity Framework:</strong> marco de ciberseguridad del gobierno de EE.UU.</li>
+              <li><strong>HIPAA:</strong> protección de información de salud en EE.UU.</li>
+              <li><strong>GDPR:</strong> reglamento europeo de protección de datos personales</li>
+              <li><strong>PCI DSS:</strong> estándar de seguridad para datos de tarjetas de pago</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ════════ MANAGED IT ════════ -->
+    <section class="faq-section" id="it-gestionado" data-cat="it">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-server"></i></div>
+        <div class="section-info">
+          <h2><span data-lang="en">Managed IT (MSP)</span><span data-lang="es">IT Gestionado (MSP)</span></h2>
+          <p data-lang="en">Technical support, monitoring and infrastructure management</p>
+          <p data-lang="es">Soporte técnico, monitoreo y administración de infraestructura</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a Managed Service Provider (MSP)?</span>
+            <span data-lang="es">¿Qué es un MSP (Managed Service Provider)?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">An <strong>MSP (Managed Service Provider)</strong> is a company that proactively manages the IT infrastructure, systems and applications of its clients under a service contract. Unlike reactive IT support (break-fix), the MSP continuously monitors, maintains and optimizes your technology before problems impact your operations.</p>
+          <p data-lang="es">Un <strong>MSP (Managed Service Provider)</strong> es una empresa que gestiona proactivamente la infraestructura IT, sistemas y aplicaciones de sus clientes bajo un contrato de servicio. A diferencia del soporte IT reactivo (break-fix), el MSP monitorea, mantiene y optimiza continuamente tu tecnología antes de que los problemas impacten tu operación.</p>
+          <p data-lang="en">ECSG operates as a full MSP: it manages your Microsoft 365, Azure, security, networks, backups and devices, acting as your company's external IT department.</p>
+          <p data-lang="es">ECSG opera como MSP completo: gestiona tu Microsoft 365, Azure, seguridad, redes, backups y dispositivos, actuando como el departamento de IT externo de tu empresa.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What does ECSG's Managed IT service include?</span>
+            <span data-lang="es">¿Qué incluye el servicio de IT Gestionado de ECSG?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>ECSG's Managed IT service includes:</p>
+            <ul>
+              <li>Proactive 24/7 infrastructure monitoring and automatic alerts</li>
+              <li>OS and software patch and update management</li>
+              <li>Backup management and recovery verification</li>
+              <li>Helpdesk technical support (Level 1, 2 and 3)</li>
+              <li>Microsoft 365 and Azure license management</li>
+              <li>User, group and permissions administration</li>
+              <li>Monthly infrastructure status reports</li>
+              <li>Capacity planning and strategic recommendations</li>
+            </ul>
+          </div>
+          <div data-lang="es">
+            <p>El servicio de IT Gestionado de ECSG incluye:</p>
+            <ul>
+              <li>Monitoreo proactivo 24/7 de infraestructura y alertas automáticas</li>
+              <li>Gestión de parches y actualizaciones de sistemas operativos y software</li>
+              <li>Gestión de backups y verificación de recuperación</li>
+              <li>Soporte técnico helpdesk (Nivel 1, 2 y 3)</li>
+              <li>Gestión de licencias de Microsoft 365 y Azure</li>
+              <li>Administración de usuarios, grupos y permisos</li>
+              <li>Reportes mensuales de estado de la infraestructura</li>
+              <li>Planificación de capacidad y recomendaciones estratégicas</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is the difference between Level 1, 2 and 3 support?</span>
+            <span data-lang="es">¿Qué diferencia hay entre soporte Level 1, 2 y 3?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <ul>
+              <li><strong>Level 1 (L1):</strong> first contact, basic issues (password reset, connectivity issues, email setup). Quick resolution or escalation.</li>
+              <li><strong>Level 2 (L2):</strong> specialized technicians resolving more complex issues (network configuration, server issues, advanced diagnosis).</li>
+              <li><strong>Level 3 (L3):</strong> senior engineers handling critical issues, architecture changes, complex integrations and escalations requiring coordination with vendors.</li>
+            </ul>
+            <p>ECSG provides support at all three levels for clients with a Managed IT contract.</p>
+          </div>
+          <div data-lang="es">
+            <ul>
+              <li><strong>Nivel 1 (L1):</strong> primer contacto, problemas básicos (reset de contraseña, problemas de conectividad, configuración de correo). Resolución rápida o escalada.</li>
+              <li><strong>Nivel 2 (L2):</strong> técnicos especializados que resuelven problemas más complejos (configuración de red, problemas de servidor, diagnóstico avanzado).</li>
+              <li><strong>Nivel 3 (L3):</strong> ingenieros senior que manejan problemas críticos, cambios de arquitectura, integraciones complejas y escaladas que requieren coordinación con fabricantes.</li>
+            </ul>
+            <p>ECSG ofrece soporte en los tres niveles para clientes con contrato de IT Gestionado.</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Active Directory (AD) and why is it important?</span>
+            <span data-lang="es">¿Qué es un Active Directory (AD) y por qué es importante?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Active Directory (AD)</strong> is Microsoft's directory service that manages identities and resources on a corporate network. It is the central authentication and authorization system: it controls who can log in, what resources each user can access and what security policies apply to devices.</p>
+          <p data-lang="es"><strong>Active Directory (AD)</strong> es el servicio de directorio de Microsoft que gestiona las identidades y recursos en una red corporativa. Es el sistema central de autenticación y autorización: controla quién puede iniciar sesión, a qué recursos puede acceder cada usuario y qué políticas de seguridad se aplican a los dispositivos.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a Business Continuity Plan (BCP)?</span>
+            <span data-lang="es">¿Qué es un plan de continuidad de negocio (BCP)?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">A <strong>BCP (Business Continuity Plan)</strong> is a strategic document that describes how an organization will continue operating during and after an unplanned disruption (system failure, natural disaster, cyberattack, pandemic). It includes the <strong>DRP (Disaster Recovery Plan)</strong>, which details how to recover IT systems. Key metrics: <strong>RTO</strong> (Recovery Time Objective) and <strong>RPO</strong> (Recovery Point Objective).</p>
+          <p data-lang="es">Un <strong>BCP (Business Continuity Plan)</strong> es un documento estratégico que describe cómo una organización continuará operando durante y después de una interrupción no planificada (fallo de sistemas, desastre natural, ciberataque, pandemia). Incluye el <strong>DRP (Disaster Recovery Plan)</strong>, que detalla cómo recuperar los sistemas IT. Métricas clave: <strong>RTO</strong> (Recovery Time Objective) y <strong>RPO</strong> (Recovery Point Objective).</p>
+          <div class="tip"><i class="fas fa-shield-halved"></i>
+            <span data-lang="en">ECSG designs and implements BCP/DRP plans using Azure Site Recovery and Azure Backup as the technology base.</span>
+            <span data-lang="es">ECSG diseña e implementa planes BCP/DRP utilizando Azure Site Recovery y Azure Backup como tecnologías base.</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is RMM (Remote Monitoring and Management)?</span>
+            <span data-lang="es">¿Qué es RMM (Remote Monitoring and Management)?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>RMM</strong> is the technology that allows MSPs to remotely monitor and manage their clients' devices and systems. With RMM tools, ECSG can: see the health status of all your equipment in real time, detect issues before they fail, install updates remotely, resolve incidents without on-site visits and generate automatic inventory and performance reports.</p>
+          <p data-lang="es"><strong>RMM</strong> es la tecnología que permite a los MSP monitorear y gestionar remotamente los dispositivos y sistemas de sus clientes. Con herramientas RMM, ECSG puede: ver el estado de salud de todos tus equipos en tiempo real, detectar problemas antes de que fallen, instalar actualizaciones remotamente, resolver incidentes sin necesidad de visita presencial, y generar reportes automáticos de inventario y rendimiento.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is server virtualization?</span>
+            <span data-lang="es">¿Qué es la virtualización de servidores?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Virtualization</strong> allows running multiple operating systems (virtual machines) on a single physical server, making better use of hardware resources. Technologies like <strong>Hyper-V</strong> (Microsoft) or <strong>VMware vSphere</strong> are the most widely used platforms. Benefits: reduced hardware costs, greater flexibility, snapshots for backup and quick recovery, and the foundation for cloud migration.</p>
+          <p data-lang="es">La <strong>virtualización</strong> permite ejecutar múltiples sistemas operativos (máquinas virtuales) en un solo servidor físico, aprovechando mejor los recursos de hardware. Tecnologías como <strong>Hyper-V</strong> (Microsoft) o <strong>VMware vSphere</strong> son las plataformas más usadas. Beneficios: reducción de costos de hardware, mayor flexibilidad, snapshots para backup y recuperación rápida, y la base para la migración a la nube.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ════════ vCIO ════════ -->
+    <section class="faq-section" id="vcio" data-cat="vcio">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-chess-king"></i></div>
+        <div class="section-info">
+          <h2>vCIO Consulting</h2>
+          <p data-lang="en">Technology strategy and IT leadership for your business</p>
+          <p data-lang="es">Estrategia tecnológica y dirección de IT para tu empresa</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a vCIO?</span>
+            <span data-lang="es">¿Qué es un vCIO?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">A <strong>vCIO (Virtual Chief Information Officer)</strong> is an external technology director who acts as the CIO (IT Director) of a company without needing to hire a full-time executive. It is the ideal service for SMBs that need strategic technology leadership but cannot justify the cost of an internal CIO.</p>
+          <p data-lang="es">Un <strong>vCIO (Virtual Chief Information Officer)</strong> es un director de tecnología externo que actúa como el CIO (Director de IT) de una empresa sin necesidad de contratar un ejecutivo a tiempo completo. Es el servicio ideal para pymes que necesitan dirección estratégica tecnológica pero no justifican el costo de un CIO interno.</p>
+          <p data-lang="en">ECSG's vCIO becomes your trusted technology advisor: aligning technology with business objectives, planning IT investments, managing vendors and advising on strategic decisions.</p>
+          <p data-lang="es">El vCIO de ECSG se convierte en tu asesor tecnológico de confianza: alinea la tecnología con los objetivos del negocio, planifica inversiones IT, gestiona vendors y asesora en decisiones estratégicas.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What does an ECSG vCIO actually do?</span>
+            <span data-lang="es">¿Qué hace un vCIO de ECSG en la práctica?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>ECSG's vCIO performs:</p>
+            <ul>
+              <li>Periodic strategic IT review meetings (monthly/quarterly)</li>
+              <li>1, 2 and 3-year technology roadmap aligned with business goals</li>
+              <li>Evaluation and recommendation of technology investments</li>
+              <li>Vendor relationship management and contract negotiation</li>
+              <li>Technology risk assessment and continuity planning</li>
+              <li>Regulatory compliance and security advisory</li>
+              <li>Cost-benefit analysis of technology projects</li>
+            </ul>
+          </div>
+          <div data-lang="es">
+            <p>El vCIO de ECSG realiza:</p>
+            <ul>
+              <li>Reuniones periódicas (mensuales/trimestrales) de revisión estratégica de IT</li>
+              <li>Roadmap tecnológico a 1, 2 y 3 años alineado con los objetivos del negocio</li>
+              <li>Evaluación y recomendación de inversiones en tecnología</li>
+              <li>Gestión de relaciones con vendors y negociación de contratos</li>
+              <li>Evaluación de riesgos tecnológicos y planificación de continuidad</li>
+              <li>Asesoría en cumplimiento normativo y seguridad</li>
+              <li>Análisis de costo-beneficio de proyectos tecnológicos</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a technology roadmap?</span>
+            <span data-lang="es">¿Qué es una hoja de ruta (roadmap) tecnológica?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">A <strong>technology roadmap</strong> is a strategic plan that defines what technologies to implement, when and why, aligned with the company's growth objectives. It establishes investment priorities, implementation milestones and success metrics. ECSG's vCIO designs your company's technology roadmap to ensure each IT investment generates measurable business value.</p>
+          <p data-lang="es">Un <strong>roadmap tecnológico</strong> es un plan estratégico que define qué tecnologías implementar, cuándo y por qué, alineado con los objetivos de crecimiento de la empresa. Establece prioridades de inversión, hitos de implementación y métricas de éxito. El vCIO de ECSG diseña el roadmap tecnológico de tu empresa, asegurando que cada inversión en IT genere valor de negocio medible.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is digital transformation?</span>
+            <span data-lang="es">¿Qué es la transformación digital?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Digital transformation</strong> is the process of integrating digital technology into all areas of a business, fundamentally changing how it operates and delivers value to its customers. It is not just about adopting new technology — it is about redesigning processes, culture and business models with technology as the enabler.</p>
+          <p data-lang="es">La <strong>transformación digital</strong> es el proceso de integrar tecnología digital en todas las áreas de una empresa, cambiando fundamentalmente cómo opera y entrega valor a sus clientes. No es solo adoptar tecnología nueva — es rediseñar procesos, cultura y modelos de negocio con la tecnología como habilitador.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is technology ROI and how is it measured?</span>
+            <span data-lang="es">¿Qué es el ROI tecnológico y cómo se mide?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Technology ROI (Return on Investment)</strong> measures the financial return on IT investments. To calculate it: (Benefit obtained – Investment cost) / Investment cost × 100. Technology benefits include: operational cost reduction (typically 40% with ECSG), productivity increases, reduced downtime losses, avoiding security incident costs and enabling new revenue.</p>
+          <p data-lang="es">El <strong>ROI (Return on Investment)</strong> tecnológico mide el retorno financiero de las inversiones en IT. Para calcularlo: (Beneficio obtenido – Costo de la inversión) / Costo de la inversión × 100. Los beneficios tecnológicos incluyen: reducción de costos operativos (típicamente 40% con ECSG), aumento de productividad, reducción de tiempo perdido por problemas IT, evitar costos de incidentes de seguridad, y habilitación de nuevos ingresos.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ════════ NETWORKING ════════ -->
+    <section class="faq-section" id="redes" data-cat="redes">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-network-wired"></i></div>
+        <div class="section-info">
+          <h2><span data-lang="en">Networking, Cabling & Standards</span><span data-lang="es">Redes, Networking & Cableado</span></h2>
+          <p data-lang="en">Network infrastructure, switches, firewall and standards</p>
+          <p data-lang="es">Infraestructura de red, switches, firewall y estándares</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is structured cabling?</span>
+            <span data-lang="es">¿Qué es el cableado estructurado?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Structured cabling</strong> is a standardized telecommunications cabling system that supports multiple services (voice, data, video) within a building or campus. Unlike ad-hoc cabling, structured cabling follows international standards that guarantee performance, scalability and ease of maintenance.</p>
+          <p data-lang="es">El <strong>cableado estructurado</strong> es un sistema de cableado de telecomunicaciones estandarizado que soporta múltiples servicios (voz, datos, video) dentro de un edificio o campus. A diferencia del cableado ad-hoc, el cableado estructurado sigue normas internacionales que garantizan rendimiento, escalabilidad y facilidad de mantenimiento.</p>
+          <div class="tip"><i class="fas fa-certificate"></i>
+            <span data-lang="en">ECSG installs certified structured cabling under <strong>ANSI/TIA-568</strong> and <strong>ISO/IEC 11801</strong> standards.</span>
+            <span data-lang="es">ECSG instala cableado estructurado certificado bajo estándares <strong>ANSI/TIA-568</strong> e <strong>ISO/IEC 11801</strong>.</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is the difference between Cat5e, Cat6 and Cat6A?</span>
+            <span data-lang="es">¿Qué diferencia hay entre Cat5e, Cat6 y Cat6A?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>Ethernet cable categories differ in supported speed and distance:</p>
+            <ul>
+              <li><strong>Cat5e:</strong> up to 1 Gbps at 100m. Standard for basic office networks. Still functional but limited for modern environments.</li>
+              <li><strong>Cat6:</strong> up to 1 Gbps (10 Gbps at 55m). Better shielding, less crosstalk. Currently the recommended standard.</li>
+              <li><strong>Cat6A:</strong> up to 10 Gbps at 100m. Ideal for data centers, hospitals and environments requiring maximum performance and future scalability.</li>
+              <li><strong>Cat7/Cat8:</strong> up to 25-40 Gbps. Used in high-density data centers.</li>
+            </ul>
+            <p>ECSG recommends installing a minimum of Cat6 in new installations to ensure compatibility with future technologies.</p>
+          </div>
+          <div data-lang="es">
+            <p>Las categorías de cable Ethernet difieren en velocidad y distancia soportada:</p>
+            <ul>
+              <li><strong>Cat5e:</strong> hasta 1 Gbps a 100m. Estándar para redes de oficina básicas. Aún funcional pero limitado para entornos modernos.</li>
+              <li><strong>Cat6:</strong> hasta 1 Gbps (10 Gbps a 55m). Mayor blindaje, menos crosstalk. Estándar recomendado actualmente.</li>
+              <li><strong>Cat6A:</strong> hasta 10 Gbps a 100m. Ideal para centros de datos, hospitales y entornos que requieren máximo rendimiento y escalabilidad futura.</li>
+              <li><strong>Cat7/Cat8:</strong> hasta 25-40 Gbps. Uso en data centers de alta densidad.</li>
+            </ul>
+            <p>ECSG recomienda instalar mínimo Cat6 en instalaciones nuevas para garantizar compatibilidad con tecnologías futuras.</p>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a network switch and what are the types?</span>
+            <span data-lang="es">¿Qué es un switch de red y cuáles son los tipos?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>A <strong>switch</strong> is a network device that connects multiple devices within the same network (LAN) and intelligently directs data traffic to the correct destination. Types of switches:</p>
+            <ul>
+              <li><strong>Unmanaged:</strong> plug-and-play, no configuration. For small simple networks.</li>
+              <li><strong>Managed:</strong> configurable with VLANs, QoS, STP, SNMP. For enterprise environments.</li>
+              <li><strong>Layer 2:</strong> operate at MAC address level. Basic switching.</li>
+              <li><strong>Layer 3:</strong> include routing capabilities between VLANs. Reduce the need for a dedicated router.</li>
+              <li><strong>PoE (Power over Ethernet):</strong> supply electrical power via the network cable (ideal for IP cameras, VoIP phones and Wi-Fi APs).</li>
+            </ul>
+          </div>
+          <div data-lang="es">
+            <p>Un <strong>switch</strong> es un dispositivo de red que conecta múltiples dispositivos dentro de una misma red (LAN) y dirige el tráfico de datos de forma inteligente hacia el destino correcto. Tipos de switches:</p>
+            <ul>
+              <li><strong>Unmanaged:</strong> plug-and-play, sin configuración. Para pequeñas redes simples.</li>
+              <li><strong>Managed:</strong> configurables con VLANs, QoS, STP, SNMP. Para entornos empresariales.</li>
+              <li><strong>Layer 2:</strong> operan a nivel de MAC address. Conmutación básica.</li>
+              <li><strong>Layer 3:</strong> incluyen capacidades de routing entre VLANs. Reducen necesidad de router dedicado.</li>
+              <li><strong>PoE (Power over Ethernet):</strong> suministran energía eléctrica a través del cable de red (ideal para cámaras IP, teléfonos VoIP y APs Wi-Fi).</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a VLAN and what is it used for?</span>
+            <span data-lang="es">¿Qué es una VLAN y para qué se usa?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">A <strong>VLAN (Virtual Local Area Network)</strong> is a logical segmentation of the network that allows creating separate virtual networks within the same physical infrastructure. Devices on different VLANs cannot communicate with each other without passing through a router or firewall.</p>
+          <p data-lang="es">Una <strong>VLAN (Virtual Local Area Network)</strong> es una segmentación lógica de la red que permite crear redes virtuales separadas dentro de la misma infraestructura física. Los dispositivos en diferentes VLANs no pueden comunicarse entre sí sin pasar por un router o firewall.</p>
+          <p data-lang="en">Common use cases: separating employee networks from guest Wi-Fi, isolating security systems (cameras, access control), separating servers from workstations and meeting PCI DSS and ISO 27001 segmentation requirements.</p>
+          <p data-lang="es">Casos de uso comunes: separar la red de empleados de la red de invitados Wi-Fi, aislar sistemas de seguridad (cámaras, control de acceso), separar servidores de estaciones de trabajo, y cumplir requisitos de segmentación para PCI DSS e ISO 27001.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What standards govern structured cabling?</span>
+            <span data-lang="es">¿Qué estándares rigen el cableado estructurado?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>The main international structured cabling standards are:</p>
+            <ul>
+              <li><strong>ANSI/TIA-568:</strong> U.S. standard for commercial building telecommunications cabling. Defines cable types, connectors, maximum distances and installation procedures.</li>
+              <li><strong>ISO/IEC 11801:</strong> equivalent international standard, adopted in Europe and Latin America.</li>
+              <li><strong>ANSI/TIA-569:</strong> standards for telecommunications pathways and spaces (raceways, conduits, data rooms).</li>
+              <li><strong>ANSI/TIA-606:</strong> administration and identification standard for structured cabling.</li>
+              <li><strong>ANSI/TIA-607:</strong> grounding and bonding requirements for telecommunications.</li>
+            </ul>
+            <div class="tip"><i class="fas fa-check-circle"></i> ECSG installs and certifies cabling under these standards, delivering certification reports with a network analyzer.</div>
+          </div>
+          <div data-lang="es">
+            <p>Los principales estándares internacionales de cableado estructurado son:</p>
+            <ul>
+              <li><strong>ANSI/TIA-568:</strong> estándar estadounidense de cableado de telecomunicaciones para edificios comerciales. Define tipos de cable, conectores, distancias máximas y procedimientos de instalación.</li>
+              <li><strong>ISO/IEC 11801:</strong> estándar internacional equivalente, adoptado en Europa y América Latina.</li>
+              <li><strong>ANSI/TIA-569:</strong> estándares para rutas y espacios de telecomunicaciones (canaletas, ductos, cuartos de datos).</li>
+              <li><strong>ANSI/TIA-606:</strong> estándar de administración e identificación del cableado estructurado.</li>
+              <li><strong>ANSI/TIA-607:</strong> requerimientos de puesta a tierra y bonding para telecomunicaciones.</li>
+            </ul>
+            <div class="tip"><i class="fas fa-check-circle"></i> ECSG instala y certifica cableado bajo estos estándares, entregando reportes de certificación con analizador de red.</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is PoE (Power over Ethernet)?</span>
+            <span data-lang="es">¿Qué es PoE (Power over Ethernet)?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>PoE (Power over Ethernet)</strong> is a technology that allows transmitting electrical power through the network cable along with data, eliminating the need for separate power supplies for end devices. Standards: <strong>IEEE 802.3af</strong> (15.4W), <strong>IEEE 802.3at/PoE+</strong> (30W), <strong>IEEE 802.3bt/PoE++</strong> (60-90W). PoE-powered devices: IP cameras, VoIP phones, Wi-Fi access points, IoT sensors and access control readers.</p>
+          <p data-lang="es"><strong>PoE (Power over Ethernet)</strong> es una tecnología que permite transmitir energía eléctrica a través del cable de red junto con los datos, eliminando la necesidad de fuentes de alimentación separadas para dispositivos finales. Estándares: <strong>IEEE 802.3af</strong> (15.4W), <strong>IEEE 802.3at/PoE+</strong> (30W), <strong>IEEE 802.3bt/PoE++</strong> (60-90W). Dispositivos alimentados por PoE: cámaras IP, teléfonos VoIP, puntos de acceso Wi-Fi, sensores IoT y lectores de control de acceso.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is SD-WAN?</span>
+            <span data-lang="es">¿Qué es SD-WAN?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>SD-WAN (Software-Defined Wide Area Network)</strong> is a technology that intelligently virtualizes and manages WAN connections (internet, MPLS, LTE) for a multi-site company. It enables prioritizing critical traffic, automatic failover between connections and cost reduction compared to traditional MPLS.</p>
+          <p data-lang="es"><strong>SD-WAN (Software-Defined Wide Area Network)</strong> es una tecnología que virtualiza y gestiona de forma inteligente las conexiones WAN (internet, MPLS, LTE) de una empresa con múltiples sedes. Permite priorizar el tráfico crítico, hacer failover automático entre conexiones y reducir costos comparado con MPLS tradicional.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a VPN and when do I need it?</span>
+            <span data-lang="es">¿Qué es una VPN y cuándo la necesito?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>A <strong>VPN (Virtual Private Network)</strong> creates an encrypted communication tunnel over the internet, allowing secure access to corporate resources as if you were physically in the office. Main types:</p>
+            <ul>
+              <li><strong>Remote Access VPN:</strong> for remote employees accessing the corporate network from home or travel.</li>
+              <li><strong>Site-to-Site VPN:</strong> permanently and securely connects two offices over the internet.</li>
+              <li><strong>SSL VPN / ZTNA:</strong> remote access without a traditional VPN client, based on Zero Trust.</li>
+            </ul>
+          </div>
+          <div data-lang="es">
+            <p>Una <strong>VPN (Virtual Private Network)</strong> crea un túnel cifrado de comunicaciones sobre internet, permitiendo acceder de forma segura a recursos corporativos como si estuvieras físicamente en la oficina. Tipos principales:</p>
+            <ul>
+              <li><strong>Remote Access VPN:</strong> para empleados remotos que acceden a la red corporativa desde casa o viaje.</li>
+              <li><strong>Site-to-Site VPN:</strong> conecta permanentemente dos sedes u oficinas a través de internet de forma segura.</li>
+              <li><strong>SSL VPN / ZTNA:</strong> acceso remoto sin cliente VPN tradicional, basado en Zero Trust.</li>
+            </ul>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is a data room (MDF/IDF) and how is it organized?</span>
+            <span data-lang="es">¿Qué es un rack y cómo se organiza un cuarto de datos?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">A <strong>rack</strong> (or telecommunications cabinet) is the standard 19" structure that organizes and houses network equipment, servers and telecommunications systems. Its capacity is measured in <strong>rack units (U)</strong>, where 1U = 44.45mm in height. A well-organized data room includes: rack with cable management, labeled patch panel, switches, firewall, UPS (power backup), adequate thermal management and controlled access. ECSG designs and installs data rooms following the TIA-942 standard.</p>
+          <p data-lang="es">Un <strong>rack</strong> (o armario de comunicaciones) es la estructura estándar de 19" que organiza y aloja equipos de red, servidores y sistemas de telecomunicaciones. Su capacidad se mide en <strong>unidades de rack (U)</strong>, donde 1U = 44.45mm de altura. Un cuarto de datos bien organizado incluye: rack con gestión de cables, patch panel etiquetado, switches, firewall, UPS (respaldo de energía), gestión térmica adecuada y acceso controlado. ECSG diseña e instala cuartos de datos siguiendo estándar TIA-942.</p>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ════════ CAMERAS ════════ -->
+    <section class="faq-section" id="camaras" data-cat="camaras">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-camera"></i></div>
+        <div class="section-info">
+          <h2><span data-lang="en">Cameras & Physical Security</span><span data-lang="es">Cámaras & Seguridad Física</span></h2>
+          <p data-lang="en">Video surveillance, NVR, CCTV and remote access</p>
+          <p data-lang="es">Videovigilancia, NVR, CCTV y acceso remoto</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What types of camera systems does ECSG install?</span>
+            <span data-lang="es">¿Qué tipos de sistemas de cámaras instala ECSG?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>ECSG installs professional video surveillance systems for businesses and institutions:</p>
+            <ul>
+              <li><strong>IP cameras (PoE):</strong> connected directly to the LAN, PoE-powered, recording to NVR. High resolution (4K/2K), remote access and AI video analytics.</li>
+              <li><strong>Outdoor cameras:</strong> weather-resistant (IP66/IP67), night vision (IR or full-color), for perimeters, parking lots and access points.</li>
+              <li><strong>PTZ cameras:</strong> motorized pan, tilt and zoom. Ideal for large areas like warehouses and lobbies.</li>
+              <li><strong>Fisheye cameras:</strong> 360° fish-eye view. One camera covering a complete area.</li>
+              <li><strong>Indoor cameras:</strong> discrete dome for offices, server rooms and points of sale.</li>
+            </ul>
+            <div class="tip"><i class="fas fa-info-circle"></i> Brands we work with: Hikvision, Dahua, Axis, Hanwha (Samsung), Uniview.</div>
+          </div>
+          <div data-lang="es">
+            <p>ECSG instala sistemas de videovigilancia profesionales para empresas e instituciones:</p>
+            <ul>
+              <li><strong>Cámaras IP (PoE):</strong> conectadas directamente a la red LAN, alimentadas por PoE, con grabación en NVR. Alta resolución (4K/2K), acceso remoto y análisis de video por IA.</li>
+              <li><strong>Cámaras de exterior:</strong> resistentes a la intemperie (IP66/IP67), visión nocturna (IR o full-color), para perímetros, estacionamientos y accesos.</li>
+              <li><strong>Cámaras PTZ:</strong> con control de paneo, inclinación y zoom motorizado. Ideales para áreas grandes como almacenes y lobbies.</li>
+              <li><strong>Cámaras fisheye:</strong> ojo de pez con visión 360°. Para una sola cámara que cubre un área completa.</li>
+              <li><strong>Cámaras de interior:</strong> domo discreto para oficinas, salas de servidores y puntos de venta.</li>
+            </ul>
+            <div class="tip"><i class="fas fa-info-circle"></i> Marcas con las que trabajamos: Hikvision, Dahua, Axis, Hanwha (Samsung), Uniview.</div>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is the difference between analog CCTV and IP cameras?</span>
+            <span data-lang="es">¿Qué diferencia hay entre CCTV analógico y cámaras IP?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>Analog CCTV (DVR):</strong> uses coaxial cable to transmit analog video signal to a DVR (Digital Video Recorder). More limited resolutions (up to 5MP in TVI/AHD), separate network cabling, less flexibility for remote access and scalability.</p>
+          <p data-lang="es"><strong>CCTV analógico (DVR):</strong> usa cable coaxial para transmitir señal de video analógica a un DVR (Digital Video Recorder). Resoluciones más limitadas (hasta 5MP en TVI/AHD), cableado separado de red, menor flexibilidad para acceso remoto y escalabilidad.</p>
+          <p data-lang="en"><strong>IP (NVR):</strong> uses network cable (Cat6) to transmit digitized video to an NVR (Network Video Recorder). Superior resolutions (4K, 8MP), integration with corporate network, native remote access, AI analytics and greater scalability. <strong>ECSG recommends and designs IP systems</strong> for new installations.</p>
+          <p data-lang="es"><strong>IP (NVR):</strong> usa cable de red (Cat6) para transmitir video digitalizado a un NVR (Network Video Recorder). Resoluciones superiores (4K, 8MP), integración con la red corporativa, acceso remoto nativo, análisis por IA, y mayor escalabilidad. <strong>ECSG recomienda y diseña sistemas IP</strong> para instalaciones nuevas.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is an NVR and how much storage do I need?</span>
+            <span data-lang="es">¿Qué es un NVR y cuánto almacenamiento necesito?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">An <strong>NVR (Network Video Recorder)</strong> is the central device that receives, records and manages video from IP cameras. It includes high-capacity hard drives (optimized for continuous recording) and Video Management Software (VMS). Storage needs depend on: number of cameras, recording resolution, frames per second (fps), retention period (days) and compression type (H.264, H.265, H.265+). H.265+ can reduce storage by up to 70% compared to H.264.</p>
+          <p data-lang="es">Un <strong>NVR (Network Video Recorder)</strong> es el dispositivo central que recibe, graba y gestiona el video de las cámaras IP. Incluye discos duros de alta capacidad (optimizados para grabación continua) y software de gestión de video (VMS). Para calcular el almacenamiento necesario se considera: número de cámaras, resolución de grabación, frames por segundo (fps), tiempo de retención (días) y tipo de compresión (H.264, H.265, H.265+). H.265+ puede reducir el almacenamiento hasta un 70% comparado con H.264.</p>
+          <div class="tip"><i class="fas fa-calculator"></i>
+            <span data-lang="en">ECSG performs the storage calculation as part of system design. A typical 8-camera HD system with 30-day retention requires 2–4TB.</span>
+            <span data-lang="es">ECSG realiza el cálculo de almacenamiento como parte del diseño del sistema. Un sistema típico de 8 cámaras HD con 30 días de retención requiere entre 2-4TB.</span>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">Can I view cameras from my phone or PC?</span>
+            <span data-lang="es">¿Puedo ver las cámaras desde mi celular o PC?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en">Yes. All IP systems installed by ECSG include remote access from any internet-connected device: smartphone (iOS/Android), tablet or computer. ECSG configures remote access securely — never exposing the NVR directly to the internet, but through the manufacturer's cloud services or VPN.</p>
+          <p data-lang="es">Sí. Todos los sistemas IP que instala ECSG incluyen acceso remoto desde cualquier dispositivo con internet: smartphone (iOS/Android), tablet o computadora. ECSG configura el acceso remoto de forma segura — nunca exponiendo el NVR directamente a internet, sino a través de servicios de nube del fabricante o VPN.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is Intelligent Video Analytics (IVA)?</span>
+            <span data-lang="es">¿Qué es el análisis de video inteligente (IVA)?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <p data-lang="en"><strong>IVA (Intelligent Video Analytics)</strong> is the ability of modern cameras and NVRs to analyze video content in real time using artificial intelligence to detect specific events without human intervention. Available functions: perimeter intrusion detection, virtual line crossing, abandoned/removed object detection, people counting, license plate recognition (LPR), facial detection, behavior analytics and heat maps.</p>
+          <p data-lang="es">El <strong>IVA (Intelligent Video Analytics)</strong> es la capacidad de las cámaras y NVRs modernos de analizar el contenido del video en tiempo real usando inteligencia artificial para detectar eventos específicos sin intervención humana. Funciones disponibles: detección de intrusión en zonas perimetrales, cruce de línea virtual, detección de abandono u objetos removidos, conteo de personas, reconocimiento de matrículas (LPR), detección facial, análisis de comportamiento y mapa de calor de afluencia.</p>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What does ECSG's camera installation service include?</span>
+            <span data-lang="es">¿Qué incluye el servicio de instalación de cámaras de ECSG?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>ECSG's complete camera installation service includes:</p>
+            <ol>
+              <li><strong>Site survey:</strong> technical visit to evaluate the space, identify blind spots and design optimal coverage.</li>
+              <li><strong>System design:</strong> technical proposal with camera layout, equipment specifications and budget.</li>
+              <li><strong>Structured cabling:</strong> PoE Cat6 installation for each camera.</li>
+              <li><strong>Camera and NVR installation:</strong> mounting, image, resolution and recording configuration.</li>
+              <li><strong>Remote access setup:</strong> mobile and PC apps configured and tested.</li>
+              <li><strong>Training:</strong> staff training on operating the system.</li>
+              <li><strong>Acceptance certificate:</strong> document certifying the system operates to specification.</li>
+            </ol>
+          </div>
+          <div data-lang="es">
+            <p>El servicio completo de instalación de cámaras de ECSG incluye:</p>
+            <ol>
+              <li><strong>Relevamiento del sitio:</strong> visita técnica para evaluar el espacio, identificar puntos ciegos y diseñar la cobertura óptima.</li>
+              <li><strong>Diseño del sistema:</strong> propuesta técnica con plano de cámaras, especificaciones de equipos y presupuesto.</li>
+              <li><strong>Cableado estructurado:</strong> instalación de Cat6 PoE para cada cámara.</li>
+              <li><strong>Instalación de cámaras y NVR:</strong> montaje, configuración de imagen, resolución y grabación.</li>
+              <li><strong>Configuración de acceso remoto:</strong> app móvil y PC configuradas y probadas.</li>
+              <li><strong>Entrenamiento:</strong> capacitación al personal para operar el sistema.</li>
+              <li><strong>Acta de aceptación:</strong> documento que certifica que el sistema opera según especificaciones.</li>
+            </ol>
+          </div>
+        </div></div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-q">
+          <div class="faq-q-text">
+            <span data-lang="en">What is the difference between HD, Full HD and 4K camera resolution?</span>
+            <span data-lang="es">¿Cuál es la diferencia entre resolución HD, Full HD y 4K en cámaras?</span>
+          </div>
+          <div class="faq-chevron"><i class="fas fa-chevron-down"></i></div>
+        </div>
+        <div class="faq-a"><div class="faq-a-inner">
+          <div data-lang="en">
+            <p>Camera resolutions determine image quality and the ability to identify people and details:</p>
+            <ul>
+              <li><strong>HD (1MP / 720p):</strong> 1280×720 px. Basic, sufficient for small areas.</li>
+              <li><strong>Full HD (2MP / 1080p):</strong> 1920×1080 px. Current standard for most installations.</li>
+              <li><strong>2K (4MP):</strong> 2560×1440 px. More detail, ideal for access points and cash registers.</li>
+              <li><strong>4K (8MP):</strong> 3840×2160 px. Maximum quality, allows digital zoom without losing detail. Ideal for customs, banks and critical areas.</li>
+            </ul>
+            <p>ECSG recommends a minimum of Full HD for new installations and 4K for high-importance areas.</p>
+          </div>
+          <div data-lang="es">
+            <p>Las resoluciones de cámaras de seguridad determinan la calidad de imagen y la capacidad de identificar personas y detalles:</p>
+            <ul>
+              <li><strong>HD (1MP / 720p):</strong> 1280×720 px. Básico, suficiente para áreas pequeñas.</li>
+              <li><strong>Full HD (2MP / 1080p):</strong> 1920×1080 px. Estándar actual para la mayoría de instalaciones.</li>
+              <li><strong>2K (4MP):</strong> 2560×1440 px. Mayor detalle, ideal para accesos y cajas.</li>
+              <li><strong>4K (8MP):</strong> 3840×2160 px. Máxima calidad, permite zoom digital sin perder detalle. Ideal para aduanas, bancos y áreas críticas.</li>
+            </ul>
+            <p>ECSG recomienda mínimo Full HD para nuevas instalaciones y 4K para áreas de alta importancia.</p>
+          </div>
+        </div></div>
+      </div>
+    </section>
+
+    <!-- ════════ GLOSSARY ════════ -->
+    <section class="faq-section" id="glosario" data-cat="glosario">
+      <div class="section-header">
+        <div class="section-icon"><i class="fas fa-book-open"></i></div>
+        <div class="section-info">
+          <h2><span data-lang="en">Technical Glossary</span><span data-lang="es">Glosario Técnico</span></h2>
+          <p data-lang="en">Key terms in cloud, networking, security and infrastructure</p>
+          <p data-lang="es">Términos clave de cloud, redes, seguridad e infraestructura</p>
+        </div>
+      </div>
+
+      <div class="glossary-grid">
+        <div class="glossary-card"><div class="term">Cloud Computing</div><div class="def" data-lang="en">Delivery of computing services (servers, storage, databases, networking, software) over the internet with pay-per-use billing. Eliminates the need for physical infrastructure of your own.</div><div class="def" data-lang="es">Entrega de servicios informáticos (servidores, almacenamiento, bases de datos, redes, software) a través de internet con facturación por uso. Elimina la necesidad de infraestructura física propia.</div></div>
+        <div class="glossary-card"><div class="term">Firewall</div><div class="def" data-lang="en">Network security system that monitors and controls incoming and outgoing traffic based on security rules. The first line of perimeter defense for any corporate network.</div><div class="def" data-lang="es">Sistema de seguridad de red que monitorea y controla el tráfico entrante y saliente según reglas de seguridad. Primera línea de defensa perimetral de cualquier red corporativa.</div></div>
+        <div class="glossary-card"><div class="term">VPN</div><div class="def" data-lang="en">Virtual Private Network. Encrypted communications tunnel over the internet enabling secure access to private network resources from any location.</div><div class="def" data-lang="es">Virtual Private Network. Túnel cifrado de comunicaciones sobre internet que permite acceder de forma segura a recursos de red privados desde cualquier ubicación.</div></div>
+        <div class="glossary-card"><div class="term">DNS</div><div class="def" data-lang="en">Domain Name System. Translates domain names (www.ecsgtech.com) into IP addresses that devices use to communicate. The "phone book" of the internet.</div><div class="def" data-lang="es">Domain Name System. Sistema que traduce nombres de dominio en direcciones IP numéricas. El "directorio telefónico" de internet.</div></div>
+        <div class="glossary-card"><div class="term">DHCP</div><div class="def" data-lang="en">Dynamic Host Configuration Protocol. Automatically assigns IP addresses and network parameters to connecting devices, eliminating manual IP configuration.</div><div class="def" data-lang="es">Dynamic Host Configuration Protocol. Protocolo que asigna automáticamente direcciones IP y parámetros de red a los dispositivos que se conectan. Elimina la configuración manual de IPs.</div></div>
+        <div class="glossary-card"><div class="term">TCP/IP</div><div class="def" data-lang="en">Fundamental internet communication protocol suite. TCP guarantees ordered delivery of data packets; IP manages addressing and routing.</div><div class="def" data-lang="es">Conjunto de protocolos fundamentales de comunicación en internet. TCP garantiza la entrega ordenada de paquetes de datos; IP gestiona el direccionamiento y enrutamiento.</div></div>
+        <div class="glossary-card"><div class="term">LAN / WAN</div><div class="def" data-lang="en">LAN (Local Area Network): local network within a building or office. WAN (Wide Area Network): wide-area network connecting multiple geographically distant sites, including the internet.</div><div class="def" data-lang="es">LAN (Local Area Network): red de área local dentro de un edificio u oficina. WAN (Wide Area Network): red de área amplia que conecta múltiples sedes geográficamente distantes, incluido internet.</div></div>
+        <div class="glossary-card"><div class="term">VLAN</div><div class="def" data-lang="en">Virtual LAN. Logical segmentation of a physical network into multiple isolated virtual networks. Improves security and performance by separating traffic by department or function.</div><div class="def" data-lang="es">Virtual LAN. Segmentación lógica de una red física en múltiples redes virtuales aisladas. Mejora la seguridad y el rendimiento al separar el tráfico por departamento o función.</div></div>
+        <div class="glossary-card"><div class="term">SSL / TLS</div><div class="def" data-lang="en">Encryption protocols that secure internet communications. TLS is the modern version of SSL. The padlock in the browser bar indicates a TLS connection. Essential for email, web and VPN.</div><div class="def" data-lang="es">Protocolos de cifrado que aseguran las comunicaciones por internet. TLS es la versión moderna de SSL. El candado en la barra del navegador indica que la conexión usa TLS.</div></div>
+        <div class="glossary-card"><div class="term">AES-256</div><div class="def" data-lang="en">Advanced Encryption Standard with 256-bit keys. Symmetric encryption algorithm considered the strongest security standard today. Used in Azure Backup, VPNs and secure communications.</div><div class="def" data-lang="es">Advanced Encryption Standard de 256 bits. Algoritmo de cifrado simétrico considerado el estándar de seguridad más fuerte actualmente. Usado en Azure Backup, VPNs y comunicaciones seguras.</div></div>
+        <div class="glossary-card"><div class="term">MFA</div><div class="def" data-lang="en">Multi-Factor Authentication. Security method requiring two or more verification forms to access an account — password plus a second factor (phone code, authenticator app). Blocks 99.9% of account attacks.</div><div class="def" data-lang="es">Multi-Factor Authentication. Método de seguridad que requiere dos o más formas de verificación para acceder a una cuenta. Bloquea el 99.9% de los ataques de cuentas según Microsoft.</div></div>
+        <div class="glossary-card"><div class="term">SPF / DKIM / DMARC</div><div class="def" data-lang="en">DNS email authentication records that prevent domain spoofing/phishing. SPF defines authorized sending servers; DKIM digitally signs messages; DMARC defines what to do with failing messages.</div><div class="def" data-lang="es">Registros DNS de autenticación de correo que previenen la falsificación del dominio. SPF define servidores autorizados; DKIM firma digitalmente los mensajes; DMARC define qué hacer con los mensajes que fallen.</div></div>
+        <div class="glossary-card"><div class="term">QoS</div><div class="def" data-lang="en">Quality of Service. Mechanism that prioritizes certain types of network traffic (voice, video) over others to guarantee performance of critical applications, especially on congested networks.</div><div class="def" data-lang="es">Quality of Service. Mecanismo que prioriza ciertos tipos de tráfico de red (voz, video) sobre otros para garantizar el rendimiento de aplicaciones críticas, especialmente en redes congestionadas.</div></div>
+        <div class="glossary-card"><div class="term">PoE</div><div class="def" data-lang="en">Power over Ethernet. Standard enabling transmission of electrical power through Cat5e/Cat6 cable, powering IP cameras, VoIP phones and Wi-Fi APs without separate electrical wiring.</div><div class="def" data-lang="es">Power over Ethernet. Estándar que permite transmitir energía eléctrica a través del cable de red Cat5e/Cat6, alimentando cámaras IP, teléfonos VoIP y APs Wi-Fi sin cableado eléctrico adicional.</div></div>
+        <div class="glossary-card"><div class="term">STP / RSTP</div><div class="def" data-lang="en">Spanning Tree Protocol. Network protocol preventing loops in networks with redundant switches, ensuring only one active path exists between two points. RSTP is the fast version (&lt;1 second convergence).</div><div class="def" data-lang="es">Spanning Tree Protocol. Protocolo de red que previene bucles en redes con switches redundantes. RSTP es su versión rápida (menos de 1 segundo de convergencia).</div></div>
+        <div class="glossary-card"><div class="term">SNMP</div><div class="def" data-lang="en">Simple Network Management Protocol. Standard protocol for monitoring and managing network devices (switches, routers, firewalls, servers). Enables RMM tools to collect metrics and generate alerts.</div><div class="def" data-lang="es">Simple Network Management Protocol. Protocolo estándar para monitorear y gestionar dispositivos de red. Permite a las herramientas RMM recopilar métricas y generar alertas.</div></div>
+        <div class="glossary-card"><div class="term">IPS / IDS</div><div class="def" data-lang="en">Intrusion Prevention/Detection System. IDS detects and alerts on malicious network activity. IPS goes further and automatically blocks detected attacks. Key component of modern NGFWs.</div><div class="def" data-lang="es">Intrusion Prevention/Detection System. IDS detecta y alerta sobre actividades maliciosas en la red. IPS va más lejos y bloquea automáticamente los ataques detectados.</div></div>
+        <div class="glossary-card"><div class="term">WAF</div><div class="def" data-lang="en">Web Application Firewall. Protects web applications by filtering and monitoring HTTP/HTTPS traffic against attacks like SQL injection, XSS and CSRF. Azure includes WAF built into Application Gateway.</div><div class="def" data-lang="es">Web Application Firewall. Protege aplicaciones web filtrando y monitoreando el tráfico HTTP/HTTPS contra ataques como SQL injection, XSS y CSRF. Azure incluye WAF integrado en Application Gateway.</div></div>
+        <div class="glossary-card"><div class="term">RTO / RPO</div><div class="def" data-lang="en">Recovery Time Objective / Recovery Point Objective. RTO: maximum acceptable time to recover a system after failure. RPO: maximum acceptable data loss measured in time. Key metrics of any disaster recovery plan.</div><div class="def" data-lang="es">Recovery Time Objective / Recovery Point Objective. RTO: tiempo máximo aceptable para recuperar un sistema tras una falla. RPO: máxima pérdida de datos aceptable medida en tiempo. Métricas clave del plan de recuperación ante desastres.</div></div>
+        <div class="glossary-card"><div class="term">SOC</div><div class="def" data-lang="en">Security Operations Center. Operations center that monitors, detects, investigates and responds to cybersecurity incidents in real time, 24/7/365. ECSG can integrate SOC capabilities for clients that require it.</div><div class="def" data-lang="es">Security Operations Center. Centro de operaciones de seguridad que monitorea, detecta, investiga y responde a incidentes de ciberseguridad en tiempo real, 24/7/365.</div></div>
+        <div class="glossary-card"><div class="term">ONVIF</div><div class="def" data-lang="en">Open Network Video Interface Forum. Interoperability standard for IP cameras and video surveillance systems. Guarantees cameras from different manufacturers are compatible with the NVR. All ECSG-installed systems are ONVIF compliant.</div><div class="def" data-lang="es">Open Network Video Interface Forum. Estándar de interoperabilidad para cámaras IP. Garantiza que cámaras de diferentes fabricantes sean compatibles con el NVR. Todos los sistemas que instala ECSG son ONVIF compliant.</div></div>
+        <div class="glossary-card"><div class="term">H.265 / HEVC</div><div class="def" data-lang="en">High Efficiency Video Coding. Video compression standard that reduces recording file sizes by up to 50% compared to H.264, maintaining the same image quality. Essential for optimizing storage in camera systems.</div><div class="def" data-lang="es">High Efficiency Video Coding. Estándar de compresión de video que reduce el tamaño de los archivos de grabación hasta un 50% comparado con H.264, manteniendo la misma calidad de imagen.</div></div>
+        <div class="glossary-card"><div class="term">IP66 / IP67</div><div class="def" data-lang="en">Environmental protection rating for electronic equipment. IP66: resistant to powerful water jets (outdoor cameras). IP67: resistant to 1-meter immersion for 30 minutes. Standard for outdoor cameras exposed to rain and dust.</div><div class="def" data-lang="es">Grado de protección ambiental de equipos electrónicos. IP66: resistente a potentes chorros de agua. IP67: resistente a inmersión hasta 1 metro por 30 minutos. Estándar para cámaras en exteriores.</div></div>
+        <div class="glossary-card"><div class="term">TIA-568</div><div class="def" data-lang="en">ANSI/TIA standard defining structured cabling requirements for commercial buildings in the U.S.: cable types, connectors, maximum distances, pin configurations and required certification tests.</div><div class="def" data-lang="es">Estándar ANSI/TIA que define los requerimientos de cableado estructurado para edificios comerciales en EE.UU.: tipos de cable, conectores, distancias máximas y pruebas de certificación requeridas.</div></div>
+        <div class="glossary-card"><div class="term">IEEE 802.11</div><div class="def" data-lang="en">Wi-Fi standards family from the IEEE. 802.11n (Wi-Fi 4), 802.11ac (Wi-Fi 5, up to 3.5 Gbps), 802.11ax (Wi-Fi 6, up to 9.6 Gbps, efficiency in high user density environments).</div><div class="def" data-lang="es">Familia de estándares Wi-Fi. 802.11n (Wi-Fi 4), 802.11ac (Wi-Fi 5, hasta 3.5 Gbps), 802.11ax (Wi-Fi 6, hasta 9.6 Gbps, eficiencia en alta densidad de usuarios).</div></div>
+        <div class="glossary-card"><div class="term">IEEE 802.3</div><div class="def" data-lang="en">Ethernet (wired network) standard. Defines physical and data link specifications for wired LAN networks: speeds (100M, 1G, 10G), cable types (Cat5e, Cat6, fiber optic) and PoE (802.3af/at/bt).</div><div class="def" data-lang="es">Estándar de Ethernet (red cableada). Define las especificaciones físicas y de enlace de datos para redes LAN cableadas: velocidades, tipos de cable y PoE (802.3af/at/bt).</div></div>
+        <div class="glossary-card"><div class="term">SFP / SFP+</div><div class="def" data-lang="en">Small Form-factor Pluggable. Hot-swappable transceiver modules for switches and routers. SFP: up to 1 Gbps. SFP+: up to 10 Gbps. Enable fiber optic connectivity for high-speed inter-switch links.</div><div class="def" data-lang="es">Small Form-factor Pluggable. Módulos transceptores intercambiables para switches y routers. SFP: hasta 1 Gbps. SFP+: hasta 10 Gbps. Permiten conectar fibra óptica para enlaces de alta velocidad.</div></div>
+        <div class="glossary-card"><div class="term">OSI Model</div><div class="def" data-lang="en">Open Systems Interconnection. 7-layer reference model for understanding network communications: Physical, Data Link, Network, Transport, Session, Presentation, Application. Fundamental for network troubleshooting and architecture design.</div><div class="def" data-lang="es">Open Systems Interconnection. Modelo de referencia de 7 capas para entender las comunicaciones de red. Fundamental para diagnóstico de problemas de red y diseño de arquitecturas.</div></div>
+        <div class="glossary-card"><div class="term">HA / Failover</div><div class="def" data-lang="en">High Availability / Failover. System architecture designed to maintain service continuity against component failures. When a primary system fails, the secondary automatically takes over, minimizing downtime.</div><div class="def" data-lang="es">High Availability / Conmutación por error. Arquitectura de sistemas diseñada para mantener la continuidad del servicio ante fallas de componentes. Cuando un sistema primario falla, el secundario toma el control automáticamente.</div></div>
+        <div class="glossary-card"><div class="term">CDN</div><div class="def" data-lang="en">Content Delivery Network. Globally distributed server network delivering web content from the server closest to the user, reducing latency and improving performance. Azure CDN and Cloudflare are popular examples.</div><div class="def" data-lang="es">Content Delivery Network. Red de servidores distribuidos globalmente que entregan contenido web desde el servidor más cercano al usuario, reduciendo latencia y mejorando el rendimiento.</div></div>
+        <div class="glossary-card"><div class="term">API</div><div class="def" data-lang="en">Application Programming Interface. Set of rules and protocols allowing different applications to communicate with each other. Microsoft Graph REST APIs enable integrating Microsoft 365 with custom business applications.</div><div class="def" data-lang="es">Application Programming Interface. Conjunto de reglas y protocolos que permite que diferentes aplicaciones se comuniquen entre sí. Las APIs de Microsoft Graph permiten integrar Microsoft 365 con aplicaciones empresariales personalizadas.</div></div>
+        <div class="glossary-card"><div class="term">CIDR</div><div class="def" data-lang="en">Classless Inter-Domain Routing. Notation for describing IP address ranges and subnet masks. Example: 192.168.1.0/24 indicates 256 possible addresses. Foundation of any corporate network design.</div><div class="def" data-lang="es">Classless Inter-Domain Routing. Notación para describir rangos de direcciones IP y máscaras de subred. Ejemplo: 192.168.1.0/24 indica 256 direcciones posibles. Base del diseño de cualquier red corporativa.</div></div>
+        <div class="glossary-card"><div class="term">MDM</div><div class="def" data-lang="en">Mobile Device Management. Solution for managing and securing corporate or BYOD mobile devices (smartphones, tablets). Microsoft Intune is Microsoft 365's MDM solution. Enables policy enforcement, encryption and remote wipe.</div><div class="def" data-lang="es">Mobile Device Management. Solución para gestionar y asegurar dispositivos móviles corporativos o BYOD. Microsoft Intune es la solución MDM de Microsoft 365. Permite aplicar políticas, cifrar y borrar dispositivos remotamente.</div></div>
+        <div class="glossary-card"><div class="term">SD-WAN</div><div class="def" data-lang="en">Software-Defined Wide Area Network. Technology that intelligently manages WAN connections across multiple sites. Enables traffic prioritization, automatic failover and cost reduction vs. traditional MPLS.</div><div class="def" data-lang="es">Software-Defined Wide Area Network. Tecnología que virtualiza y gestiona inteligentemente las conexiones WAN de empresas con múltiples sedes. Permite priorizar tráfico, failover automático y reducir costos vs. MPLS.</div></div>
+        <div class="glossary-card"><div class="term">Zero Trust</div><div class="def" data-lang="en">"Never trust, always verify" security model. Assumes no user, device or application is trusted by default, even if inside the corporate network. Based on MFA, least privilege, micro-segmentation and continuous monitoring.</div><div class="def" data-lang="es">Modelo de seguridad basado en "nunca confiar, siempre verificar". Asume que ningún usuario, dispositivo o aplicación es de confianza por defecto, incluso si está dentro de la red corporativa.</div></div>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<!-- ══════════════ CTA ══════════════ -->
+<section class="cta-band">
+  <div class="inner">
+    <h2>
+      <span data-lang="en">Didn't find your answer?</span>
+      <span data-lang="es">¿No encontraste tu respuesta?</span>
+    </h2>
+    <p data-lang="en">Our team of experts is ready to answer any technical question and help you make the best technology decisions for your company.</p>
+    <p data-lang="es">Nuestro equipo de expertos está listo para responder cualquier pregunta técnica y ayudarte a tomar las mejores decisiones tecnológicas para tu empresa.</p>
+    <a href="mailto:info@ecsgtech.com" class="btn-white">
+      <i class="fas fa-envelope"></i>
+      <span data-lang="en">Contact the Team</span>
+      <span data-lang="es">Contactar al Equipo</span>
+    </a>
+  </div>
+</section>
+
+<!-- ══════════════ FOOTER ══════════════ -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-grid">
+      <div class="footer-col">
+        <h4>Enterprise Cloud Solutions Group LLC</h4>
+        <p>26 Belden Ave, Norwalk, CT</p>
+        <p>info@ecsgtech.com</p>
+        <p>www.ecsgtech.com</p>
+        <p style="margin-top:8px;color:rgba(255,255,255,0.25);font-size:0.77rem;">
+          <span data-lang="en">Secure. Reliable. Human.</span>
+          <span data-lang="es">Seguro. Confiable. Humano.</span>
+        </p>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang="en">Services</h4>
+        <h4 data-lang="es">Servicios</h4>
+        <a href="managed-services.html" data-lang="en">Managed IT</a>
+        <a href="managed-services.html" data-lang="es">IT Gestionado</a>
+        <a href="cloud-services.html">Cloud Services</a>
+        <a href="cybersecurity.html" data-lang="en">Cybersecurity</a>
+        <a href="cybersecurity.html" data-lang="es">Ciberseguridad</a>
+        <a href="camera-installation.html" data-lang="en">Camera Installation</a>
+        <a href="camera-installation.html" data-lang="es">Instalación de Cámaras</a>
+      </div>
+      <div class="footer-col">
+        <h4 data-lang="en">Company</h4>
+        <h4 data-lang="es">Empresa</h4>
+        <a href="ECSG_About.html" data-lang="en">About Us</a>
+        <a href="ECSG_About.html" data-lang="es">Nosotros</a>
+        <a href="index.html" data-lang="en">Home</a>
+        <a href="index.html" data-lang="es">Inicio</a>
+        <a href="ecsgcontact_sales.html" data-lang="en">Contact Sales</a>
+        <a href="ecsgcontact_sales.html" data-lang="es">Contactar Ventas</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>
+        <span data-lang="en">© 2026 Enterprise Cloud Solutions Group LLC. All rights reserved. Norwalk, CT.</span>
+        <span data-lang="es">© 2026 Enterprise Cloud Solutions Group LLC. Todos los derechos reservados. Norwalk, CT.</span>
+      </p>
+      <div class="footer-tagline">
+        <span data-lang="en">SECURE · RELIABLE · HUMAN</span>
+        <span data-lang="es">SEGURO · CONFIABLE · HUMANO</span>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ══════════════ SCRIPTS ══════════════ -->
+<script>
+// ── LANGUAGE SYSTEM ──────────────────────────────────
+const LANG_KEY = 'ecsg_lang';
+let currentLang = 'en';
+
+function applyLang(lang) {
+  currentLang = lang;
+  document.documentElement.lang = lang;
+  document.body.classList.toggle('lang-en', lang === 'en');
+  document.body.classList.toggle('lang-es', lang === 'es');
+
+  // Update all lang buttons
+  ['btnEN','btnEN2'].forEach(id => {
+    const b = document.getElementById(id);
+    if (b) b.classList.toggle('active', lang === 'en');
+  });
+  ['btnES','btnES2'].forEach(id => {
+    const b = document.getElementById(id);
+    if (b) b.classList.toggle('active', lang === 'es');
+  });
+
+  // Update search placeholder
+  const s = document.getElementById('faq-search');
+  if (s) s.placeholder = lang === 'en' ? (s.dataset.phEn || '') : (s.dataset.phEs || '');
+
+  // Re-run search with new language
+  if (s && s.value) updateSearch(s.value);
+
+  try { localStorage.setItem(LANG_KEY, lang); } catch(e) {}
+}
+
+['btnEN','btnEN2'].forEach(id => {
+  const b = document.getElementById(id);
+  if (b) b.addEventListener('click', () => applyLang('en'));
+});
+['btnES','btnES2'].forEach(id => {
+  const b = document.getElementById(id);
+  if (b) b.addEventListener('click', () => applyLang('es'));
+});
+
+// Load saved language (default: English)
+try {
+  const saved = localStorage.getItem(LANG_KEY);
+  applyLang(saved === 'es' ? 'es' : 'en');
+} catch(e) { applyLang('en'); }
+
+// ── HAMBURGER ────────────────────────────────────────
+const hbg = document.getElementById('hamburger');
+const mmenu = document.getElementById('mobile-menu');
+if (hbg) hbg.addEventListener('click', () => mmenu.classList.toggle('open'));
+
+// ── FAQ ACCORDION ─────────────────────────────────────
+document.querySelectorAll('.faq-q').forEach(q => {
+  q.addEventListener('click', () => {
+    const item = q.closest('.faq-item');
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  });
+});
+
+// Open first item per section by default
+document.querySelectorAll('.faq-section').forEach(section => {
+  const first = section.querySelector('.faq-item');
+  if (first) first.classList.add('open');
+});
+
+// ── SEARCH ────────────────────────────────────────────
+const searchInput = document.getElementById('faq-search');
+const searchCount = document.getElementById('search-count');
+const noResults   = document.getElementById('no-results');
+const allSections = document.querySelectorAll('.faq-section');
+
+function updateSearch(query) {
+  query = query.toLowerCase().trim();
+  let visible = 0;
+  allSections.forEach(section => {
+    let sectionVisible = false;
+    section.querySelectorAll('.faq-item').forEach(item => {
+      const text = item.textContent.toLowerCase();
+      const match = !query || text.includes(query);
+      item.style.display = match ? '' : 'none';
+      if (match) { sectionVisible = true; visible++; }
+    });
+    section.style.display = sectionVisible ? '' : 'none';
+  });
+  if (query) {
+    searchCount.textContent = visible + (currentLang === 'en'
+      ? (' result' + (visible !== 1 ? 's' : ''))
+      : (' resultado' + (visible !== 1 ? 's' : '')));
+    noResults.style.display = visible === 0 ? 'block' : 'none';
+  } else {
+    searchCount.textContent = '';
+    noResults.style.display = 'none';
+  }
+}
+
+if (searchInput) {
+  searchInput.addEventListener('input', e => updateSearch(e.target.value));
+}
+
+// ── CATEGORY FILTER ───────────────────────────────────
+document.querySelectorAll('.cat-pill').forEach(pill => {
+  pill.addEventListener('click', () => {
+    // Reset all pills
+    document.querySelectorAll('.cat-pill').forEach(p => p.classList.remove('active'));
+    // Activate all pills with same cat
+    const cat = pill.dataset.cat;
+    document.querySelectorAll(`.cat-pill[data-cat="${cat}"]`).forEach(p => p.classList.add('active'));
+
+    if (searchInput) { searchInput.value = ''; searchCount.textContent = ''; }
+    noResults.style.display = 'none';
+
+    allSections.forEach(section => {
+      section.querySelectorAll('.faq-item').forEach(i => i.style.display = '');
+      if (cat === 'all') {
+        section.style.display = '';
+      } else {
+        const id = section.id;
+        const show = (
+          (cat === 'm365'     && id === 'm365') ||
+          (cat === 'azure'    && id === 'azure') ||
+          (cat === 'ciber'    && id === 'ciberseguridad') ||
+          (cat === 'redes'    && (id === 'redes' || id === 'camaras')) ||
+          (cat === 'glosario' && id === 'glosario')
+        );
+        section.style.display = show ? '' : 'none';
+      }
+    });
+    const first = document.querySelector('.faq-section:not([style*="display: none"]):not([style*="display:none"])');
+    if (first && cat !== 'all') first.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+// ── SIDEBAR ACTIVE HIGHLIGHT ──────────────────────────
+const sideLinks = document.querySelectorAll('.sidebar-nav a');
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      sideLinks.forEach(l => l.classList.remove('active'));
+      const link = document.querySelector(`.sidebar-nav a[href="#${entry.target.id}"]`);
+      if (link) link.classList.add('active');
+    }
+  });
+}, { rootMargin: '-10% 0px -70% 0px' });
+allSections.forEach(s => obs.observe(s));
+</script>
+</body>
+</html>
