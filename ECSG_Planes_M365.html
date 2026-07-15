@@ -1,0 +1,1274 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microsoft 365 Plans — Enterprise Cloud Solutions Group LLC</title>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #1E3A5F;
+    --navy-deep: #152C4A;
+    --blue: #2E75B6;
+    --blue-light: #4A90D9;
+    --blue-pale: #E8F1FB;
+    --white: #FFFFFF;
+    --gray-light: #F5F8FC;
+    --gray-mid: #DDE8F5;
+    --gray-text: #4A5568;
+    --accent: #0EA5E9;
+    --green: #10B981;
+    --orange: #F59E0B;
+    --red: #EF4444;
+    --basic-color: #2E75B6;
+    --standard-color: #1E6B4A;
+    --premium-color: #7C3AED;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Barlow', sans-serif;
+    background: var(--gray-light);
+    color: var(--navy);
+    min-height: 100vh;
+  }
+
+  /* ─── NAVBAR ─── */
+  .navbar {
+    background: var(--navy-deep);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.3);
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-link {
+    color: rgba(255,255,255,0.75);
+    text-decoration: none;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    padding: 8px 14px;
+    border-radius: 6px;
+    transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .nav-link:hover { color: #fff; background: rgba(255,255,255,0.08); }
+  .nav-link.active { color: #fff; background: rgba(46,117,182,0.35); font-weight: 600; }
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .lang-toggle {
+    display: flex;
+    align-items: center;
+    background: rgba(255,255,255,0.08);
+    border-radius: 20px;
+    overflow: hidden;
+    padding: 2px;
+    gap: 2px;
+  }
+  .lang-btn {
+    background: transparent;
+    border: none;
+    color: rgba(255,255,255,0.6);
+    padding: 4px 14px;
+    border-radius: 18px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+  .lang-btn.active {
+    background: var(--blue);
+    color: #fff;
+  }
+  .lang-btn:hover:not(.active) { color: #fff; }
+  .nav-cta {
+    background: var(--blue);
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-family: 'Barlow', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .nav-cta:hover { background: var(--blue-light); }
+
+  /* ─── HAMBURGER ─── */
+  .nav-hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 6px;
+    border-radius: 6px;
+    transition: background 0.2s;
+  }
+  .nav-hamburger:hover { background: rgba(255,255,255,0.08); }
+  .nav-hamburger span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    background: rgba(255,255,255,0.85);
+    border-radius: 2px;
+    transition: all 0.28s ease;
+    transform-origin: center;
+  }
+  .nav-hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+  .nav-hamburger.open span:nth-child(2) { opacity: 0; transform: scaleX(0); }
+  .nav-hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+  .nav-mobile-menu {
+    display: none;
+    flex-direction: column;
+    background: var(--navy-deep);
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding: 12px 20px 20px;
+    gap: 4px;
+    position: relative;
+    z-index: 99;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  }
+  .nav-mobile-menu.open { display: flex; }
+  .nav-mobile-menu .nav-link {
+    padding: 11px 14px;
+    font-size: 15px;
+    border-radius: 6px;
+  }
+  .nav-mobile-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 14px;
+    margin-top: 8px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    gap: 12px;
+  }
+  .nav-mobile-bottom .nav-cta { flex: 1; justify-content: center; }
+
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .nav-right .nav-cta { display: none; }
+    .nav-right .lang-toggle { display: none; }
+    .nav-hamburger { display: flex; }
+  }
+
+  /* ─── HEADER ─── */
+  .header {
+    background: linear-gradient(135deg, var(--navy-deep) 0%, var(--navy) 50%, #1a4570 100%);
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+  }
+  .header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+      radial-gradient(ellipse 60% 80% at 85% 50%, rgba(46,117,182,0.25) 0%, transparent 70%),
+      radial-gradient(circle at 10% 80%, rgba(14,165,233,0.1) 0%, transparent 50%);
+  }
+  .header-inner {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 36px 60px;
+    gap: 40px;
+  }
+  .logo-wrap {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  .logo-wrap img {
+    width: 120px;
+    height: auto;
+    filter: drop-shadow(0 2px 12px rgba(46,117,182,0.4));
+  }
+  .header-text {
+    flex: 1;
+    text-align: center;
+  }
+  .header-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 8px;
+  }
+  .header-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(28px, 4vw, 52px);
+    font-weight: 800;
+    color: #fff;
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: -0.5px;
+  }
+  .header-title span {
+    color: var(--blue-light);
+  }
+  .header-subtitle {
+    font-size: 13px;
+    color: rgba(255,255,255,0.6);
+    margin-top: 10px;
+    letter-spacing: 0.5px;
+  }
+  .header-contact {
+    flex-shrink: 0;
+    text-align: right;
+    color: rgba(255,255,255,0.55);
+    font-size: 12px;
+    line-height: 1.8;
+  }
+  .header-contact a { color: var(--blue-light); text-decoration: none; }
+
+  /* ─── LANGUAGE SECTIONS ─── */
+  .lang-section { display: none; }
+  .lang-section.active { display: block; }
+
+  /* ─── SECTION WRAPPER ─── */
+  .section {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 48px 40px;
+  }
+
+  /* ─── SECTION TITLE ─── */
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--navy);
+    margin-bottom: 8px;
+  }
+  .section-title span { color: var(--blue); }
+  .section-divider {
+    width: 60px;
+    height: 3px;
+    background: var(--blue);
+    margin-bottom: 32px;
+  }
+
+  /* ─── PLAN CARDS GRID ─── */
+  .plans-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+
+  .plan-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(30,58,95,0.10);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.25s, box-shadow 0.25s;
+    position: relative;
+  }
+  .plan-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 40px rgba(30,58,95,0.18);
+  }
+  .plan-card.featured::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--premium-color), #A855F7);
+  }
+
+  .plan-header {
+    padding: 28px 28px 20px;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+  }
+  .plan-header::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; right: -20px;
+    width: 100px; height: 100px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 50%;
+  }
+  .plan-basic .plan-header { background: linear-gradient(135deg, #1E5A8E, #2E75B6); }
+  .plan-standard .plan-header { background: linear-gradient(135deg, #145A3D, #1E6B4A); }
+  .plan-premium .plan-header { background: linear-gradient(135deg, #5B21B6, #7C3AED); }
+
+  .plan-badge {
+    display: inline-block;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    background: rgba(255,255,255,0.2);
+    padding: 3px 10px;
+    border-radius: 20px;
+    margin-bottom: 10px;
+  }
+  .plan-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    line-height: 1.1;
+    position: relative;
+  }
+  .plan-tagline {
+    font-size: 12px;
+    opacity: 0.8;
+    margin-top: 6px;
+    line-height: 1.4;
+    position: relative;
+  }
+
+  .plan-body { padding: 24px 28px; flex: 1; }
+
+  /* ─── FEATURE GROUPS ─── */
+  .feature-group {
+    margin-bottom: 18px;
+  }
+  .feature-group-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--gray-text);
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid var(--gray-mid);
+  }
+  .plan-basic .feature-group-title { color: var(--basic-color); border-color: #C8DFF5; }
+  .plan-standard .feature-group-title { color: var(--standard-color); border-color: #C8E8D8; }
+  .plan-premium .feature-group-title { color: var(--premium-color); border-color: #DDD6FE; }
+
+  .feature-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 5px 0;
+    font-size: 13px;
+    line-height: 1.4;
+    color: #374151;
+  }
+  .feature-icon {
+    flex-shrink: 0;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    font-size: 10px;
+  }
+  .feature-icon.check { background: #D1FAE5; color: #059669; }
+  .feature-icon.security { background: #EDE9FE; color: #7C3AED; }
+  .plan-basic .feature-icon.check { background: #DBEAFE; color: var(--basic-color); }
+  .plan-standard .feature-icon.check { background: #D1FAE5; color: var(--standard-color); }
+
+  .feature-note {
+    font-size: 11px;
+    color: #9CA3AF;
+    font-style: italic;
+    margin-left: 24px;
+    line-height: 1.3;
+  }
+
+  /* ─── PLAN FOOTER ─── */
+  .plan-footer {
+    padding: 20px 28px;
+    border-top: 1px solid var(--gray-mid);
+    background: var(--gray-light);
+    font-size: 12px;
+    color: var(--gray-text);
+    line-height: 1.5;
+  }
+
+  /* ─── COMPARISON TABLE ─── */
+  .comparison-wrap {
+    background: var(--navy);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 48px;
+  }
+  .comparison-header-bar {
+    padding: 28px 40px 20px;
+  }
+  .comparison-header-bar .section-title { color: #fff; }
+  .comparison-header-bar .section-divider { background: var(--blue-light); }
+
+  .comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .comparison-table th, .comparison-table td {
+    padding: 14px 20px;
+    font-size: 13px;
+    text-align: left;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .comparison-table th {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    background: rgba(0,0,0,0.2);
+  }
+  .comparison-table td { color: rgba(255,255,255,0.85); }
+  .comparison-table td:first-child {
+    font-weight: 600;
+    color: #fff;
+  }
+  .comparison-table tr:hover td { background: rgba(46,117,182,0.1); }
+  .comparison-table .col-basic { color: #60A5FA; }
+  .comparison-table .col-standard { color: #34D399; }
+  .comparison-table .col-premium { color: #A78BFA; }
+  .tick { color: #34D399; font-size: 15px; }
+  .cross { color: #6B7280; font-size: 15px; }
+  .partial { color: #F59E0B; font-size: 12px; }
+
+  /* ─── ONLINE VS DESKTOP ─── */
+  .comparison-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 48px;
+  }
+  .comp-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(30,58,95,0.09);
+  }
+  .comp-card-header {
+    padding: 20px 28px;
+    color: #fff;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .comp-card-header.desktop { background: linear-gradient(135deg, var(--navy), var(--blue)); }
+  .comp-card-header.web { background: linear-gradient(135deg, #374151, #6B7280); }
+  .comp-card-body { padding: 24px 28px; }
+  .comp-item {
+    display: flex;
+    gap: 10px;
+    padding: 6px 0;
+    font-size: 13px;
+    color: #374151;
+    align-items: flex-start;
+  }
+  .comp-item .icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+
+  /* ─── WHY ECSG ─── */
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 48px;
+  }
+  .why-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 28px 24px;
+    border-left: 4px solid var(--blue);
+    box-shadow: 0 2px 12px rgba(30,58,95,0.07);
+    transition: transform 0.2s;
+  }
+  .why-card:hover { transform: translateY(-2px); }
+  .why-card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: var(--navy);
+    margin-bottom: 10px;
+  }
+  .why-card p { font-size: 13px; color: var(--gray-text); line-height: 1.6; }
+
+  /* ─── ACCEPTANCE ─── */
+  .acceptance-block {
+    background: linear-gradient(135deg, var(--navy-deep), var(--navy));
+    border-radius: 16px;
+    padding: 40px;
+    color: #fff;
+    margin-bottom: 48px;
+  }
+  .acceptance-block .section-title { color: #fff; }
+  .acceptance-block .section-divider { background: var(--blue-light); }
+  .plan-select-row {
+    display: flex;
+    gap: 16px;
+    margin: 20px 0 32px;
+  }
+  .plan-select-btn {
+    flex: 1;
+    padding: 16px;
+    border: 2px solid rgba(255,255,255,0.2);
+    border-radius: 8px;
+    background: transparent;
+    color: rgba(255,255,255,0.7);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.25s;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+  }
+  .plan-select-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+  }
+  .plan-select-btn.basic:hover, .plan-select-btn.basic.selected { border-color: #60A5FA; background: rgba(96,165,250,0.12); color: #60A5FA; }
+  .plan-select-btn.standard:hover, .plan-select-btn.standard.selected { border-color: #34D399; background: rgba(52,211,153,0.12); color: #34D399; }
+  .plan-select-btn.premium:hover, .plan-select-btn.premium.selected { border-color: #A78BFA; background: rgba(167,139,250,0.12); color: #A78BFA; }
+
+  .sig-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+  }
+  .sig-block h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+    margin-bottom: 20px;
+  }
+  .sig-field {
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+  }
+  .sig-field label {
+    font-size: 11px;
+    color: rgba(255,255,255,0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 6px;
+  }
+  .sig-field input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-family: 'Barlow', sans-serif;
+    font-size: 14px;
+    width: 100%;
+  }
+  .sig-field input::placeholder { color: rgba(255,255,255,0.2); }
+  .validity-note {
+    margin-top: 24px;
+    font-size: 12px;
+    color: rgba(255,255,255,0.35);
+    font-style: italic;
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 16px;
+  }
+
+  /* ─── FOOTER ─── */
+  .footer {
+    background: var(--navy-deep);
+    padding: 32px 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .footer img { width: 80px; opacity: 0.9; }
+  .footer-text { color: rgba(255,255,255,0.4); font-size: 12px; line-height: 1.6; }
+  .footer-text a { color: var(--blue-light); text-decoration: none; }
+  .footer-right { text-align: right; color: rgba(255,255,255,0.3); font-size: 11px; }
+
+  /* ─── PRINT STYLES ─── */
+  @media print {
+    .lang-bar, .lang-btn { display: none !important; }
+    .lang-section { display: block !important; }
+    body { background: #fff; }
+  }
+
+  @media (max-width: 900px) {
+    .plans-grid { grid-template-columns: 1fr; }
+    .comparison-cards { grid-template-columns: 1fr; }
+    .why-grid { grid-template-columns: 1fr 1fr; }
+    .header-inner { flex-direction: column; text-align: center; }
+    .header-contact { text-align: center; }
+    .sig-grid { grid-template-columns: 1fr; }
+    .section { padding: 32px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+  <div class="nav-links">
+    <a href="index.html" class="nav-link">Home</a>
+    <a href="managed-services.html" class="nav-link">Managed Services</a>
+    <a href="cloud-services.html" class="nav-link active">Cloud Services</a>
+    <a href="cybersecurity.html" class="nav-link">Cybersecurity</a>
+    <a href="ECSG_About.html" class="nav-link">About Us</a>
+  </div>
+  <div class="nav-right">
+    <div class="lang-toggle">
+      <button class="lang-btn active" data-lang="en">EN</button>
+      <button class="lang-btn" data-lang="es">ES</button>
+    </div>
+    <a href="ecsgcontact_sales.html" class="nav-cta">✉ Contact Sales</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="nav-mobile-menu" id="navMobileMenu">
+  <a href="index.html" class="nav-link">Home</a>
+  <a href="managed-services.html" class="nav-link">Managed Services</a>
+  <a href="cloud-services.html" class="nav-link active">Cloud Services</a>
+  <a href="cybersecurity.html" class="nav-link">Cybersecurity</a>
+  <a href="ECSG_About.html" class="nav-link">About Us</a>
+  <div class="nav-mobile-bottom">
+    <div class="lang-toggle">
+      <button class="lang-btn" id="mLangEN" data-lang="en">EN</button>
+      <button class="lang-btn" id="mLangES" data-lang="es">ES</button>
+    </div>
+    <a href="ecsgcontact_sales.html" class="nav-cta">✉ Contact Sales</a>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header">
+  <div class="header-inner">
+    <div class="header-text">
+      <div class="header-eyebrow">Enterprise Cloud Solutions Group LLC</div>
+      <h1 class="header-title">Microsoft <span>365</span> Plans</h1>
+      <p class="header-subtitle" id="hdr-sub">Managed IT · Cloud · Cybersecurity · Projects</p>
+    </div>
+    <div class="header-contact">
+      26 Belden Ave, Norwalk, CT<br>
+      <a href="mailto:info@ecsgtech.com">info@ecsgtech.com</a><br>
+      <a href="https://www.ecsgtech.com">www.ecsgtech.com</a>
+    </div>
+  </div>
+</header>
+
+<!-- ══════════════════ SPANISH ══════════════════ -->
+<div id="lang-en" class="lang-section active">
+
+  <div class="section">
+    <div class="section-title">Available <span>Plans</span></div>
+    <div class="section-divider"></div>
+
+    <div class="plans-grid">
+
+      <!-- BASIC EN -->
+      <div class="plan-card plan-basic">
+        <div class="plan-header">
+          <div class="plan-badge">Basic Plan</div>
+          <div class="plan-name">Business<br>Basic</div>
+          <p class="plan-tagline">Entry-level plan focused on cloud productivity. No installable desktop apps included.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Tenant Management</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft 365 Tenant creation & configuration</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Domain registration and verification</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>DNS setup (MX, SPF, Autodiscover, HTTPS, TLS)</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Entra ID — users, access policies, MFA</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Email security (SPF, DKIM, DMARC)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Included Applications</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Word, Excel, PowerPoint, Outlook — <strong>web & mobile only</strong></div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>OneNote, OneDrive (web & mobile)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Cloud Services</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Exchange Online Plan 1 — 50 GB mailbox</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft Teams (chat, video calls, meetings)</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>OneDrive 1 TB per user</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>SharePoint Online</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Forms, Lists, Planner, To Do, Loop, Sway</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Bookings — client scheduling</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Copilot Chat (basic, no Graph access)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Administration</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Admin Center — user & license management</div>
+            <div class="feature-note">No Intune or advanced security included</div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          Tenant management by ECSG for life (for the duration of the business relationship).
+        </div>
+      </div>
+
+      <!-- STANDARD EN -->
+      <div class="plan-card plan-standard">
+        <div class="plan-header">
+          <div class="plan-badge">Standard Plan</div>
+          <div class="plan-name">Business<br>Standard</div>
+          <p class="plan-tagline">Includes installable desktop apps and full enterprise collaboration features.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Everything in Basic, plus:</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Word, Excel, PowerPoint, Outlook — <strong>desktop + web + mobile</strong></div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Access & Publisher (PC only)</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Exchange + anti-phishing & anti-spoofing security</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Advanced Collaboration</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft Teams — webinars with registration</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>SharePoint Online — intranet, sites, libraries</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>OneDrive 1 TB with PC/Mac sync</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft Loop — collaborative workspaces</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft Clipchamp — video editor</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Bookings — client appointment scheduling</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Productivity</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Forms, Lists, Planner, To Do, Sway</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft Planner — visual Kanban board</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Basic Copilot Chat integrated in apps</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Administration</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Full Microsoft 365 Admin Center</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Advanced app configuration and general security</div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          Tenant management by ECSG for life (for the duration of the business relationship).
+        </div>
+      </div>
+
+      <!-- PREMIUM EN -->
+      <div class="plan-card plan-premium featured">
+        <div class="plan-header">
+          <div class="plan-badge">Premium Plan</div>
+          <div class="plan-name">Business<br>Premium</div>
+          <p class="plan-tagline">The most complete plan: productivity + advanced security + device management.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Everything in Standard, plus:</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Full Office apps (desktop + web + mobile)</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Exchange Online Plan 1 — 50 GB, corporate domain</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Teams — enterprise webinars & large meetings</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>SharePoint, OneDrive 1 TB, Loop, Clipchamp, Bookings</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">🔐 Advanced Security (Premium Exclusive)</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>Defender for Office 365 — Safe Links, Safe Attachments</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>AI-powered anti-phishing protection</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>Defender for Business — enterprise EDR</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>Ransomware protection & centralized threat control</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>Intune — MDM/MAM, device policies, remote wipe</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>Azure AD Premium P1 (Entra ID P1) — Conditional Access</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>DLP, Sensitivity Labels, Data Governance</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Endpoint Management</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Intune Remote Help — advanced remote support</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Autopilot — automated PC provisioning</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Manage Windows 10/11 Pro, Mac, iOS, Android</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Windows Pro Upgrade</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Right to upgrade Windows Home → Windows Pro</div>
+            <div class="feature-note">Essential for enabling Intune, Autopilot, and Conditional Access</div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          Tenant management by ECSG for life (for the duration of the business relationship).
+        </div>
+      </div>
+
+    </div><!-- /plans-grid -->
+
+    <!-- COMPARISON TABLE EN -->
+    <div class="comparison-wrap">
+      <div class="comparison-header-bar">
+        <div class="section-title">Quick <span style="color:var(--blue-light)">Comparison</span></div>
+        <div class="section-divider"></div>
+      </div>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Feature</th>
+            <th class="col-basic">Basic</th>
+            <th class="col-standard">Standard</th>
+            <th class="col-premium">Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Office web & mobile apps</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Installable desktop apps</td><td><span class="cross">✗</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Exchange Online (50 GB mailbox)</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Full Microsoft Teams</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>OneDrive 1 TB per user</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>SharePoint Online</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Teams Webinars</td><td><span class="cross">✗</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Clipchamp (video editor)</td><td><span class="cross">✗</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Basic Copilot Chat</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Defender for Office 365</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Defender for Business (EDR)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Microsoft Intune (MDM/MAM)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Azure AD Premium P1 (Entra ID P1)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>DLP + Sensitivity Labels</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Windows Pro Upgrade</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Autopilot + Remote Help</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ONLINE VS DESKTOP EN -->
+    <div class="section-title">Online Apps <span>vs</span> Desktop Apps</div>
+    <div class="section-divider"></div>
+    <div class="comparison-cards">
+      <div class="comp-card">
+        <div class="comp-card-header desktop">🖥 Desktop Apps</div>
+        <div class="comp-card-body">
+          <div class="comp-item"><span class="icon">✅</span> VBA, Macros & advanced automation</div>
+          <div class="comp-item"><span class="icon">✅</span> Full Power Query and Power Pivot</div>
+          <div class="comp-item"><span class="icon">✅</span> Complex data models</div>
+          <div class="comp-item"><span class="icon">✅</span> Advanced animations and designs (PowerPoint)</div>
+          <div class="comp-item"><span class="icon">✅</span> Full offline support — no Internet required</div>
+          <div class="comp-item"><span class="icon">✅</span> COM add-ins and Windows system integration</div>
+          <div class="comp-item"><span class="icon">✅</span> Large files (millions of rows in Excel)</div>
+          <div class="comp-item"><span class="icon">✅</span> Better compatibility with complex file formats</div>
+          <div class="comp-item"><span class="icon">✅</span> Print options and advanced mail merge</div>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-header web">🌐 Online Apps (Web)</div>
+        <div class="comp-card-body">
+          <div class="comp-item"><span class="icon">✅</span> Real-time collaboration with colleagues</div>
+          <div class="comp-item"><span class="icon">✅</span> Access from any device with a browser</div>
+          <div class="comp-item"><span class="icon">✅</span> Ideal for light work and quick reviews</div>
+          <div class="comp-item"><span class="icon">⚠️</span> No VBA / Macros support</div>
+          <div class="comp-item"><span class="icon">⚠️</span> Limited Power Query (Excel Online)</div>
+          <div class="comp-item"><span class="icon">⚠️</span> Advanced animations unavailable (PowerPoint Online)</div>
+          <div class="comp-item"><span class="icon">❌</span> Always requires an active Internet connection</div>
+          <div class="comp-item"><span class="icon">❌</span> No COM add-ins or local fonts</div>
+          <div class="comp-item"><span class="icon">❌</span> Limited advanced design capabilities</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY ECSG EN -->
+    <div class="section-title">Why <span>ECSG</span>?</div>
+    <div class="section-divider"></div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-title">☁ Microsoft Certified</div>
+        <p>Our team holds Microsoft Azure and Microsoft 365 certifications, ensuring implementations aligned with industry best practices.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">🛡 Security First</div>
+        <p>We use SentinelOne, DefensX, and Kaseya to deliver enterprise-grade security across every layer of your technology infrastructure.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">📡 Proactive vs. Reactive</div>
+        <p>We solve problems before they impact your operations through 24/7 monitoring and real-time automated alerts.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">🌎 US-Based + Global Reach</div>
+        <p>Headquartered in Norwalk, CT — we serve clients across the US and internationally with the same service standard.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">👥 Dedicated Team</div>
+        <p>You get a single point of contact, a dedicated account manager, and certified engineers assigned to your organization.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">💰 Transparent Pricing</div>
+        <p>No hidden fees. Fixed monthly retainers with a clearly defined scope and service level agreement (SLA) commitments.</p>
+      </div>
+    </div>
+
+    <!-- CONTACT CTA -->
+    <div class="acceptance-block">
+      <div class="section-title">Ready to <span style="color:var(--blue-light)">Get Started?</span></div>
+      <div class="section-divider"></div>
+      <p style="color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:28px;">Select your preferred plan and one of our specialists will get in touch with you.</p>
+      <div class="plan-select-row">
+        <a class="plan-select-btn basic" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=basic">Basic Plan</a>
+        <a class="plan-select-btn standard" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=standard">Standard Plan</a>
+        <a class="plan-select-btn premium" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=premium">Premium Plan</a>
+      </div>
+      <div class="validity-note">Have questions? Email us at <a href="/cdn-cgi/l/email-protection#0861666e67486d6b7b6f7c6d6b60266b6765"><span class="__cf_email__" data-cfemail="fd94939b92bd989e8e9a89989e95d39e9290">[email&#160;protected]</span></a> — we respond within 1 business day.</div>
+    </div>
+
+  </div><!-- /section -->
+</div><!-- /lang-en -->
+
+<!-- ══════════════════ ENGLISH ══════════════════ -->
+<div id="lang-es" class="lang-section">
+
+  <!-- PLANS -->
+  <div class="section">
+    <div class="section-title">Planes <span>Disponibles</span></div>
+    <div class="section-divider"></div>
+
+    <div class="plans-grid">
+
+      <!-- BASIC -->
+      <div class="plan-card plan-basic">
+        <div class="plan-header">
+          <div class="plan-badge">Plan Básico</div>
+          <div class="plan-name">Business<br>Basic</div>
+          <p class="plan-tagline">Plan de entrada centrado en productividad en la nube. Sin apps de escritorio instalables.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Gestión del Tenant</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Creación y configuración del Tenant M365</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Registro y verificación del dominio</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Configuración DNS (MX, SPF, Autodiscover, HTTPS)</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Entra ID — usuarios, políticas de acceso, MFA</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Seguridad de correo (SPF, DKIM, DMARC)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Aplicaciones Incluidas</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Word, Excel, PowerPoint, Outlook — <strong>solo web y móvil</strong></div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>OneNote, OneDrive (web y móvil)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Servicios Cloud</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Exchange Online Plan 1 — buzón 50 GB</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft Teams (chat, videollamadas, reuniones)</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>OneDrive 1 TB por usuario</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>SharePoint Online</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Forms, Lists, Planner, To Do, Loop, Sway</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Bookings — agenda con clientes</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Copilot Chat (versión básica, sin acceso a Graph)</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Administración</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Admin Center, gestión de usuarios y licencias</div>
+            <div class="feature-note">Sin Intune ni seguridad avanzada</div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          Administración del Tenant por ECSG de por vida (mientras dure la relación comercial).
+        </div>
+      </div>
+
+      <!-- STANDARD -->
+      <div class="plan-card plan-standard">
+        <div class="plan-header">
+          <div class="plan-badge">Plan Estándar</div>
+          <div class="plan-name">Business<br>Standard</div>
+          <p class="plan-tagline">Incluye apps de escritorio instalables y todas las funciones de colaboración empresarial.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Todo lo de Basic más:</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Word, Excel, PowerPoint, Outlook — <strong>desktop + web + móvil</strong></div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Access y Publisher (solo PC)</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Exchange Online + seguridad SPF/DKIM/DMARC/anti-phishing</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Colaboración Avanzada</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft Teams — webinars con registro</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>SharePoint Online — intranet, sitios, bibliotecas</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>OneDrive 1 TB con sincronización PC/Mac</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft Loop — espacios colaborativos</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft Clipchamp — editor de video</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Bookings — reserva de citas con clientes</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Productividad</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Forms, Lists, Planner, To Do, Sway</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft Planner — tablero Kanban visual</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Copilot Chat básico integrado en apps</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Administración</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Microsoft 365 Admin Center completo</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Configuración avanzada de apps y seguridad general</div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          Administración del Tenant por ECSG de por vida (mientras dure la relación comercial).
+        </div>
+      </div>
+
+      <!-- PREMIUM -->
+      <div class="plan-card plan-premium featured">
+        <div class="plan-header">
+          <div class="plan-badge">Plan Premium</div>
+          <div class="plan-name">Business<br>Premium</div>
+          <p class="plan-tagline">El plan más completo: productividad + seguridad avanzada + gestión de dispositivos.</p>
+        </div>
+        <div class="plan-body">
+          <div class="feature-group">
+            <div class="feature-group-title">Todo lo de Standard más:</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Apps Office completas (desktop + web + móvil)</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Exchange Online Plan 1 — 50 GB, dominio corporativo</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Teams — webinars empresariales completos</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>SharePoint, OneDrive 1 TB, Loop, Clipchamp, Bookings</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">🔐 Seguridad Avanzada (Exclusivo Premium)</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>Defender for Office 365 — Safe Links, Safe Attachments</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>Protección anti-phishing con IA</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>Defender for Business — EDR empresarial</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>Protección contra ransomware y control de amenazas</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>Intune — MDM/MAM, políticas de dispositivos, borrado remoto</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>Azure AD Premium P1 (Entra ID P1) — Acceso Condicional</div>
+            <div class="feature-item"><span class="feature-icon security">🛡</span>DLP, Sensitivity Labels, Data Loss Prevention</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Gestión de Endpoints</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Intune Remote Help — soporte remoto avanzado</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Autopilot — configuración automática de PCs</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Administración de Windows 10/11 Pro, Mac, iOS, Android</div>
+          </div>
+          <div class="feature-group">
+            <div class="feature-group-title">Windows Pro Upgrade</div>
+            <div class="feature-item"><span class="feature-icon check">✓</span>Derecho a actualizar Windows Home → Windows Pro</div>
+            <div class="feature-note">Fundamental para habilitar Intune, Autopilot y Acceso Condicional</div>
+          </div>
+        </div>
+        <div class="plan-footer">
+          Administración del Tenant por ECSG de por vida (mientras dure la relación comercial).
+        </div>
+      </div>
+
+    </div><!-- /plans-grid -->
+
+    <!-- COMPARISON TABLE -->
+    <div class="comparison-wrap">
+      <div class="comparison-header-bar">
+        <div class="section-title">Comparativa <span style="color:var(--blue-light)">Rápida</span></div>
+        <div class="section-divider"></div>
+      </div>
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th>Característica</th>
+            <th class="col-basic">Basic</th>
+            <th class="col-standard">Standard</th>
+            <th class="col-premium">Premium</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Apps Office web y móvil</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Apps Office instalables (desktop)</td><td><span class="cross">✗</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Exchange Online (50 GB buzón)</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Microsoft Teams completo</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>OneDrive 1 TB por usuario</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>SharePoint Online</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Webinars (Teams)</td><td><span class="cross">✗</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Clipchamp (editor de video)</td><td><span class="cross">✗</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Copilot Chat básico</td><td class="col-basic"><span class="tick">✔</span></td><td class="col-standard"><span class="tick">✔</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Defender for Office 365</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Defender for Business (EDR)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Microsoft Intune (MDM/MAM)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Azure AD Premium P1 (Entra ID P1)</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>DLP + Sensitivity Labels</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Windows Pro Upgrade</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+          <tr><td>Autopilot + Remote Help</td><td><span class="cross">✗</span></td><td><span class="cross">✗</span></td><td class="col-premium"><span class="tick">✔</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ONLINE VS DESKTOP -->
+    <div class="section-title">Apps <span>Online</span> vs <span>Escritorio</span></div>
+    <div class="section-divider"></div>
+    <div class="comparison-cards">
+      <div class="comp-card">
+        <div class="comp-card-header desktop">🖥 Apps de Escritorio (Desktop)</div>
+        <div class="comp-card-body">
+          <div class="comp-item"><span class="icon">✅</span> VBA, Macros y automatización avanzada</div>
+          <div class="comp-item"><span class="icon">✅</span> Power Query completo y Power Pivot</div>
+          <div class="comp-item"><span class="icon">✅</span> Modelos de datos complejos</div>
+          <div class="comp-item"><span class="icon">✅</span> Animaciones y diseños avanzados (PowerPoint)</div>
+          <div class="comp-item"><span class="icon">✅</span> Trabajo offline total sin depender de Internet</div>
+          <div class="comp-item"><span class="icon">✅</span> Complementos COM e integración con Windows</div>
+          <div class="comp-item"><span class="icon">✅</span> Archivos grandes (millones de filas en Excel)</div>
+          <div class="comp-item"><span class="icon">✅</span> Mayor compatibilidad con formatos complejos</div>
+          <div class="comp-item"><span class="icon">✅</span> Opciones de impresión y combinación de correspondencia</div>
+        </div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-card-header web">🌐 Apps Online (Web)</div>
+        <div class="comp-card-body">
+          <div class="comp-item"><span class="icon">✅</span> Colaboración en tiempo real con colegas</div>
+          <div class="comp-item"><span class="icon">✅</span> Acceso desde cualquier dispositivo con navegador</div>
+          <div class="comp-item"><span class="icon">✅</span> Ideal para trabajo ligero y revisiones rápidas</div>
+          <div class="comp-item"><span class="icon">⚠️</span> Sin soporte para VBA / Macros</div>
+          <div class="comp-item"><span class="icon">⚠️</span> Power Query limitado (Excel Online)</div>
+          <div class="comp-item"><span class="icon">⚠️</span> Animaciones avanzadas no disponibles (PowerPoint Online)</div>
+          <div class="comp-item"><span class="icon">❌</span> Requiere conexión a Internet siempre</div>
+          <div class="comp-item"><span class="icon">❌</span> Sin complementos COM ni fuentes locales</div>
+          <div class="comp-item"><span class="icon">❌</span> Funcionalidades de diseño avanzado limitadas</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY ECSG -->
+    <div class="section-title">¿Por qué <span>ECSG</span>?</div>
+    <div class="section-divider"></div>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-card-title">☁ Certificación Microsoft</div>
+        <p>Nuestro equipo está certificado en Microsoft Azure y Microsoft 365, garantizando implementaciones conforme a las mejores prácticas de la industria.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">🛡 Seguridad Primero</div>
+        <p>Utilizamos SentinelOne, DefensX y Kaseya para ofrecer seguridad de nivel empresarial en cada capa de su infraestructura tecnológica.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">📡 Proactivo vs. Reactivo</div>
+        <p>Resolvemos problemas antes de que afecten sus operaciones con monitoreo 24/7 y alertas automatizadas en tiempo real.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">🌎 Base EE.UU. + Alcance Global</div>
+        <p>Con sede en Norwalk, CT — atendemos clientes en todo EE.UU. e internacionalmente con el mismo estándar de servicio.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">👥 Equipo Dedicado</div>
+        <p>Obtiene un punto de contacto único, un gerente de cuenta dedicado e ingenieros certificados asignados a su empresa.</p>
+      </div>
+      <div class="why-card">
+        <div class="why-card-title">💰 Precios Transparentes</div>
+        <p>Sin cargos ocultos. Retainers mensuales fijos con alcance claramente definido y compromisos de nivel de servicio (ANS).</p>
+      </div>
+    </div>
+
+    <!-- CONTACT CTA -->
+    <div class="acceptance-block">
+      <div class="section-title">¿Listo para <span style="color:var(--blue-light)">Empezar?</span></div>
+      <div class="section-divider"></div>
+      <p style="color:rgba(255,255,255,0.6);font-size:14px;margin-bottom:28px;">Seleccione el plan de su preferencia y uno de nuestros especialistas se pondrá en contacto con usted.</p>
+      <div class="plan-select-row">
+        <a class="plan-select-btn basic" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=basic">Plan Basic</a>
+        <a class="plan-select-btn standard" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=standard">Plan Standard</a>
+        <a class="plan-select-btn premium" href="https://www.ecsgtech.com/ecsgcontact_sales.html?plan=premium">Plan Premium</a>
+      </div>
+      <div class="validity-note">¿Tiene preguntas? Escríbanos a <a href="/cdn-cgi/l/email-protection#87eee9e1e8c7e2e4f4e0f3e2e4efa9e4e8ea"><span class="__cf_email__" data-cfemail="7811161e17381d1b0b1f0c1d1b10561b1715">[email&#160;protected]</span></a> — respondemos en menos de 1 día hábil.</div>
+    </div>
+
+  </div><!-- /section -->
+</div><!-- /lang-es -->
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-text">
+    <strong style="color:rgba(255,255,255,0.7)">Enterprise Cloud Solutions Group LLC</strong><br>
+    26 Belden Ave, Norwalk, CT 06850 &nbsp;·&nbsp;
+    <a href="/cdn-cgi/l/email-protection#d2bbbcb4bd92b7b1a1b5a6b7b1bafcb1bdbf"><span class="__cf_email__" data-cfemail="4920272f26092c2a3a2e3d2c2a21672a2624">[email&#160;protected]</span></a> &nbsp;·&nbsp;
+    <a href="https://www.ecsgtech.com">www.ecsgtech.com</a>
+  </div>
+  <div class="footer-right">
+    Managed IT · Cloud · Cybersecurity · Projects<br>
+    © 2025 ECSG LLC. All rights reserved.
+  </div>
+</footer>
+<script>
+(function() {
+
+  function switchLang(lang) {
+    document.querySelectorAll('.lang-section').forEach(function(s) {
+      s.classList.remove('active');
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b) {
+      b.classList.remove('active');
+    });
+    var section = document.getElementById('lang-' + lang);
+    if (section) section.classList.add('active');
+    document.querySelectorAll('.lang-btn[data-lang="' + lang + '"]').forEach(function(b) {
+      b.classList.add('active');
+    });
+    localStorage.setItem('ecsg-lang', lang);
+  }
+
+  document.addEventListener('DOMContentLoaded', function() {
+
+    /* Lang toggle */
+    document.querySelectorAll('.lang-btn').forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        switchLang(this.getAttribute('data-lang'));
+      });
+    });
+
+    /* Default EN */
+    switchLang('en');
+
+    /* Hamburger */
+    var hamburger = document.getElementById('navHamburger');
+    var mobileMenu = document.getElementById('navMobileMenu');
+
+    if (hamburger && mobileMenu) {
+      hamburger.addEventListener('click', function() {
+        var isOpen = mobileMenu.classList.toggle('open');
+        hamburger.classList.toggle('open', isOpen);
+        hamburger.setAttribute('aria-expanded', String(isOpen));
+      });
+      mobileMenu.querySelectorAll('.nav-link').forEach(function(link) {
+        link.addEventListener('click', function() {
+          mobileMenu.classList.remove('open');
+          hamburger.classList.remove('open');
+          hamburger.setAttribute('aria-expanded', 'false');
+        });
+      });
+    }
+
+  });
+
+})();
+</script>
+</body>
+</html>
