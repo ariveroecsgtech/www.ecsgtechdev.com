@@ -10,16 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
-    --navy:#1E3A5F;
-    --navy-deep:#132842;
-    --blue:#2E75B6;
-    --blue-bright:#4A8FD1;
-    --blue-pale:#EAF2FB;
-    --cream:#F3EFE7;
+    --navy:#001848;
+    --navy-deep:#000C24;
+    --blue:#2F6EC6;
+    --blue-bright:#60A5FA;
+    --accent:#76C8F8;
+    --blue-pale:#EAF3FE;
+    --cream:#F4F4F4;
     --white:#FFFFFF;
-    --ink:#1B2B3E;
-    --muted:#5B7089;
-    --line:#E3E7ED;
+    --ink:#0A1E3D;
+    --muted:#54708F;
+    --line:#E2E6EA;
+    --text-on-dark:#CFE3FA;
+    --text-on-dark-muted:#93B4D9;
     --radius:14px;
     --maxw:1240px;
   }
@@ -60,10 +63,10 @@
   .btn-outline-navy:hover{background:var(--navy);color:#fff;}
 
   /* ===== TOPBAR ===== */
-  .topbar{background:var(--navy-deep);color:#cfe0f2;font-size:13px;}
+  .topbar{background:var(--navy-deep);color:var(--text-on-dark);font-size:13px;}
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;padding:9px 28px;gap:20px;flex-wrap:wrap;}
   .topbar-left{display:flex;align-items:center;gap:26px;flex-wrap:wrap;}
-  .topbar-left span, .topbar-left a{display:flex;align-items:center;gap:7px;color:#cfe0f2;}
+  .topbar-left span, .topbar-left a{display:flex;align-items:center;gap:7px;color:var(--text-on-dark);}
   .topbar-left svg{flex-shrink:0;opacity:.85;}
   .topbar-right{display:flex;align-items:center;gap:18px;}
   .topbar-right a.call{font-weight:600;color:#fff;}
@@ -126,7 +129,7 @@
   /* ===== HERO ===== */
   .hero{
     position:relative;overflow:hidden;
-    background:radial-gradient(1100px 500px at 82% -10%, #1c4470 0%, var(--navy) 45%, var(--navy-deep) 100%);
+    background:radial-gradient(1100px 500px at 82% -10%, #123B72 0%, var(--navy) 45%, var(--navy-deep) 100%);
     padding:56px 0 70px;
   }
   .hero .wrap{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);gap:56px;align-items:center;}
@@ -139,16 +142,16 @@
   @keyframes hlDotBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-12%);}}
   @keyframes hlCurveBreathe{0%,100%{transform:scaleX(1) scaleY(1);}50%{transform:scaleX(1.05) scaleY(.93);}}
   @media (prefers-reduced-motion:reduce){.hero-logo .hl-dot,.hero-logo .hl-curve{animation:none !important;}}
-  .hero-copy .eyebrow{color:#8fc0f2;}
-  .hero-copy .eyebrow::before{background:#8fc0f2;}
+  .hero-copy .eyebrow{color:var(--accent);}
+  .hero-copy .eyebrow::before{background:var(--accent);}
   .hero-copy h1{color:#fff;font-size:clamp(32px,4vw,50px);font-weight:800;letter-spacing:-.01em;}
-  .hero-copy h1 em{font-style:normal;color:#8fc0f2;}
-  .hero-copy p{color:#c3d3e6;font-size:17px;line-height:1.7;margin:22px 0 30px;max-width:520px;}
+  .hero-copy h1 em{font-style:normal;color:var(--accent);}
+  .hero-copy p{color:var(--text-on-dark);font-size:17px;line-height:1.7;margin:22px 0 30px;max-width:520px;}
   .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
   .hero-ticker{margin-top:44px;border-top:1px solid rgba(255,255,255,.15);padding-top:20px;overflow:hidden;width:100%;max-width:100%;min-width:0;}
   .hero-ticker-track{display:flex;gap:34px;white-space:nowrap;animation:scrollTicker 28s linear infinite;width:max-content;min-width:0;}
-  .hero-ticker span{color:#9fb7d2;font-size:13.5px;font-weight:600;letter-spacing:.03em;}
-  .hero-ticker span::after{content:"•";margin-left:34px;color:#4A8FD1;}
+  .hero-ticker span{color:var(--text-on-dark-muted);font-size:13.5px;font-weight:600;letter-spacing:.03em;}
+  .hero-ticker span::after{content:"•";margin-left:34px;color:var(--blue-bright);}
   @keyframes scrollTicker{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
   /* signature stack graphic */
@@ -160,13 +163,13 @@
   .stack-row:nth-child(3){animation-delay:.55s;}
   @keyframes riseIn{to{opacity:1;transform:translateY(0);}}
   .bar{height:64px;border-radius:32px;box-shadow:0 18px 40px -16px rgba(0,0,0,.45);}
-  .bar-1{width:46%;background:linear-gradient(120deg,#9CC4EE,#5B95D6);margin-left:auto;}
-  .bar-2{width:100%;background:linear-gradient(120deg,#5B95D6,#2E75B6);}
+  .bar-1{width:46%;background:linear-gradient(120deg,var(--accent),var(--blue));margin-left:auto;}
+  .bar-2{width:100%;background:linear-gradient(120deg,var(--blue-bright),var(--blue));}
   .bar-3-wrap{display:flex;gap:16px;width:100%;}
-  .bar-3{width:68%;height:64px;border-radius:32px;background:linear-gradient(120deg,#2E75B6,#1E3A5F);}
-  .dot{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 32% 30%,#8fc0f2,#2E75B6 70%);}
-  .stack-label{position:absolute;left:calc(100% + 18px);top:50%;transform:translateY(-50%);color:#dce8f7;font-size:13px;font-weight:700;white-space:nowrap;}
-  .stack-label small{display:block;font-weight:500;color:#8fa8c4;font-size:11.5px;margin-top:2px;}
+  .bar-3{width:68%;height:64px;border-radius:32px;background:linear-gradient(120deg,var(--blue),var(--navy));}
+  .dot{width:64px;height:64px;border-radius:50%;background:radial-gradient(circle at 32% 30%,var(--accent),var(--blue) 70%);}
+  .stack-label{position:absolute;left:calc(100% + 18px);top:50%;transform:translateY(-50%);color:var(--text-on-dark);font-size:13px;font-weight:700;white-space:nowrap;}
+  .stack-label small{display:block;font-weight:500;color:var(--text-on-dark-muted);font-size:11.5px;margin-top:2px;}
   .bar-1-wrap,.bar-2-wrap{position:relative;}
 
   /* ===== SECTIONS COMMON ===== */
@@ -200,8 +203,8 @@
   .split-card.pale .tag{color:var(--blue);}
   .split-card .link-arrow{display:inline-flex;align-items:center;gap:6px;margin-top:18px;font-weight:700;font-size:14px;}
   .founder-strip{display:flex;align-items:center;gap:14px;margin-top:26px;padding-top:22px;border-top:1px solid rgba(255,255,255,.15);}
-  .founder-strip .avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,#8fc0f2,#2E75B6);display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-family:'Manrope',sans-serif;}
-  .founder-strip span{display:block;font-size:13.5px;color:#cfe0f2;}
+  .founder-strip .avatar{width:46px;height:46px;border-radius:50%;background:linear-gradient(135deg,var(--accent),var(--blue));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-family:'Manrope',sans-serif;}
+  .founder-strip span{display:block;font-size:13.5px;color:var(--text-on-dark);}
   .founder-strip strong{font-size:14.5px;}
 
   /* ===== SERVICES ===== */
@@ -218,22 +221,22 @@
   .achievements{background:var(--navy-deep);color:#fff;}
   .ach-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:50px;}
   .ach-card{text-align:center;padding:34px 18px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);}
-  .ach-card b{font-family:'Manrope',sans-serif;font-size:44px;font-weight:800;color:#8fc0f2;display:block;}
-  .ach-card span{color:#b9cbe0;font-size:14px;font-weight:600;}
+  .ach-card b{font-family:'Manrope',sans-serif;font-size:44px;font-weight:800;color:var(--accent);display:block;}
+  .ach-card span{color:var(--text-on-dark);font-size:14px;font-weight:600;}
   .capability-ticker{overflow:hidden;border-top:1px solid rgba(255,255,255,.12);padding-top:26px;}
   .capability-track{display:flex;gap:14px;width:max-content;animation:scrollTicker 34s linear infinite;}
-  .capability-track span{padding:9px 18px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:13px;font-weight:600;color:#dce8f7;white-space:nowrap;}
+  .capability-track span{padding:9px 18px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);font-size:13px;font-weight:600;color:var(--text-on-dark);white-space:nowrap;}
 
   /* ===== CTA ===== */
   .cta{background:linear-gradient(120deg,var(--blue) 0%,var(--navy) 100%);color:#fff;position:relative;overflow:hidden;}
   .cta .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;}
   .cta h2{color:#fff;font-size:clamp(26px,3vw,36px);}
-  .cta p{color:#dce8f7;font-size:15.5px;line-height:1.7;margin-top:14px;max-width:480px;}
+  .cta p{color:var(--text-on-dark);font-size:15.5px;line-height:1.7;margin-top:14px;max-width:480px;}
   .cta-right{text-align:right;}
-  .cta-right p{margin:0 0 20px;color:#eaf2fb;font-size:15px;font-weight:600;text-align:right;margin-left:auto;}
+  .cta-right p{margin:0 0 20px;color:var(--text-on-dark);font-size:15px;font-weight:600;text-align:right;margin-left:auto;}
 
   /* ===== FOOTER ===== */
-  footer{background:var(--navy-deep);color:#b9cbe0;padding-top:74px;}
+  footer{background:var(--navy-deep);color:var(--text-on-dark);padding-top:74px;}
   .footer-top{display:grid;grid-template-columns:1.4fr .8fr .8fr 1fr;gap:40px;padding-bottom:52px;border-bottom:1px solid rgba(255,255,255,.1);}
   .footer-brand img{height:36px;margin-bottom:18px;}
   .footer-logo{position:relative;width:157px;height:70px;margin-bottom:18px;}
@@ -244,16 +247,16 @@
   @keyframes flDotBounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-12%);}}
   @keyframes flCurveBreathe{0%,100%{transform:scaleX(1) scaleY(1);}50%{transform:scaleX(1.05) scaleY(.93);}}
   @media (prefers-reduced-motion:reduce){.footer-logo .fl-dot,.footer-logo .fl-curve{animation:none !important;}}
-  .footer-brand p{font-size:14px;line-height:1.75;color:#9fb3c9;max-width:320px;}
+  .footer-brand p{font-size:14px;line-height:1.75;color:var(--text-on-dark-muted);max-width:320px;}
   .footer-social{display:flex;gap:10px;margin-top:20px;}
   .footer-social a{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,.06);display:flex;align-items:center;justify-content:center;transition:background .2s;}
   .footer-social a:hover{background:var(--blue);}
   .footer-col h5{color:#fff;font-family:'Manrope',sans-serif;font-size:15px;margin-bottom:20px;}
   .footer-col ul li{margin-bottom:12px;}
-  .footer-col ul li a{font-size:14px;color:#b9cbe0;transition:color .2s;}
-  .footer-col ul li a:hover{color:#8fc0f2;}
-  .footer-col address{font-style:normal;font-size:14px;line-height:1.7;color:#b9cbe0;}
-  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:26px 0;font-size:13px;color:#7e93ab;flex-wrap:wrap;gap:10px;}
+  .footer-col ul li a{font-size:14px;color:var(--text-on-dark);transition:color .2s;}
+  .footer-col ul li a:hover{color:var(--accent);}
+  .footer-col address{font-style:normal;font-size:14px;line-height:1.7;color:var(--text-on-dark);}
+  .footer-bottom{display:flex;justify-content:space-between;align-items:center;padding:26px 0;font-size:13px;color:var(--text-on-dark-muted);flex-wrap:wrap;gap:10px;}
 
   /* ===== REVEAL ON SCROLL ===== */
   /* Below-the-fold sections: fade in via IntersectionObserver, with a CSS-only
@@ -544,25 +547,25 @@
     </div>
     <div class="services-grid reveal">
       <div class="service-card">
-        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E75B6" stroke-width="2"><path d="M4 15a4 4 0 0 1 1-7.9A5 5 0 0 1 15 6a4.5 4.5 0 0 1 1 8.9"/><path d="M8 15h9"/></svg></div>
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M4 15a4 4 0 0 1 1-7.9A5 5 0 0 1 15 6a4.5 4.5 0 0 1 1 8.9"/><path d="M8 15h9"/></svg></div>
         <h4>Managed Services</h4>
         <p>Proactive monitoring, helpdesk support, endpoint management, and vCIO consulting — we manage your IT so you can focus on your business.</p>
         <a href="managed-services.html" class="read-more">Read More →</a>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E75B6" stroke-width="2"><path d="M6 19a4 4 0 0 1-1-7.9A5 5 0 0 1 14 8a4.5 4.5 0 0 1 4 7.9"/><path d="M12 12v7"/><path d="m9 16 3 3 3-3"/></svg></div>
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><path d="M6 19a4 4 0 0 1-1-7.9A5 5 0 0 1 14 8a4.5 4.5 0 0 1 4 7.9"/><path d="M12 12v7"/><path d="m9 16 3 3 3-3"/></svg></div>
         <h4>Cloud Services</h4>
         <p>Azure infrastructure, cloud migrations, hybrid environments, and cost optimization — secure, scalable cloud solutions built for your workloads.</p>
         <a href="cloud-services.html" class="read-more">Read More →</a>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E75B6" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></div>
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="3"/><path d="M9 9h6v6H9z"/></svg></div>
         <h4>Project Management</h4>
         <p>Structured IT project delivery — from scoping and planning to execution and post-deployment support, on time and within budget.</p>
         <a href="project-management.html" class="read-more">Read More →</a>
       </div>
       <div class="service-card">
-        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#2E75B6" stroke-width="2"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6"/></svg></div>
+        <div class="service-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--blue)" stroke-width="2"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-4 3-6 7-6s7 2 7 6"/></svg></div>
         <h4>vCIO &amp; Consulting</h4>
         <p>Strategic technology advisory, IT roadmaps, vendor management, and compliance guidance — your virtual CIO, on demand.</p>
         <a href="vCIO-services.html" class="read-more">Read More →</a>
@@ -575,7 +578,7 @@
 <section class="achievements">
   <div class="wrap">
     <div class="section-head reveal" style="max-width:600px;">
-      <span class="eyebrow" style="justify-content:center;color:#8fc0f2;">Achievement</span>
+      <span class="eyebrow" style="justify-content:center;color:var(--accent);">Achievement</span>
       <h2 style="color:#fff;">We are increasing business success</h2>
     </div>
     <div class="ach-grid reveal">
@@ -596,7 +599,7 @@
 <section class="cta">
   <div class="wrap reveal">
     <div>
-      <span class="eyebrow" style="color:#cfe0f2;">Ready to Get Started?</span>
+      <span class="eyebrow" style="color:var(--text-on-dark);">Ready to Get Started?</span>
       <h2>Let's talk about your cloud strategy</h2>
       <p>We help organizations align cloud technology with real business goals — security, scalability, cost control, and long-term growth. Our experts work with you to define a clear, actionable cloud roadmap tailored to your environment.</p>
     </div>
